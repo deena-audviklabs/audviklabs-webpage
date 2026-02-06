@@ -52,11 +52,14 @@
             padding: 0;
             background-color: #050508;
             color: white;
-            overscroll-behavior: none;
             width: 100%;
+            max-width: 100%;
+            /* Force width limit */
             overflow-x: hidden;
+            /* Hide overflow on BOTH html and body */
+            position: relative;
+            scroll-behavior: smooth;
         }
-
         /* --- LENIS SCROLL --- */
         html.lenis,
         html.lenis body {
@@ -501,6 +504,51 @@
         .tech-card-more:hover {
             border-color: #FFD700;
             background: rgba(255, 140, 0, 0.05);
+        }
+                /* --- RICH GOLD SUNRISE GLOW --- */
+        .card-mouse-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+
+            /* UPDATED GRADIENT: Intense Gold -> Warm Amber -> Transparent */
+            background: radial-gradient(circle,
+                    rgba(255, 223, 0, 0.4) 0%,
+                    /* Core: Bright Canary Gold */
+                    rgba(255, 195, 0, 0.25) 30%,
+                    /* Middle: Rich Sun Yellow */
+                    rgba(255, 140, 0, 0.15) 55%,
+                    /* Outer: Deep Sunrise Orange */
+                    transparent 70%);
+
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+
+            /* High blur to diffuse the colors like light */
+            filter: blur(50px);
+            /* Screen blend mode makes gold look 'hot' against dark backgrounds */
+            mix-blend-mode: screen;
+        }
+
+        .liquid-card:hover .card-mouse-glow {
+            opacity: 1;
+        }
+
+        /* --- NEW: TRUE SUNRISE GOLD GRADIENT --- */
+        .sunrise-text-gradient {
+            /* Lighter, brighter Gold to Soft Amber */
+            background: linear-gradient(135deg, #FFE259 0%, #FFD700 50%, #FFA751 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            /* Golden Glow (instead of orange) */
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+            display: inline-block;
         }
     </style>
 </head>
@@ -998,7 +1046,7 @@
 
             <div class="mt-16 w-full max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="p-4 border border-white/5 rounded-2xl bg-white/5 backdrop-blur-sm">
-                    <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF8C00] to-[#FFD700] mb-1 group-hover:scale-110 transition-transform duration-300">Global</div>
+                    <div class="text-2xl font-bold text-audvikBlue">Global</div>
                     <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Presence</div>
                 </div>
                 <div class="p-4 border border-white/5 rounded-2xl bg-white/5 backdrop-blur-sm">
@@ -1047,12 +1095,14 @@
                     </div>
                 </div>
 
-                <div class="flex-1 w-full">
-                    <div class="liquid-card p-8 border border-white/10 relative overflow-hidden group" data-tilt
-                        data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                 <div class="flex-1 w-full">
+                    <div id="glow-card" class="liquid-card p-8 border border-white/10 relative overflow-hidden group"
+                        data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+
+                        <div class="card-mouse-glow"></div>
 
                         <div
-                            class="absolute inset-0 bg-gradient-to-br from-audvikBlue/10 to-transparent opacity-30 group-hover:opacity-50 transition-opacity duration-500">
+                            class="absolute inset-0 bg-gradient-to-br from-audvikBlue/10 to-transparent opacity-30 group-hover:opacity-20 transition-opacity duration-500">
                         </div>
 
                         <h3 class="text-2xl font-bold mb-8 text-white relative z-10">Why AudvikLabs?</h3>
@@ -1126,7 +1176,6 @@
                         </ul>
                     </div>
                 </div>
-            </div>
         </section>
 
   <section id="products" class="py-24 px-4 relative overflow-hidden">
@@ -1625,142 +1674,150 @@
             </div>
         </section>
 
-<section id="technologies" class="py-24 relative overflow-hidden bg-[#050508]">
+        <section id="technologies" class="py-24 relative overflow-hidden bg-[#050508]">
 
-        <div class="absolute inset-0 pointer-events-none z-0">
-            
-            <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-[#FF8C00]/20 via-[#FF8C00]/5 to-transparent"></div>
-            
-            <div class="absolute bottom-[-150px] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#FFD700] rounded-full blur-[100px] opacity-25 mix-blend-screen"></div>
-            
-            <div class="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[2500px] h-[600px] bg-[#FF8C00] rounded-full blur-[120px] opacity-20"></div>
-            
-        </div>
+            <div class="absolute inset-0 pointer-events-none z-0">
 
-        <div class="max-w-[1200px] mx-auto px-6 relative z-10 flex flex-col gap-32">
-
-            <div>
-                <div class="text-center mb-12">
-                    <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-                        Able to work <span class="gold-metallic-text">with
-                            hundreds of tools</span>
-                    </h2>
-                    <p class="text-blue-100/60 max-w-2xl mx-auto text-lg">
-                        We orchestrate the world's most advanced tools to build your digital future.
-                    </p>
+                <div
+                    class="absolute bottom-0 left-0 w-full h-[600px] bg-gradient-to-t from-[#FF8C00]/10 to-transparent">
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/Pytho logo.png" alt="Python">
-                        <span>Python</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/React.png" alt="React Native">
-                        <span>React Native</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/open ai.png" alt="Generative AI">
-                        <span>Open AI</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/docker-mark-blue.png" alt="Docker">
-                        <span>Docker</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/redhat.png" alt="RedHat">
-                        <span>RedHat</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/kubernets.png" alt="Kubernetes">
-                        <span>Kubernetes</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/Data Bricks.png" alt="Databricks">
-                        <span>Databricks</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/cloud.png" alt="Google Cloud">
-                        <span>Google Cloud</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/ibm.png" alt="IBM Quantum">
-                        <span>IBM Quantum</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/micro soft.png" alt="Microsoft">
-                        <span>Microsoft</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/Oracel.png" alt="Oracle">
-                        <span>Oracle</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/Springboot.png" alt="Spring Boot">
-                        <span>Spring Boot</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/open stack.png" alt="OpenStack">
-                        <span>OpenStack</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/FastAPI.png" alt="FastAPI">
-                        <span>FastAPI</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/LogoPostgreSQL.png" alt="PostgreSQL">
-                        <span>PostgreSQL</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/React.png" alt="React">
-                        <span>React JS</span>
-                    </div>
-
-                    <div class="tech-spotlight-card">
-                        <img src="asserts/tools/streamlit.png" alt="Streamlit">
-                        <span>Streamlit</span>
-                    </div>
-
-                    <div class="tech-spotlight-card tech-card-more">
-                        <div class="text-[#FF8C00] font-bold text-xl">+</div>
-                        <span class="text-[#FFD700]">And More</span>
-                    </div>
-
+                <div
+                    class="absolute bottom-[-180px] left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-[#FFD700] rounded-full blur-[90px] opacity-20 mix-blend-screen">
                 </div>
+
+                <div
+                    class="absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[1500px] h-[500px] bg-[#FF8C00] rounded-full blur-[130px] opacity-10">
+                </div>
+
             </div>
 
-            <div class="flex flex-col items-center gap-8 pb-12">
-                <p class="text-gray-300 font-medium text-lg tracking-wide">Join us and experience the difference for yourself</p>
-                
-                <button class="hero-btn-primary px-10 py-4 text-lg flex items-center justify-center gap-3 shine-effect"
-                    onclick="openCalendly()">
-                    Let's Work Together
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
-                        </path>
-                    </svg>
-                </button>
+            <div class="max-w-[1200px] mx-auto px-6 relative z-10 flex flex-col gap-32">
+
+                <div>
+                    <div class="text-center mb-12">
+                        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+                            Able to work <span class="gold-metallic-text">with
+                                hundreds of tools</span>
+                        </h2>
+                        <p class="text-blue-100/60 max-w-2xl mx-auto text-lg">
+                            We orchestrate the world's most advanced tools to build your digital future.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/Pytho logo.png" alt="Python">
+                            <span>Python</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/React.png" alt="React Native">
+                            <span>React Native</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/open ai.png" alt="Generative AI">
+                            <span>Open AI</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/docker-mark-blue.png" alt="Docker">
+                            <span>Docker</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/redhat.png" alt="RedHat">
+                            <span>RedHat</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/kubernets.png" alt="Kubernetes">
+                            <span>Kubernetes</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/Data Bricks.png" alt="Databricks">
+                            <span>Databricks</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/cloud.png" alt="Google Cloud">
+                            <span>Google Cloud</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/ibm.png" alt="IBM Quantum">
+                            <span>IBM Quantum</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/micro soft.png" alt="Microsoft">
+                            <span>Microsoft</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/Oracel.png" alt="Oracle">
+                            <span>Oracle</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/Springboot.png" alt="Spring Boot">
+                            <span>Spring Boot</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/open stack.png" alt="OpenStack">
+                            <span>OpenStack</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/FastAPI.png" alt="FastAPI">
+                            <span>FastAPI</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="asserts/tools/LogoPostgreSQL.png" alt="PostgreSQL">
+                            <span>PostgreSQL</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="../asserts/tools/React.png" alt="React">
+                            <span>React JS</span>
+                        </div>
+
+                        <div class="tech-spotlight-card">
+                            <img src="../asserts/tools/streamlit.png" alt="Streamlit">
+                            <span>Streamlit</span>
+                        </div>
+
+                        <div class="tech-spotlight-card tech-card-more">
+                            <div class="text-[#FF8C00] font-bold text-xl">+</div>
+                            <span class="text-[#FFD700]">And More</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-8 pb-12 relative z-10">
+                    <p class="text-gray-300 font-medium text-lg tracking-wide drop-shadow-md">Join us and experience the
+                        difference for yourself</p>
+
+                    <button
+                        class="hero-btn-primary px-10 py-4 text-lg flex items-center justify-center gap-3 shine-effect"
+                        onclick="openCalendly()">
+                        Let's Work Together
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
             </div>
-
-        </div>
-    </section>
-
+        </section>
     <footer id="contact" class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden">
 
         <div
@@ -2201,6 +2258,18 @@
                 icon.classList.remove('rotate-180');
             }
         }
+                    /* --- MOUSE TRACKING SCRIPT --- */
+            const glowCard = document.getElementById('glow-card');
+            const glowElement = glowCard.querySelector('.card-mouse-glow');
+
+            glowCard.addEventListener('mousemove', (e) => {
+                const rect = glowCard.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                glowElement.style.left = `${x}px`;
+                glowElement.style.top = `${y}px`;
+            });
     </script>
 </body>
 
