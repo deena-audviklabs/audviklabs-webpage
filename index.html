@@ -550,6 +550,43 @@
             filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
             display: inline-block;
         }
+        /* --- AUDVIK BRAND GRADIENT TEXT --- */
+        .audvik-brand-text {
+            /* Gradient: Blue -> Deep Purple -> Pink */
+            background: linear-gradient(135deg, #5799D2 0%, #7966CD 50%, #A95AA3 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            
+            /* Optional: A soft blueish/purple glow instead of the gold one */
+            filter: drop-shadow(0 0 25px rgba(121, 102, 205, 0.4)); 
+            font-weight: 700;
+        }
+        /* --- GOLD TEXT GLOW ON HOVER --- */
+.text-glow-hover {
+    transition: all 0.3s ease;
+}
+
+.text-glow-hover:hover {
+    color: #FFD700; /* Force Gold Color on Hover */
+    text-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.4);
+    cursor: default;
+}
+
+/* --- GOLD BACKGROUND HIGHLIGHT BLOB --- */
+.gold-highlight-blob {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 500px;
+    background: rgba(255, 215, 0, 0.15); /* Gold Color with transparency */
+    filter: blur(150px);
+    z-index: 0;
+    pointer-events: none;
+}
     </style>
 </head>
 
@@ -577,7 +614,7 @@
 
                     <div class="relative group h-full flex items-center">
                         <a href="#services"
-                            class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                            class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Services
                             <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -593,7 +630,7 @@
                                 <div class="grid grid-cols-2 gap-1">
                                     <div class="space-y-1">
                                         <a href="../services/Business-Intelligence.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -609,7 +646,7 @@
                                                 Intelligence</span>
                                         </a>
                                         <a href="../services/gen-ai.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -625,7 +662,7 @@
                                                 AI</span>
                                         </a>
                                         <a href="../services/cloud-implementation.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -641,7 +678,7 @@
                                                 Implementation</span>
                                         </a>
                                         <a href="../services/MobileAppDev.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-blue-500/10 flex items-center justify-center text-blue-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -657,7 +694,7 @@
                                                 App Dev</span>
                                         </a>
                                         <a href="../services/QualityAssurance.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-green-500/10 flex items-center justify-center text-green-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -672,7 +709,7 @@
                                                 Assurance</span>
                                         </a>
                                         <a href="../services/serverless-services.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -686,7 +723,7 @@
                                                 Deployment</span>
                                         </a>
                                         <a href="../services/Blockchain-Development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-red-500/10 flex items-center justify-center text-red-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -704,7 +741,7 @@
 
                                     <div class="space-y-1">
                                         <a href="../services/Bot-Development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -720,7 +757,7 @@
                                                 Development</span>
                                         </a>
                                         <a href="../services/Quantam-Computing.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -736,7 +773,7 @@
                                                 Computing</span>
                                         </a>
                                         <a href="../services/MachineLearning.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center text-teal-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -751,7 +788,7 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">ML-Ops</span>
                                         </a>
                                         <a href="../services/DevSecOps.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -766,7 +803,7 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">DevSecOps</span>
                                         </a>
                                         <a href="../services/game-development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -782,7 +819,7 @@
                                                 Development</span>
                                         </a>
                                         <a href="../services/HPC.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-sky-500/10 flex items-center justify-center text-sky-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -798,7 +835,7 @@
                                                 Computing</span>
                                         </a>
                                         <a href="../services/Resourcing.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-rose-500/10 flex items-center justify-center text-rose-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -819,7 +856,7 @@
                     </div>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="#" class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                        <a href="#" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Products
                             <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -834,7 +871,7 @@
                                 class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl overflow-hidden ring-1 ring-white/5">
                                 <div class="space-y-1">
                                     <a href="../products/realm.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue group-hover/item:bg-audvikBlue group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -851,7 +888,7 @@
                                     </a>
 
                                     <a href="../products/ordo.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple group-hover/item:bg-audvikPurple group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -870,7 +907,7 @@
                                     </a>
 
                                     <a href="../products/a-helg.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink group-hover/item:bg-audvikPink group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1178,12 +1215,12 @@
                 </div>
         </section>
 
-  <section id="products" class="py-24 px-4 relative overflow-hidden">
+        <section id="products" class="py-24 px-4 relative overflow-hidden">
 
             <div
                 class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 pointer-events-none">
             </div>
-            
+
             <div
                 class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#FF8C00]/10 blur-[150px] rounded-full -z-10 pointer-events-none">
             </div>
@@ -1202,16 +1239,16 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                     <a href="../products/realm.html"
-                        class="group relative h-[300px] rounded-3xl border border-white/10 bg-[#0a0a0f] overflow-hidden transition-all duration-500 hover:border-[#FF8C00]/50 hover:shadow-[0_0_30px_rgba(255,140,0,0.3)]">
+                        class="group relative h-[300px] rounded-3xl border border-white/10 bg-[#0a0a0f] overflow-hidden transition-all duration-500 hover:border-[#FFD700]/60 hover:shadow-[0_0_30px_rgba(255,215,0,0.3)]">
 
                         <div
-                            class="absolute inset-0 bg-gradient-to-br from-[#FF8C00]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            class="absolute inset-0 bg-gradient-to-br from-[#FFD700]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
                         </div>
 
                         <div class="absolute inset-0 p-6 flex flex-col justify-between">
                             <div class="flex justify-between items-start">
                                 <div
-                                    class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#FF8C00] group-hover:text-black group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
+                                    class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#FFD700] group-hover:text-black group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                             d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
@@ -1219,7 +1256,7 @@
                                     </svg>
                                 </div>
                                 <div
-                                    class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 group-hover:text-[#FF8C00] group-hover:border-[#FF8C00] group-hover:rotate-45 transition-all duration-500">
+                                    class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 group-hover:text-[#FFD700] group-hover:border-[#FFD700] group-hover:rotate-45 transition-all duration-500">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M5 12h14M12 5l7 7-7 7"></path>
@@ -1242,16 +1279,16 @@
                     </a>
 
                     <a href="../products/ordo.html"
-                        class="group relative h-[300px] rounded-3xl border border-white/10 bg-[#0a0a0f] overflow-hidden transition-all duration-500 hover:border-[#FF8C00]/50 hover:shadow-[0_0_30px_rgba(255,140,0,0.3)]">
+                        class="group relative h-[300px] rounded-3xl border border-white/10 bg-[#0a0a0f] overflow-hidden transition-all duration-500 hover:border-[#FFD700]/60 hover:shadow-[0_0_30px_rgba(255,215,0,0.3)]">
 
                         <div
-                            class="absolute inset-0 bg-gradient-to-br from-[#FF8C00]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            class="absolute inset-0 bg-gradient-to-br from-[#FFD700]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
                         </div>
 
                         <div class="absolute inset-0 p-6 flex flex-col justify-between">
                             <div class="flex justify-between items-start">
                                 <div
-                                    class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#FF8C00] group-hover:text-black group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
+                                    class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#FFD700] group-hover:text-black group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                             d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
@@ -1259,7 +1296,7 @@
                                     </svg>
                                 </div>
                                 <div
-                                    class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 group-hover:text-[#FF8C00] group-hover:border-[#FF8C00] group-hover:rotate-45 transition-all duration-500">
+                                    class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 group-hover:text-[#FFD700] group-hover:border-[#FFD700] group-hover:rotate-45 transition-all duration-500">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M5 12h14M12 5l7 7-7 7"></path>
@@ -1282,16 +1319,16 @@
                     </a>
 
                     <a href="../products/a-helg.html"
-                        class="group relative h-[300px] rounded-3xl border border-white/10 bg-[#0a0a0f] overflow-hidden transition-all duration-500 hover:border-[#FF8C00]/50 hover:shadow-[0_0_30px_rgba(255,140,0,0.3)]">
+                        class="group relative h-[300px] rounded-3xl border border-white/10 bg-[#0a0a0f] overflow-hidden transition-all duration-500 hover:border-[#FFD700]/60 hover:shadow-[0_0_30px_rgba(255,215,0,0.3)]">
 
                         <div
-                            class="absolute inset-0 bg-gradient-to-br from-[#FF8C00]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            class="absolute inset-0 bg-gradient-to-br from-[#FFD700]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
                         </div>
 
                         <div class="absolute inset-0 p-6 flex flex-col justify-between">
                             <div class="flex justify-between items-start">
                                 <div
-                                    class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#FF8C00] group-hover:text-black group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
+                                    class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#FFD700] group-hover:text-black group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                             d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z">
@@ -1299,7 +1336,7 @@
                                     </svg>
                                 </div>
                                 <div
-                                    class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 group-hover:text-[#FF8C00] group-hover:border-[#FF8C00] group-hover:rotate-45 transition-all duration-500">
+                                    class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 group-hover:text-[#FFD700] group-hover:border-[#FFD700] group-hover:rotate-45 transition-all duration-500">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M5 12h14M12 5l7 7-7 7"></path>
@@ -1325,7 +1362,7 @@
             </div>
         </section>
         
- <section id="services" class="py-24 px-4 relative bg-black/20">
+        <section id="services" class="py-24 px-4 relative bg-black/20">
             <div class="max-w-[1400px] mx-auto">
                 <div class="text-center mb-16">
                     <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">Our Services</h2>
@@ -1417,7 +1454,8 @@
                         <p class="text-sm text-gray-400">Operationalize machine learning models effectively.</p>
                     </a>
 
-                    <a href="services/MobileAppDev.html" class="service-card p-6 rounded-2xl group block transition-all">
+                    <a href="services/MobileAppDev.html"
+                        class="service-card p-6 rounded-2xl group block transition-all">
                         <div class="text-audvikPurple mb-4 group-hover:scale-110 transition-transform">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1471,7 +1509,8 @@
                         <div class="text-audvikPurple mb-4 group-hover:scale-110 transition-transform">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                </path>
                             </svg>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white">Serverless Deployment</h3>
@@ -1495,7 +1534,8 @@
                         <div class="text-audvikPink mb-4 group-hover:scale-110 transition-transform">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                </path>
                             </svg>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white">Blockchain</h3>
@@ -1551,6 +1591,7 @@
                 </div>
             </div>
         </section>
+
 <section id="milestones" class="py-16 md:py-24 px-4 relative overflow-hidden bg-black/60 backdrop-blur-sm">
             
             <div
@@ -1697,7 +1738,7 @@
                 <div>
                     <div class="text-center mb-12">
                         <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-                            Able to work <span class="gold-metallic-text">with
+                            Able to work <span class="audvik-brand-text">with
                                 hundreds of tools</span>
                         </h2>
                         <p class="text-blue-100/60 max-w-2xl mx-auto text-lg">
@@ -2042,223 +2083,292 @@
     </footer>
 
     <script>
-        // --- INITIALIZE LENIS SMOOTH SCROLL ---
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-            mouseMultiplier: 1,
-            smoothTouch: false,
-            touchMultiplier: 2,
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        // --- CANVAS ANIMATION (UPDATED FOR GOLD/SILVER) ---
-        const canvas = document.getElementById('neural-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        // REDUCED DENSITY (Was 100)
-        const particleCount = 60;
-        const connectionDistance = 180;
-        const mouseDistance = 250;
-
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resize);
-        resize();
-
-        let mouse = { x: null, y: null };
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.x;
-            mouse.y = e.y;
-        });
-        window.addEventListener('mouseout', () => {
-            mouse.x = null;
-            mouse.y = null;
-        });
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.6;
-                this.vy = (Math.random() - 0.5) * 0.6;
-                this.size = Math.random() * 2.5 + 1;
-                // CHANGED TO GOLD
-                this.color = '#FFD700';
-            }
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-
-                if (mouse.x != null) {
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < mouseDistance) {
-                        const forceDirectionX = dx / distance;
-                        const forceDirectionY = dy / distance;
-                        const force = (mouseDistance - distance) / mouseDistance;
-                        const directionX = forceDirectionX * force * 3;
-                        const directionY = forceDirectionY * force * 3;
-                        this.x -= directionX;
-                        this.y -= directionY;
-                    }
-                }
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.shadowBlur = 10;
-                // CHANGED TO GOLD GLOW
-                ctx.shadowColor = "#FF8C00";
-                ctx.fill();
-                ctx.shadowBlur = 0;
-            }
-        }
-
-        function init() {
-            particles = [];
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i; j < particles.length; j++) {
-                    let dx = particles[i].x - particles[j].x;
-                    let dy = particles[i].y - particles[j].y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < connectionDistance) {
-                        ctx.beginPath();
-                        let opacity = 1 - (distance / connectionDistance);
-                        // CHANGED TO SILVER LINES (RGB: 192, 192, 192)
-                        ctx.strokeStyle = `rgba(192, 192, 192, ${opacity * 0.4})`;
-                        ctx.lineWidth = 1;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-            }
-            requestAnimationFrame(animate);
-        }
-        init();
-        animate();
-
-        // --- MILESTONE COUNTER ---
-        document.addEventListener("DOMContentLoaded", () => {
-            const counters = document.querySelectorAll(".counter");
-            const animateCounter = (counter) => {
-                const target = +counter.getAttribute("data-target");
-                const duration = 2000;
-                const frameDuration = 1000 / 60;
-                const totalFrames = Math.round(duration / frameDuration);
-                const increment = target / totalFrames;
-                let currentCount = 0;
-                const updateCount = () => {
-                    currentCount += increment;
-                    if (currentCount < target) {
-                        counter.innerText = Math.ceil(currentCount);
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                updateCount();
-            };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            counters.forEach(counter => {
-                observer.observe(counter);
+          // --- INITIALIZE LENIS SMOOTH SCROLL ---
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                direction: 'vertical',
+                gestureDirection: 'vertical',
+                smooth: true,
+                mouseMultiplier: 1,
+                smoothTouch: false,
+                touchMultiplier: 2,
             });
-        });
 
-        // --- SCROLL REVEAL ---
-        const isMobile = window.innerWidth < 768;
-        const sr = ScrollReveal({
-            origin: 'bottom',
-            distance: isMobile ? '30px' : '60px',
-            duration: isMobile ? 600 : 1000,
-            delay: isMobile ? 0 : 200,
-            opacity: 0,
-            scale: 1,
-            easing: 'cubic-bezier(0.5, 0, 0, 1)',
-            viewFactor: isMobile ? 0.1 : 0.2,
-            reset: false
-        });
-
-        sr.reveal('h1', { origin: 'top', distance: '20px', delay: isMobile ? 100 : 300 });
-        sr.reveal('.hero-btn-primary', { delay: isMobile ? 200 : 500, origin: 'left' });
-        sr.reveal('.hero-btn-secondary', { delay: isMobile ? 300 : 600, origin: 'right' });
-        sr.reveal('.p-4', { interval: 100, origin: 'bottom', delay: isMobile ? 400 : 800 });
-        sr.reveal('#about h2', { origin: 'left' });
-        sr.reveal('#about .space-y-6', { origin: 'left', delay: isMobile ? 100 : 400 });
-        sr.reveal('.liquid-card', { origin: 'right', delay: isMobile ? 100 : 500, scale: 0.9 });
-        sr.reveal('.service-card', { interval: isMobile ? 50 : 100, distance: '30px', scale: 0.95 });
-        sr.reveal('#milestones h2', { origin: 'top' });
-        sr.reveal('#milestones .grid > div', { interval: 100, origin: 'bottom' });
-        sr.reveal('#products h2', { origin: 'top' });
-        sr.reveal('#products .grid > a', { interval: 100, origin: 'bottom', scale: 0.95 });
-        sr.reveal('.client-glass-card', { interval: isMobile ? 50 : 100, origin: 'bottom', scale: 0.9 });
-        sr.reveal('.tech-spotlight-card', { interval: isMobile ? 30 : 50, distance: '20px', origin: 'bottom' });
-        sr.reveal('footer .grid', { delay: 100, origin: 'bottom' });
-
-        /* --- TILT EFFECT --- */
-        VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
-
-        /* --- MOBILE MENU & ACCORDION --- */
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('opacity-100')) {
-                menu.classList.remove('opacity-100', 'visible');
-                menu.classList.add('opacity-0', 'invisible');
-                document.body.style.overflow = '';
-            } else {
-                menu.classList.remove('opacity-0', 'invisible');
-                menu.classList.add('opacity-100', 'visible');
-                document.body.style.overflow = 'hidden';
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
             }
-        }
-        function toggleAccordion(listId, iconId) {
-            const list = document.getElementById(listId);
-            const icon = document.getElementById(iconId);
-            if (list.classList.contains('hidden')) {
-                list.classList.remove('hidden');
-                list.classList.add('flex');
-                icon.classList.add('rotate-180');
-            } else {
-                list.classList.add('hidden');
-                list.classList.remove('flex');
-                icon.classList.remove('rotate-180');
+            requestAnimationFrame(raf);
+
+            // --- CANVAS ANIMATION (UPDATED FOR GOLD/SILVER) ---
+            const canvas = document.getElementById('neural-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            // REDUCED DENSITY (Was 100)
+            const particleCount = 60;
+            const connectionDistance = 180;
+            const mouseDistance = 250;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
             }
-        }
-                    /* --- MOUSE TRACKING SCRIPT --- */
+            window.addEventListener('resize', resize);
+            resize();
+
+            let mouse = { x: null, y: null };
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.x;
+                mouse.y = e.y;
+            });
+            window.addEventListener('mouseout', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.6;
+                    this.vy = (Math.random() - 0.5) * 0.6;
+                    this.size = Math.random() * 2.5 + 1;
+                    // CHANGED TO GOLD
+                    this.color = '#FFD700';
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+                    if (mouse.x != null) {
+                        let dx = mouse.x - this.x;
+                        let dy = mouse.y - this.y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < mouseDistance) {
+                            const forceDirectionX = dx / distance;
+                            const forceDirectionY = dy / distance;
+                            const force = (mouseDistance - distance) / mouseDistance;
+                            const directionX = forceDirectionX * force * 3;
+                            const directionY = forceDirectionY * force * 3;
+                            this.x -= directionX;
+                            this.y -= directionY;
+                        }
+                    }
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.shadowBlur = 10;
+                    // CHANGED TO GOLD GLOW
+                    ctx.shadowColor = "#FF8C00";
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                }
+            }
+
+            function init() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i; j < particles.length; j++) {
+                        let dx = particles[i].x - particles[j].x;
+                        let dy = particles[i].y - particles[j].y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < connectionDistance) {
+                            ctx.beginPath();
+                            let opacity = 1 - (distance / connectionDistance);
+                            ctx.strokeStyle = `rgba(255, 215, 0, ${opacity * 0.5})`;
+                            ctx.lineWidth = 1;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+                requestAnimationFrame(animate);
+            }
+            init();
+            animate();
+
+            // --- MILESTONE COUNTER ---
+            document.addEventListener("DOMContentLoaded", () => {
+                const counters = document.querySelectorAll(".counter");
+                const animateCounter = (counter) => {
+                    const target = +counter.getAttribute("data-target");
+                    const duration = 2000;
+                    const frameDuration = 1000 / 60;
+                    const totalFrames = Math.round(duration / frameDuration);
+                    const increment = target / totalFrames;
+                    let currentCount = 0;
+                    const updateCount = () => {
+                        currentCount += increment;
+                        if (currentCount < target) {
+                            counter.innerText = Math.ceil(currentCount);
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                };
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounter(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                counters.forEach(counter => {
+                    observer.observe(counter);
+                });
+            });
+
+            // --- SCROLL REVEAL (Optimized for Instant Mobile View) ---
+            const isMobile = window.innerWidth < 768;
+
+            const sr = ScrollReveal({
+                origin: 'bottom',
+                distance: isMobile ? '20px' : '60px', // Shorter distance for mobile
+                duration: isMobile ? 400 : 1000,      // Mobile: 400ms (Much faster)
+                delay: 0,                             // Mobile: 0ms delay globally
+                opacity: 0,
+                scale: 1,
+                easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                viewFactor: isMobile ? 0.05 : 0.2,    // 0.05 means trigger IMMEDIATELY when 5% visible
+                reset: false
+            });
+
+            // H1 - Instant on mobile
+            sr.reveal('h1', {
+                origin: 'top',
+                distance: '20px',
+                delay: isMobile ? 0 : 300
+            });
+
+            // Hero Buttons - Very slight stagger on mobile
+            sr.reveal('.hero-btn-primary', {
+                delay: isMobile ? 100 : 500,
+                origin: 'left'
+            });
+            sr.reveal('.hero-btn-secondary', {
+                delay: isMobile ? 150 : 600,
+                origin: 'right'
+            });
+
+            // Stats Cards - Faster interval on mobile
+            sr.reveal('.p-4', {
+                interval: isMobile ? 50 : 100, // Faster ripple effect
+                origin: 'bottom',
+                delay: isMobile ? 0 : 800      // Starts immediately on mobile
+            });
+
+            // Section Headers
+            sr.reveal('#about h2', { origin: 'left' });
+            sr.reveal('#milestones h2', { origin: 'top' });
+            sr.reveal('#products h2', { origin: 'top' });
+
+            // Text & Lists - Zero delay on mobile
+            sr.reveal('#about .space-y-6', {
+                origin: 'left',
+                delay: isMobile ? 0 : 400
+            });
+
+            // Cards - Faster Appearance
+            sr.reveal('.liquid-card', {
+                origin: 'right',
+                delay: isMobile ? 0 : 500,
+                scale: 0.9
+            });
+
+            sr.reveal('.service-card', {
+                interval: isMobile ? 50 : 100,
+                distance: '30px',
+                scale: 0.95
+            });
+
+            sr.reveal('#milestones .grid > div', {
+                interval: isMobile ? 50 : 100,
+                origin: 'bottom'
+            });
+
+            sr.reveal('#products .grid > a', {
+                interval: isMobile ? 50 : 100,
+                origin: 'bottom',
+                scale: 0.95
+            });
+
+            sr.reveal('.client-glass-card', {
+                interval: isMobile ? 30 : 100,
+                origin: 'bottom',
+                scale: 0.9
+            });
+
+            sr.reveal('.tech-spotlight-card', {
+                interval: isMobile ? 20 : 50, // Very fast ripple for tech cards
+                distance: '20px',
+                origin: 'bottom'
+            });
+
+            sr.reveal('footer .grid', {
+                delay: isMobile ? 0 : 100,
+                origin: 'bottom'
+            });
+            sr.reveal('footer .grid', { delay: 100, origin: 'bottom' });
+
+            /* --- TILT EFFECT --- */
+            VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
+
+            /* --- MOBILE MENU & ACCORDION --- */
+            function toggleMobileMenu() {
+                const menu = document.getElementById('mobile-menu');
+                if (menu.classList.contains('opacity-100')) {
+                    menu.classList.remove('opacity-100', 'visible');
+                    menu.classList.add('opacity-0', 'invisible');
+                    document.body.style.overflow = '';
+                } else {
+                    menu.classList.remove('opacity-0', 'invisible');
+                    menu.classList.add('opacity-100', 'visible');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+            function toggleAccordion(listId, iconId) {
+                const list = document.getElementById(listId);
+                const icon = document.getElementById(iconId);
+                if (list.classList.contains('hidden')) {
+                    list.classList.remove('hidden');
+                    list.classList.add('flex');
+                    icon.classList.add('rotate-180');
+                } else {
+                    list.classList.add('hidden');
+                    list.classList.remove('flex');
+                    icon.classList.remove('rotate-180');
+                }
+            }
+            /* PASTE THE NEW FUNCTION HERE */
+            function openCalendly(e) {
+                if (e) e.preventDefault();
+                Calendly.initPopupWidget({
+                    url: 'https://calendly.com/audviklabs'
+                });
+                return false;
+            }
+            /* --- MOUSE TRACKING SCRIPT --- */
             const glowCard = document.getElementById('glow-card');
             const glowElement = glowCard.querySelector('.card-mouse-glow');
 
@@ -2270,6 +2380,7 @@
                 glowElement.style.left = `${x}px`;
                 glowElement.style.top = `${y}px`;
             });
+
     </script>
 </body>
 
