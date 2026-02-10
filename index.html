@@ -989,33 +989,33 @@
                     </button>
 
                     <div id="mobile-services-list" class="hidden flex-col gap-3 pt-4 text-sm items-center">
-                        <a href="../services/Business-Intelligence.html" onclick="toggleMobileMenu()"
+                        <a href="services/Business-Intelligence.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Business Intelligence</a>
-                        <a href="../services/gen-ai.html" onclick="toggleMobileMenu()"
+                        <a href="services/gen-ai.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Generative AI</a>
-                        <a href="../services/cloud-implementation.html" onclick="toggleMobileMenu()"
+                        <a href="services/cloud-implementation.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Cloud Implementation</a>
-                        <a href="../services/MobileAppDev.html" onclick="toggleMobileMenu()"
+                        <a href="services/MobileAppDev.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Mobile App Dev</a>
-                        <a href="../services/QualityAssurance.html" onclick="toggleMobileMenu()"
+                        <a href="services/QualityAssurance.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Quality Assurance</a>
-                        <a href="../services/serverless-services.html" onclick="toggleMobileMenu()"
+                        <a href="services/serverless-services.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Serverless Deployment</a>
-                        <a href="../services/Blockchain-Development.html" onclick="toggleMobileMenu()"
+                        <a href="services/Blockchain-Development.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Blockchain</a>
-                        <a href="../services/Bot-Development.html" onclick="toggleMobileMenu()"
+                        <a href="services/Bot-Development.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Bot Development</a>
-                        <a href="../services/Quantam-Computing.html" onclick="toggleMobileMenu()"
+                        <a href="services/Quantam-Computing.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Quantum Computing</a>
-                        <a href="../services/MachineLearning.html" onclick="toggleMobileMenu()"
+                        <a href="services/MachineLearning.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">ML-Ops</a>
-                        <a href="../services/DevSecOps.html" onclick="toggleMobileMenu()"
+                        <a href="services/DevSecOps.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">DevSecOps</a>
-                        <a href="../services/game-development.html" onclick="toggleMobileMenu()"
+                        <a href="services/game-development.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Game Development</a>
-                        <a href="../services/HPC.html" onclick="toggleMobileMenu()"
+                        <a href="services/HPC.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">High-Performance Computing</a>
-                        <a href="../services/Resourcing.html" onclick="toggleMobileMenu()"
+                        <a href="services/Resourcing.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Resourcing</a>
                     </div>
                 </div>
@@ -1032,11 +1032,11 @@
                     </button>
 
                     <div id="mobile-products-list" class="hidden flex-col gap-3 pt-4 text-sm items-center">
-                        <a href="../products/realm.html" onclick="toggleMobileMenu()"
+                        <a href="products/realm.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Realm (AI)</a>
-                        <a href="../products/ordo.html" onclick="toggleMobileMenu()"
+                        <a href="products/ordo.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">ORDO (Orchestration)</a>
-                        <a href="../products/a-helg.html" onclick="toggleMobileMenu()"
+                        <a href="products/a-helg.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">A-Helg (Health)</a>
                     </div>
                 </div>
@@ -2133,15 +2133,23 @@
             }
             requestAnimationFrame(raf);
 
-            // --- CANVAS ANIMATION (UPDATED FOR GOLD/SILVER) ---
+// --- CANVAS ANIMATION (Silver Lines & Gold Dots) ---
             const canvas = document.getElementById('neural-canvas');
             const ctx = canvas.getContext('2d');
             let particles = [];
 
-            // REDUCED DENSITY (Was 100)
-            const particleCount = 60;
-            const connectionDistance = 180;
-            const mouseDistance = 250;
+            // --- RESPONSIVE CONFIGURATION ---
+            const isMobileScreen = window.innerWidth < 768;
+
+            // REDUCED DENSITY FOR MOBILE
+            // Mobile: 30 particles | Desktop: 80 particles
+            const particleCount = isMobileScreen ? 30 : 80; 
+            
+            // Shorter connections on mobile
+            const connectionDistance = isMobileScreen ? 110 : 180; 
+            
+            // Smaller mouse interaction radius on mobile
+            const mouseDistance = isMobileScreen ? 150 : 250;
 
             function resize() {
                 canvas.width = window.innerWidth;
@@ -2167,8 +2175,9 @@
                     this.vx = (Math.random() - 0.5) * 0.6;
                     this.vy = (Math.random() - 0.5) * 0.6;
                     this.size = Math.random() * 2.5 + 1;
-                    // CHANGED TO GOLD
-                    this.color = '#FFD700';
+                    
+                    // --- DOTS REMAIN GOLD ---
+                    this.color = '#FFD700'; 
                 }
                 update() {
                     this.x += this.vx;
@@ -2196,8 +2205,7 @@
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                     ctx.fillStyle = this.color;
                     ctx.shadowBlur = 10;
-                    // CHANGED TO GOLD GLOW
-                    ctx.shadowColor = "#FF8C00";
+                    ctx.shadowColor = "#FF8C00"; // Gold/Orange Glow
                     ctx.fill();
                     ctx.shadowBlur = 0;
                 }
@@ -2217,10 +2225,15 @@
                         let dx = particles[i].x - particles[j].x;
                         let dy = particles[i].y - particles[j].y;
                         let distance = Math.sqrt(dx * dx + dy * dy);
+                        
                         if (distance < connectionDistance) {
                             ctx.beginPath();
                             let opacity = 1 - (distance / connectionDistance);
-                            ctx.strokeStyle = `rgba(255, 215, 0, ${opacity * 0.5})`;
+                            
+                            // --- CHANGED LINES TO SILVER ---
+                            // RGB(192, 192, 192) is Silver
+                            ctx.strokeStyle = `rgba(192, 192, 192, ${opacity * 0.4})`; 
+                            
                             ctx.lineWidth = 1;
                             ctx.moveTo(particles[i].x, particles[i].y);
                             ctx.lineTo(particles[j].x, particles[j].y);
