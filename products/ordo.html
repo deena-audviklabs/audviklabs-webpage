@@ -65,7 +65,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #050508;
+            background-color: #001133;
             color: white;
             width: 100%;
             max-width: 100%;
@@ -623,178 +623,308 @@
     </nav>
 
 
+<main>
     <div class="content-layer relative w-full flex flex-col min-h-screen justify-between overflow-hidden">
 
         <div class="absolute inset-0 bg-grid-pattern bg-grid opacity-20 pointer-events-none"></div>
 
         <main class="pt-32 pb-20 relative z-10">
 
-    <div class="absolute top-0 right-0 -z-10 pointer-events-none">
-        <div class="w-[800px] h-[600px] bg-audvikBlue/10 rounded-full blur-[120px]"></div>
-    </div>
-
-    <div class="max-w-[1400px] mx-auto px-6 mb-32">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-            <div class="reveal space-y-6">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-audvikPink/30 bg-audvikPink/10 text-audvikPink text-xs font-bold uppercase tracking-widest">
-                    AI Powered Vision
-                </div>
-
-                <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight text-white">
-                    Sync Your Digital Ecosystem <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-audvikBlue via-audvikPurple to-audvikPink">Productivity with ORDO</span>
-                </h1>
-
-                <p class="text-blue-100/70 text-lg leading-relaxed max-w-lg">
-                    Streamline complexity with ORDO. Orchestrate your AI agents, tools, and processes into a
-                    single, high-performance rhythm that eliminates friction.
-                </p>
-
-                <button class="nav-btn-primary px-8 py-3 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold hover:scale-105 transition-transform" onclick="openCalendly()">
-                    Get In Touch Now
-                </button>
+            <div class="absolute top-0 right-0 -z-10 pointer-events-none">
+                <div class="w-[800px] h-[600px] bg-audvikBlue/10 rounded-full blur-[120px]"></div>
             </div>
 
-            <div class="reveal relative group" data-tilt data-tilt-max="3">
-                <div class="absolute -inset-10 bg-gradient-to-tr from-yellow-500/40 via-orange-600/40 to-transparent rounded-[2.5rem] blur-3xl opacity-0 group-hover:opacity-80 transition-opacity duration-700">
-                </div>
-                <div class="relative rounded-[2rem] overflow-hidden border-2 border-yellow-500/40 shadow-2xl bg-[#0a0a0f] transition-all duration-500 group-hover:border-yellow-400 p-6">
-                    <svg width="600" height="450" viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto drop-shadow-2xl">
-                        <rect x="50" y="50" width="500" height="300" rx="12" fill="#0F1115" stroke="#eab308" stroke-width="2" />
-                        <path d="M250 350 L250 400 L200 420 L400 420 L350 400 L350 350" fill="#0F1115" stroke="#eab308" stroke-width="2" />
-                        <rect x="60" y="60" width="480" height="280" rx="8" fill="#1A1D24" />
-                        
-                        <g transform="translate(100, 150)">
-                            <rect x="-20" y="-20" width="120" height="90" rx="4" stroke="#eab308" stroke-width="2" stroke-dasharray="4 2" fill="rgba(234, 179, 8, 0.1)" />
-                            <rect x="-20" y="-35" width="70" height="15" fill="#eab308" />
-                            <text x="-15" y="-24" fill="black" font-size="10" font-weight="bold" font-family="sans-serif">IDENTIFIED</text>
-                            <circle cx="40" cy="30" r="20" stroke="white" stroke-width="1.5" stroke-opacity="0.3" />
-                        </g>
-                        
-                        <g transform="translate(350, 120)">
-                            <rect x="0" y="0" width="140" height="100" rx="4" stroke="#f97316" stroke-width="2" fill="rgba(249, 115, 22, 0.1)" />
-                            <rect x="0" y="-15" width="60" height="15" fill="#f97316" />
-                            <text x="5" y="-4" fill="black" font-size="10" font-weight="bold" font-family="sans-serif">ORCHESTRATE</text>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
+            <div class="max-w-[1400px] mx-auto px-6 mb-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-    <div class="max-w-[1400px] mx-auto px-6 mb-32">
-        <div class="p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-12 rounded-[3rem] border-2 border-yellow-500/30 bg-white/5 hover:bg-white/[0.08] hover:border-yellow-400 transition-all duration-500 reveal backdrop-blur-md">
-            <div class="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-500/10 blur-[80px] pointer-events-none"></div>
+                    <div class="reveal space-y-6">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-audvikPink/30 bg-audvikPink/10 text-audvikPink text-xs font-bold uppercase tracking-widest">
+                            AI Powered Vision
+                        </div>
 
-            <div class="flex-shrink-0 relative">
-                <div class="w-40 h-40 rounded-full bg-white/5 border-2 border-yellow-500/40 flex items-center justify-center relative shadow-[0_0_30px_rgba(234,179,8,0.15)]">
-                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-                        <circle cx="50" cy="50" r="45" stroke="#eab308" stroke-width="1" stroke-dasharray="5 5" />
-                        <circle cx="50" cy="50" r="35" stroke="#A95AA3" stroke-width="2" />
-                        <circle cx="50" cy="50" r="12" fill="#5799D2" />
-                    </svg>
-                    <div class="absolute -bottom-6 text-center w-full font-bold text-xl tracking-widest text-white">ORDO</div>
-                </div>
-            </div>
+                        <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight text-white">
+                            Sync Your Digital Ecosystem <br>
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-audvikBlue via-audvikPurple to-audvikPink">Productivity
+                                with ORDO</span>
+                        </h1>
 
-            <div class="relative z-10">
-                <h2 class="font-display text-3xl font-bold mb-4 text-audvikBlue">What is ORDO?</h2>
-                <p class="text-gray-300 text-lg leading-relaxed">
-                    Ordo refers to a system for object recognition, detection, and orchestration, that
-                    identifies and localizes items in sensor data. It combines computer-vision models
-                    (classification, detection, tracking) and scene understanding to recognize objects and their
-                    relationships.
-                </p>
-            </div>
-        </div>
-    </div>
+                        <p class="text-blue-100/70 text-lg leading-relaxed max-w-lg">
+                            Streamline complexity with ORDO. Orchestrate your AI agents, tools, and processes into a
+                            single, high-performance rhythm that eliminates friction.
+                        </p>
 
-    <div class="max-w-[1400px] mx-auto px-6 space-y-24 mb-32">
+                        <button
+                            class="nav-btn-primary px-8 py-3 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold hover:scale-105 transition-transform"
+                            onclick="openCalendly()">
+                            Get In Touch Now
+                        </button>
+                    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-8 rounded-3xl border-2 border-yellow-500/30 bg-white/5 hover:border-yellow-400 transition-all duration-500 reveal">
-            <div class="order-2 md:order-1">
-                <h3 class="font-display text-3xl font-bold mb-4 text-audvikPurple">Comprehensive Insights</h3>
-                <p class="text-gray-400 leading-relaxed text-base">
-                    Ordo delivers end-to-end multimodal perception and reasoning—combining object detection,
-                    tracking, scene understanding, and LLM-driven decisioning into a unified pipeline.
-                </p>
-            </div>
-            <div class="order-1 md:order-2 flex justify-center group/img relative">
-                <div class="absolute -inset-6 bg-yellow-500/20 blur-2xl opacity-0 group-hover/img:opacity-100 transition-opacity"></div>
-                <div class="relative p-6 rounded-2xl bg-[#0a0a0f] border border-yellow-500/20">
-                    <svg width="250" height="200" viewBox="0 0 250 200" fill="none">
-                        <path d="M125 40 C 80 40, 50 70, 50 110 C 50 150, 80 170, 125 170 C 170 170, 200 150, 200 110 C 200 70, 170 40, 125 40" fill="url(#grad1)" fill-opacity="0.2" stroke="#eab308" stroke-width="2" />
-                        <defs>
-                            <linearGradient id="grad1" x1="50" y1="40" x2="200" y2="170" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#5799D2" />
-                                <stop offset="1" stop-color="#A95AA3" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                    <div class="reveal relative group" data-tilt data-tilt-max="3">
+                        <div
+                            class="absolute -inset-10 bg-gradient-to-tr from-yellow-500/30 via-orange-600/30 to-transparent rounded-[2.5rem] blur-[60px] opacity-60 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+
+                        <div
+                            class="relative h-[450px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-[#0a0a0f]/90 backdrop-blur-xl flex items-center justify-center transition-all duration-500 group-hover:border-yellow-400/50">
+
+                            <div
+                                class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]">
+                            </div>
+
+                            <div class="relative z-10 flex flex-col items-center justify-center">
+                                <div class="absolute inset-0 border border-yellow-500/30 rounded-full animate-ping">
+                                </div>
+                                <div
+                                    class="w-24 h-24 rounded-full bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center shadow-[0_0_40px_rgba(234,179,8,0.4)] z-20">
+                                    <svg class="w-10 h-10 text-black" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="absolute w-full h-full animate-[spin_20s_linear_infinite]">
+                                    <div
+                                        class="absolute -top-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+                                        <div class="w-[1px] h-12 bg-gradient-to-t from-yellow-500 to-transparent">
+                                        </div>
+                                        <div
+                                            class="px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] text-gray-300">
+                                            AI AGENT A</div>
+                                    </div>
+                                    <div
+                                        class="absolute -bottom-24 left-1/2 -translate-x-1/2 flex flex-col-reverse items-center gap-2">
+                                        <div class="w-[1px] h-12 bg-gradient-to-b from-yellow-500 to-transparent">
+                                        </div>
+                                        <div
+                                            class="px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] text-gray-300">
+                                            DATABASE</div>
+                                    </div>
+                                    <div
+                                        class="absolute top-1/2 -right-32 -translate-y-1/2 flex flex-row items-center gap-2">
+                                        <div class="h-[1px] w-12 bg-gradient-to-r from-yellow-500 to-transparent">
+                                        </div>
+                                        <div
+                                            class="px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] text-gray-300">
+                                            ANALYTICS</div>
+                                    </div>
+                                    <div
+                                        class="absolute top-1/2 -left-32 -translate-y-1/2 flex flex-row-reverse items-center gap-2">
+                                        <div class="h-[1px] w-12 bg-gradient-to-l from-yellow-500 to-transparent">
+                                        </div>
+                                        <div
+                                            class="px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] text-gray-300">
+                                            WORKFLOW</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-8 rounded-3xl border-2 border-yellow-500/30 bg-white/5 hover:border-yellow-400 transition-all duration-500 reveal">
-            <div class="flex justify-center group/img relative">
-                <div class="absolute -inset-6 bg-orange-600/20 blur-2xl opacity-0 group-hover/img:opacity-100 transition-opacity"></div>
-                <div class="relative p-6 rounded-2xl bg-[#0a0a0f] border border-yellow-500/20">
-                    <svg width="280" height="200" viewBox="0 0 280 200" fill="none">
-                        <rect x="20" y="20" width="240" height="160" rx="8" fill="rgba(255,255,255,0.05)" />
-                        <path d="M40 100 L70 70 L100 110 L130 50 L160 80 L190 40" stroke="#eab308" stroke-width="2" stroke-linecap="round" />
-                        <rect x="40" y="100" width="20" height="60" rx="2" fill="#5799D2" />
-                        <rect x="130" y="50" width="20" height="110" rx="2" fill="#A95AA3" />
-                    </svg>
+            <div class="max-w-[1400px] mx-auto px-6 mb-32">
+                <div
+                    class="p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-12 rounded-[3rem] border border-white/10 bg-white/5 hover:bg-white/[0.08] hover:border-yellow-500/30 transition-all duration-500 reveal backdrop-blur-md group">
+                    <div
+                        class="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-500/10 blur-[80px] pointer-events-none">
+                    </div>
+
+                    <div class="flex-shrink-0 relative">
+                        <div
+                            class="w-48 h-48 rounded-full bg-[#0a0a0f] border border-white/10 flex items-center justify-center relative shadow-[0_0_30px_rgba(234,179,8,0.15)] group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 rounded-full border-t border-yellow-500/50 animate-[spin_2s_linear_infinite]">
+                            </div>
+                            <div
+                                class="absolute inset-4 rounded-full border border-dashed border-white/20 animate-[spin_10s_linear_infinite_reverse]">
+                            </div>
+
+                            <div
+                                class="w-20 h-20 rounded-full bg-gradient-to-br from-audvikBlue to-audvikPurple flex items-center justify-center shadow-lg z-10">
+                                <span class="font-bold text-lg text-white tracking-widest">ORDO</span>
+                            </div>
+
+                            <div
+                                class="absolute top-8 right-10 w-2 h-2 bg-red-500 rounded-full animate-ping opacity-75">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-12 w-2 h-2 bg-green-500 rounded-full animate-ping opacity-75 animation-delay-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h2 class="font-display text-3xl font-bold mb-4 text-audvikBlue">What is ORDO?</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Ordo refers to a system for object recognition, detection, and orchestration, that
+                            identifies and localizes items in sensor data. It combines computer-vision models
+                            (classification, detection, tracking) and scene understanding to recognize objects and their
+                            relationships.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div>
-                <h3 class="font-display text-3xl font-bold mb-4 text-audvikBlue">Customisable Graphs</h3>
-                <p class="text-gray-400 leading-relaxed text-base">
-                    Interactive visualizations for metrics, detections, and events—choose chart types like line,
-                    bar, heatmap, scatter, and object-overlap views to represent real-time data.
-                </p>
-            </div>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-8 rounded-3xl border-2 border-yellow-500/30 bg-white/5 hover:border-yellow-400 transition-all duration-500 reveal">
-            <div class="order-2 md:order-1">
-                <h3 class="font-display text-3xl font-bold mb-4 text-audvikPurple">Software Life Cycle Monitoring</h3>
-                <p class="text-gray-400 leading-relaxed text-base">
-                    Ordo monitors the entire software/model lifecycle—tracking code, data, and model versions
-                    across dev, CI/CD, staging, and production deployments.
-                </p>
-            </div>
-            <div class="order-1 md:order-2 flex justify-center group/img relative">
-                <div class="absolute -inset-6 bg-yellow-500/20 blur-2xl opacity-0 group-hover/img:opacity-100 transition-opacity"></div>
-                <div class="relative p-8 rounded-full bg-[#0a0a0f] border border-yellow-500/20">
-                    <svg width="180" height="180" viewBox="0 0 220 220" fill="none" class="animate-[spin_12s_linear_infinite]">
-                        <path d="M110 20 A 90 90 0 0 1 200 110" stroke="#eab308" stroke-width="15" stroke-linecap="round" />
-                        <path d="M200 110 A 90 90 0 0 1 110 200" stroke="#A95AA3" stroke-width="15" stroke-linecap="round" />
-                        <path d="M110 200 A 90 90 0 0 1 20 110" stroke="#5799D2" stroke-width="15" stroke-linecap="round" />
-                    </svg>
+            <div class="max-w-[1400px] mx-auto px-6 space-y-24 mb-32">
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-8 rounded-3xl border border-white/10 bg-white/5 hover:border-audvikPurple/50 transition-all duration-500 reveal group">
+                    <div class="order-2 md:order-1">
+                        <h3 class="font-display text-3xl font-bold mb-4 text-audvikPurple">Comprehensive Insights</h3>
+                        <p class="text-gray-400 leading-relaxed text-base">
+                            Ordo delivers end-to-end multimodal perception and reasoning—combining object detection,
+                            tracking, scene understanding, and LLM-driven decisioning into a unified pipeline.
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 flex justify-center group/img relative">
+                        <div
+                            class="absolute -inset-6 bg-audvikPurple/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="relative w-full max-w-[300px] h-[220px] p-6 rounded-2xl bg-[#0a0a0f] border border-white/10 overflow-hidden flex flex-col justify-center gap-3 shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-blue-400"></div>
+                                <div class="h-2 w-full bg-blue-400/20 rounded-full overflow-hidden">
+                                    <div class="h-full w-1/2 bg-blue-400 rounded-full animate-[slide_2s_infinite]">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-purple-400"></div>
+                                <div class="h-2 w-full bg-purple-400/20 rounded-full overflow-hidden">
+                                    <div
+                                        class="h-full w-2/3 bg-purple-400 rounded-full animate-[slide_2.5s_infinite_reverse]">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-pink-400"></div>
+                                <div class="h-2 w-full bg-pink-400/20 rounded-full overflow-hidden">
+                                    <div class="h-full w-3/4 bg-pink-400 rounded-full animate-[slide_3s_infinite]">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-4 border-t border-white/10">
+                                <div
+                                    class="w-full h-8 rounded-lg bg-gradient-to-r from-audvikBlue via-audvikPurple to-audvikPink flex items-center justify-center text-[10px] font-bold text-white tracking-widest">
+                                    UNIFIED OUTPUT
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-8 rounded-3xl border border-white/10 bg-white/5 hover:border-audvikBlue/50 transition-all duration-500 reveal group">
+                    <div class="flex justify-center group/img relative">
+                        <div
+                            class="absolute -inset-6 bg-audvikBlue/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="relative w-full max-w-[320px] h-[220px] rounded-2xl bg-[#0a0a0f] border border-white/10 p-4 grid grid-cols-2 gap-3 shadow-2xl transform group-hover:rotate-1 transition-transform duration-500">
+                            <div
+                                class="col-span-2 h-20 rounded-lg bg-white/5 border border-white/5 p-2 flex items-end justify-between gap-1 overflow-hidden relative">
+                                <svg viewBox="0 0 100 30" class="w-full h-full stroke-audvikBlue fill-none stroke-2">
+                                    <path d="M0 25 Q 20 10 40 20 T 100 5" />
+                                </svg>
+                                <div
+                                    class="absolute top-2 left-2 text-[8px] text-gray-500 uppercase tracking-wider">
+                                    Traffic</div>
+                            </div>
+                            <div
+                                class="h-24 rounded-lg bg-white/5 border border-white/5 p-2 flex items-end justify-between gap-1">
+                                <div class="w-1/4 bg-purple-500/50 h-[40%] rounded-sm"></div>
+                                <div class="w-1/4 bg-purple-500 h-[80%] rounded-sm"></div>
+                                <div class="w-1/4 bg-purple-500/70 h-[60%] rounded-sm"></div>
+                            </div>
+                            <div
+                                class="h-24 rounded-lg bg-white/5 border border-white/5 p-2 flex items-center justify-center">
+                                <div
+                                    class="w-14 h-14 rounded-full border-4 border-pink-500 border-t-transparent border-r-transparent rotate-45">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-3xl font-bold mb-4 text-audvikBlue">Customisable Graphs</h3>
+                        <p class="text-gray-400 leading-relaxed text-base">
+                            Interactive visualizations for metrics, detections, and events—choose chart types like line,
+                            bar, heatmap, scatter, and object-overlap views to represent real-time data.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-8 rounded-3xl border border-white/10 bg-white/5 hover:border-yellow-500/50 transition-all duration-500 reveal group">
+                    <div class="order-2 md:order-1">
+                        <h3 class="font-display text-3xl font-bold mb-4 text-audvikPurple">Software Life Cycle
+                            Monitoring</h3>
+                        <p class="text-gray-400 leading-relaxed text-base">
+                            Ordo monitors the entire software/model lifecycle—tracking code, data, and model versions
+                            across dev, CI/CD, staging, and production deployments.
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 flex justify-center group/img relative">
+                        <div
+                            class="absolute -inset-6 bg-yellow-500/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="relative w-[220px] h-[220px] rounded-full bg-[#0a0a0f] border border-white/10 flex items-center justify-center shadow-2xl">
+                            <div
+                                class="absolute inset-0 rounded-full border-2 border-dashed border-white/10 animate-[spin_20s_linear_infinite]">
+                            </div>
+
+                            <div class="absolute w-40 h-40 border-2 border-audvikBlue rounded-full opacity-30"></div>
+                            <div
+                                class="absolute w-40 h-40 border-2 border-yellow-500 rounded-full opacity-30 rotate-45">
+                            </div>
+
+                            <div class="absolute w-full h-full animate-[spin_3s_linear_infinite]">
+                                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-yellow-500 rounded-full shadow-[0_0_15px_#EAB308]"></div>
+                            </div>
+
+                            <div class="text-center z-10">
+                                <span class="block text-2xl font-bold text-white">CI/CD</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">Active</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="py-24 border-t border-white/5 relative overflow-hidden reveal text-center rounded-[3rem]">
-        <div class="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-orange-600/20 rounded-full blur-[110px] pointer-events-none"></div>
-        <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[350px] h-[175px] bg-yellow-500/20 rounded-full blur-[70px] pointer-events-none"></div>
+            <div
+                class="py-24 border-t border-white/5 relative overflow-hidden reveal text-center rounded-[3rem] bg-[#0a0a0f]">
+                <div
+                    class="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-orange-600/20 rounded-full blur-[110px] pointer-events-none">
+                </div>
+                <div
+                    class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[350px] h-[175px] bg-yellow-500/20 rounded-full blur-[70px] pointer-events-none">
+                </div>
 
-        <div class="relative z-10">
-            <h2 class="font-display text-4xl font-bold mb-6 text-white">Experience Visionary <span class="text-audvikBlue">Orchestration</span></h2>
-            <p class="text-gray-400 text-xl max-w-4xl mx-auto mb-12 font-light">
-                Ready to eliminate friction and master your digital ecosystem? Start building with ORDO today.
-            </p>
-            <button class="nav-btn-primary px-10 py-4 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold hover:scale-105 transition-transform" onclick="openCalendly()">
-                Start Your Free Trial
-            </button>
-        </div>
-    </div>
+                <div class="relative z-10">
+                    <h2 class="font-display text-4xl font-bold mb-6 text-white">Experience Visionary <span
+                            class="text-audvikBlue">Orchestration</span></h2>
+                    <p class="text-gray-400 text-xl max-w-4xl mx-auto mb-12 font-light">
+                        Ready to eliminate friction and master your digital ecosystem? Start building with ORDO today.
+                    </p>
+                    <button
+                        class="nav-btn-primary px-10 py-4 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold hover:scale-105 transition-transform"
+                        onclick="openCalendly()">
+                        Start Your Free Trial
+                    </button>
+                </div>
+            </div>
 
-</main>
-        <footer id="contact" class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden mt-auto">
+        </main>
+
+        <footer id="contact"
+            class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden mt-auto">
 
             <div
                 class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-audvikBlue/5 rounded-full blur-[120px] pointer-events-none">
@@ -857,7 +987,8 @@
 
                                 <div
                                     class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
-                                    <img src="../asserts/ISO/AICPA.png" alt="AICPA" class="w-full h-full object-cover">
+                                    <img src="../asserts/ISO/AICPA.png" alt="AICPA"
+                                        class="w-full h-full object-cover">
                                 </div>
                             </div>
                         </div>
@@ -872,9 +1003,11 @@
 
                         <div class="space-y-6">
                             <div class="relative pl-4 border-l-2 border-audvikBlue/30">
-                                <strong class="text-audvikBlue text-xs uppercase tracking-wider block mb-1">Headquarters
+                                <strong
+                                    class="text-audvikBlue text-xs uppercase tracking-wider block mb-1">Headquarters
                                     (Bengaluru)</strong>
-                                <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
+                                <p
+                                    class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
                                     15/1, 185/2, 185/A, 18th Main Rd,<br>Jayanagar 9th Block, 560041
                                 </p>
                             </div>
@@ -882,14 +1015,16 @@
                             <div class="relative pl-4 border-l-2 border-white/10">
                                 <strong class="text-gray-300 text-xs uppercase tracking-wider block mb-1">Bengaluru
                                     (Mail)</strong>
-                                <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
+                                <p
+                                    class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
                                     5th Floor, Trifecta Adatto,<br>Garudachar Palya, 560048
                                 </p>
                             </div>
 
                             <div class="relative pl-4 border-l-2 border-white/10">
                                 <strong class="text-gray-300 text-xs uppercase tracking-wider block mb-1">Noida</strong>
-                                <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
+                                <p
+                                    class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
                                     C2, Sector 1, Block C,<br>GTB Nagar, UP 201301
                                 </p>
                             </div>
@@ -1020,6 +1155,7 @@
         </footer>
 
     </div>
+</main>
 
     <script>
         // --- SCROLL REVEAL (Animations) ---
