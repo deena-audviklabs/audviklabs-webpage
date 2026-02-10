@@ -79,21 +79,12 @@
         .bg-grid {
             background-size: 40px 40px;
         }
-
-        /* --- NAVBAR STYLES (GOLD OUTLINE & GLOW) --- */
+  /* --- NAVBAR STYLES (GOLD OUTLINE & GLOW) --- */
         .liquid-nav-pill {
             background: rgba(10, 15, 25, 0.6);
             backdrop-filter: blur(40px) saturate(200%);
             border: 1px solid rgba(255, 215, 0, 0.3);
             border-top: 1px solid rgba(255, 215, 0, 0.6);
-           /* --- NAVBAR STYLES (GOLD OUTLINE & GLOW) --- */
-        .liquid-nav-pill {
-            background: rgba(10, 15, 25, 0.6);
-            backdrop-filter: blur(40px) saturate(200%);
-            /* GOLD BORDER */
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-top: 1px solid rgba(255, 215, 0, 0.6);
-            /* GOLD GLOW */
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
             border-radius: 9999px;
             transition: all 0.3s ease;
@@ -131,11 +122,6 @@
             color: #FFD700;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
-        
-            /* Gold Text Hover */
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-
         /* --- HERO BUTTONS --- */
         .hero-btn-primary {
             position: relative;
@@ -186,7 +172,7 @@
 
 <body>
 
-     <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
         <div class="w-full mx-auto relative flex items-center justify-center">
 
             <div
@@ -195,13 +181,10 @@
                 <a href="../index.html" class="flex-shrink-0">
                     <img src="../asserts/Audvik Logo.svg" alt="Audvik Labs Logo"
                         class="h-8 md:h-10 w-auto drop-shadow-lg">
-                    <img src="../asserts/Audvik Logo.svg" alt="Audvik Labs Logo" class="h-8 md:h-10 w-auto drop-shadow-lg">
                 </a>
 
                 <div class="hidden lg:flex items-center gap-8">
 
-                    <a href="../index.html" class="nav-link text-white flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
                     <a href="../index.html" class="nav-link">
                         Home
                     </a>
@@ -451,6 +434,7 @@
                     <div class="relative group h-full flex items-center">
                         <a href="#" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Products
+                            <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
                             <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -521,10 +505,10 @@
                         </div>
                     </div>
 
-                    <a href="blog.html" class="nav-link">Blog</a>
-                    <a href="about.html" class="nav-link text-white flex items-center gap-2">About us</a>
-                    <a href="contactus.html" class="nav-link">Contact us</a>
-                    <a href="SuccessStories.html" class="nav-link">Success Stories</a>
+                    <a href="../blog.html" class="nav-link">Blog</a>
+                    <a href="../about.html" class="nav-link">About us</a>
+                    <a href="../contactus.html" class="nav-link">Contact us</a>
+                    <a href="../SuccessStories.html" class="nav-link">Success Stories</a>
                 </div>
 
                 <div class="hidden lg:flex items-center pl-4 border-l border-white/10">
@@ -547,7 +531,7 @@
             class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 lg:hidden flex flex-col pt-32 px-6 overflow-y-auto">
             <div class="flex flex-col gap-6 text-lg text-center pb-12">
 
-                <a href="index.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Home</a>
+                <a href="#" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Home</a>
 
                 <div class="border-b border-white/10 pb-4">
                     <button onclick="toggleAccordion('mobile-services-list', 'services-icon')"
@@ -630,6 +614,7 @@
             </div>
         </div>
     </nav>
+
     <div class="content-layer relative w-full flex flex-col min-h-screen justify-between overflow-hidden">
 
         <div class="absolute inset-0 bg-grid-pattern bg-grid opacity-20 pointer-events-none"></div>
