@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scientific System Modernization | Success Story - AudvikLabs</title>
     <link rel="icon" type="image/svg+xml" href="../asserts/Audvik Logo Mark.svg">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-     <!-- Calendly COnfiguration -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <!-- Calendly COnfiguration -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script src="../calendly-init.js"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -51,12 +54,17 @@
     </script>
 
     <style>
-        /* FORCE DARK THEME */
+     html,
         body {
-            margin: 0; padding: 0;
-            background-color: #050508 !important;
+            margin: 0;
+            padding: 0;
+            background-color: #001133;
             color: white;
+            width: 100%;
+            max-width: 100%;
             overflow-x: hidden;
+            position: relative;
+            scroll-behavior: smooth;
         }
 
         /* --- VISUAL FX --- */
@@ -80,6 +88,7 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.4s ease;
         }
+
         .glass-card:hover {
             border-color: rgba(87, 153, 210, 0.3);
             background: rgba(255, 255, 255, 0.04);
@@ -88,129 +97,373 @@
 
         /* Technical Markers */
         .marker-corner {
-            position: absolute; width: 10px; height: 10px;
-            border-color: #5799D2; border-style: solid;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-color: #5799D2;
+            border-style: solid;
             opacity: 0.5;
         }
-        .tl { top: 0; left: 0; border-width: 2px 0 0 2px; }
-        .tr { top: 0; right: 0; border-width: 2px 2px 0 0; }
-        .bl { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
-        .br { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
 
-        /* Navbar Pill */
+        .tl {
+            top: 0;
+            left: 0;
+            border-width: 2px 0 0 2px;
+        }
+
+        .tr {
+            top: 0;
+            right: 0;
+            border-width: 2px 2px 0 0;
+        }
+
+        .bl {
+            bottom: 0;
+            left: 0;
+            border-width: 0 0 2px 2px;
+        }
+
+        .br {
+            bottom: 0;
+            right: 0;
+            border-width: 0 2px 2px 0;
+        }
+
+        /* --- NAVBAR STYLES (GOLD OUTLINE & GLOW) --- */
         .liquid-nav-pill {
-            background: rgba(10, 15, 25, 0.6); 
-            backdrop-filter: blur(40px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 9999px; 
+            background: rgba(10, 15, 25, 0.6);
+            backdrop-filter: blur(40px) saturate(200%);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-top: 1px solid rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+            border-radius: 9999px;
             transition: all 0.3s ease;
         }
+
+        .liquid-nav-pill:hover {
+            border-color: rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            background: rgba(15, 18, 25, 0.8);
+        }
+
         .nav-btn-primary {
             border-radius: 9999px;
             background: linear-gradient(135deg, #5799D2, #7966CD);
-            color: #ffffff; font-weight: 600; font-size: 0.85rem;
+            /* Kept gradient, but added gold border */
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
         }
-        .nav-link { color: #d1d5db; transition: color 0.2s; font-size: 0.9rem; font-weight: 500; }
-        .nav-link:hover { color: #ffffff; }
+
+        .nav-btn-primary:hover {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .nav-link {
+            color: #d1d5db;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
 
         /* Lenis */
-        html.lenis { height: auto; }
-        .lenis.lenis-smooth { scroll-behavior: auto; }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #050508; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050508;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
     </style>
 </head>
+
 <body class="bg-[#050508] text-white">
 
     <div class="fixed inset-0 z-0 pointer-events-none h-screen w-screen">
         <div class="absolute inset-0 bg-blueprint"></div>
-        
-        <div class="glow-blob bg-audvikBlue w-[500px] h-[500px] top-[-100px] left-[-100px] opacity-30 animate-pulse-slow"></div>
-        <div class="glow-blob bg-audvikPurple w-[600px] h-[600px] top-[20%] right-[-200px] opacity-30 animate-pulse-slow" style="animation-delay: 2s;"></div>
-        <div class="glow-blob bg-audvikPink w-[400px] h-[400px] bottom-0 left-[20%] opacity-20 animate-pulse-slow" style="animation-delay: 4s;"></div>
+
+        <div
+            class="glow-blob bg-audvikBlue w-[500px] h-[500px] top-[-100px] left-[-100px] opacity-30 animate-pulse-slow">
+        </div>
+        <div class="glow-blob bg-audvikPurple w-[600px] h-[600px] top-[20%] right-[-200px] opacity-30 animate-pulse-slow"
+            style="animation-delay: 2s;"></div>
+        <div class="glow-blob bg-audvikPink w-[400px] h-[400px] bottom-0 left-[20%] opacity-20 animate-pulse-slow"
+            style="animation-delay: 4s;"></div>
     </div>
+
 
     <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
         <div class="w-full mx-auto relative flex items-center justify-center">
-            
-            <div class="liquid-nav-pill w-[95%] max-w-md lg:w-fit lg:max-w-none flex items-center justify-between gap-8 px-6 py-4 relative z-50 transition-all duration-300">
-                
+
+            <div
+                class="liquid-nav-pill w-[95%] max-w-md lg:w-fit lg:max-w-none flex items-center justify-between gap-8 px-6 py-4 relative z-50 transition-all duration-300">
+
                 <a href="../index.html" class="flex-shrink-0">
-                    <img src="../asserts/Audvik Logo.svg" alt="Audvik Labs Logo" class="h-8 md:h-10 w-auto drop-shadow-lg">
+                    <img src="../asserts/Audvik Logo.svg" alt="Audvik Labs Logo"
+                        class="h-8 md:h-10 w-auto drop-shadow-lg">
                 </a>
 
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../index.html" class="nav-link flex items-center gap-2">Home</a>
+
+                    <a href="../index.html" class="nav-link">
+                        Home
+                    </a>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="#services" class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
-                          Our Services
-                            <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <a href="#services" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
+                            Our Services
+                            <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </a>
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[500px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
-                            <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-3 shadow-2xl overflow-hidden ring-1 ring-white/5">
+
+                        <div
+                            class="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[500px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                            <div
+                                class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-3 shadow-2xl overflow-hidden ring-1 ring-white/5">
                                 <div class="grid grid-cols-2 gap-1">
                                     <div class="space-y-1">
-                                        <a href="../services/Business-Intelligence.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Business Intelligence</span>
+                                        <a href="../services/Business-Intelligence.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Business
+                                                Intelligence</span>
                                         </a>
-                                        <a href="../services/gen-ai.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Generative AI</span>
+                                        <a href="../services/gen-ai.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Generative
+                                                AI</span>
                                         </a>
-                                        <a href="../services/cloud-implementation.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Cloud Implementation</span>
+                                        <a href="../services/cloud-implementation.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Cloud
+                                                Implementation</span>
                                         </a>
-                                        <a href="../services/MobileAppDev.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-blue-500/10 flex items-center justify-center text-blue-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Mobile App Dev</span>
+                                        <a href="../services/MobileAppDev.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Mobile
+                                                App Dev</span>
                                         </a>
-                                        <a href="../services/QualityAssurance.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-green-500/10 flex items-center justify-center text-green-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Quality Assurance</span>
+                                        <a href="../services/QualityAssurance.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-green-500/10 flex items-center justify-center text-green-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Quality
+                                                Assurance</span>
                                         </a>
-                                        <a href="../services/serverless-services.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Serverless Deployment</span>
+                                        <a href="../services/serverless-services.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Serverless
+                                                Deployment</span>
                                         </a>
-                                        <a href="../services/Blockchain-Development.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-red-500/10 flex items-center justify-center text-red-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Blockchain</span>
+                                        <a href="../services/Blockchain-Development.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-red-500/10 flex items-center justify-center text-red-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Blockchain</span>
                                         </a>
                                     </div>
+
                                     <div class="space-y-1">
-                                        <a href="../services/Bot-Development.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Bot Development</span>
+                                        <a href="../services/Bot-Development.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Bot
+                                                Development</span>
                                         </a>
-                                        <a href="../services/Quantam-Computing.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Quantum Computing</span>
+                                        <a href="../services/Quantam-Computing.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Quantum
+                                                Computing</span>
                                         </a>
-                                        <a href="../services/MachineLearning.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center text-teal-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">ML-Ops</span>
+                                        <a href="../services/MachineLearning.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center text-teal-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">ML-Ops</span>
                                         </a>
-                                        <a href="../services/DevSecOps.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">DevSecOps</span>
+                                        <a href="../services/DevSecOps.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">DevSecOps</span>
                                         </a>
-                                        <a href="../services/game-development.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Game Development</span>
+                                        <a href="../services/game-development.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Game
+                                                Development</span>
                                         </a>
-                                        <a href="../services/HPC.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-sky-500/10 flex items-center justify-center text-sky-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">High-Performance Computing</span>
+                                        <a href="../services/HPC.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-sky-500/10 flex items-center justify-center text-sky-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">High-Performance
+                                                Computing</span>
                                         </a>
-                                        <a href="../services/Resourcing.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-rose-500/10 flex items-center justify-center text-rose-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Resourcing</span>
+                                        <a href="../services/Resourcing.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-rose-500/10 flex items-center justify-center text-rose-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Resourcing</span>
                                         </a>
                                     </div>
                                 </div>
@@ -219,40 +472,71 @@
                     </div>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="../products.html" class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                        <a href="#" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Products
-                            <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </a>
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
-                            <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl overflow-hidden ring-1 ring-white/5">
+
+                        <div
+                            class="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                            <div
+                                class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl overflow-hidden ring-1 ring-white/5">
                                 <div class="space-y-1">
-                                    <a href="../products/realm.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                        <div class="w-8 h-8 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue group-hover/item:bg-audvikBlue group-hover/item:text-white transition-colors">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    <a href="../products/realm.html"
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                        <div
+                                            class="w-8 h-8 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue group-hover/item:bg-audvikBlue group-hover/item:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                            </svg>
                                         </div>
                                         <div>
                                             <span class="block text-white text-sm font-medium leading-none">Realm</span>
-                                            <span class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">AI Platform</span>
+                                            <span
+                                                class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">AI
+                                                Platform</span>
                                         </div>
                                     </a>
 
-                                    <a href="../products/ordo.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                        <div class="w-8 h-8 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple group-hover/item:bg-audvikPurple group-hover/item:text-white transition-colors">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                                    <a href="../products/ordo.html"
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                        <div
+                                            class="w-8 h-8 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple group-hover/item:bg-audvikPurple group-hover/item:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                                </path>
+                                            </svg>
                                         </div>
                                         <div>
                                             <span class="block text-white text-sm font-medium leading-none">ORDO</span>
-                                            <span class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">Orchestration</span>
+                                            <span
+                                                class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">Orchestration</span>
                                         </div>
                                     </a>
 
-                                    <a href="../products/a-helg.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                        <div class="w-8 h-8 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink group-hover/item:bg-audvikPink group-hover/item:text-white transition-colors">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <a href="../products/a-helg.html"
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                        <div
+                                            class="w-8 h-8 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink group-hover/item:bg-audvikPink group-hover/item:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
                                         </div>
                                         <div>
-                                            <span class="block text-white text-sm font-medium leading-none">A-Helg</span>
-                                            <span class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">Health Analyzer</span>
+                                            <span
+                                                class="block text-white text-sm font-medium leading-none">A-Helg</span>
+                                            <span
+                                                class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">Health
+                                                Analyzer</span>
                                         </div>
                                     </a>
                                 </div>
@@ -263,9 +547,8 @@
                     <a href="../blog.html" class="nav-link">Blog</a>
                     <a href="../about.html" class="nav-link">About us</a>
                     <a href="../contactus.html" class="nav-link">Contact us</a>
-                    <a href="../SuccessStories.html" class="nav-link flex items-center gap-2">Success Stories
-                    <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
-
+                    <a href="../SuccessStories.html" class="nav-link text-white flex items-center gap-2">Success Stories
+                        <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
                     </a>
                 </div>
 
@@ -276,95 +559,156 @@
                 </div>
 
                 <button id="mobile-menu-btn" class="lg:hidden text-white p-2" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
                 </button>
+
             </div>
         </div>
 
-        <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 lg:hidden flex flex-col pt-32 px-6 overflow-y-auto">
+        <div id="mobile-menu"
+            class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 lg:hidden flex flex-col pt-32 px-6 overflow-y-auto">
             <div class="flex flex-col gap-6 text-lg text-center pb-12">
-                <a href="../index.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Home</a>
-                
+
+                <a href="../index.html" class="text-white border-b border-white/10 pb-4"
+                    onclick="toggleMobileMenu()">Home</a>
+
                 <div class="border-b border-white/10 pb-4">
-                    <button onclick="toggleAccordion('mobile-services-list', 'services-icon')" class="w-full flex items-center justify-center gap-2 py-2 group">
+                    <button onclick="toggleAccordion('mobile-services-list', 'services-icon')"
+                        class="w-full flex items-center justify-center gap-2 py-2 group">
                         <span class="text-audvikBlue text-xs uppercase tracking-widest font-bold">Our Services</span>
-                        <svg id="services-icon" class="w-4 h-4 text-audvikBlue transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg id="services-icon" class="w-4 h-4 text-audvikBlue transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
                     </button>
+
                     <div id="mobile-services-list" class="hidden flex-col gap-3 pt-4 text-sm items-center">
-                        <a href="../services/Business-Intelligence.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Business Intelligence</a>
-                        <a href="../services/gen-ai.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Generative AI</a>
-                        <a href="../services/cloud-implementation.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Cloud Implementation</a>
-                        <a href="../services/MobileAppDev.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Mobile App Dev</a>
-                        <a href="../services/QualityAssurance.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Quality Assurance</a>
-                        <a href="../services/serverless-services.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Serverless Deployment</a>
-                        <a href="../services/Blockchain-Development.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Blockchain</a>
-                        <a href="../services/Bot-Development.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Bot Development</a>
-                        <a href="../services/Quantam-Computing.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Quantum Computing</a>
-                        <a href="../services/MachineLearning.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">ML-Ops</a>
-                        <a href="../services/DevSecOps.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">DevSecOps</a>
-                        <a href="../services/game-development.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Game Development</a>
-                        <a href="../services/HPC.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">High-Performance Computing</a>
-                        <a href="../services/Resourcing.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Resourcing</a>
+                        <a href="../services/Business-Intelligence.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Business Intelligence</a>
+                        <a href="../services/gen-ai.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Generative AI</a>
+                        <a href="../services/cloud-implementation.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Cloud Implementation</a>
+                        <a href="../services/MobileAppDev.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Mobile App Dev</a>
+                        <a href="../services/QualityAssurance.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Quality Assurance</a>
+                        <a href="../services/serverless-services.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Serverless Deployment</a>
+                        <a href="../services/Blockchain-Development.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Blockchain</a>
+                        <a href="../services/Bot-Development.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Bot Development</a>
+                        <a href="../services/Quantam-Computing.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Quantum Computing</a>
+                        <a href="../services/MachineLearning.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">ML-Ops</a>
+                        <a href="../services/DevSecOps.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">DevSecOps</a>
+                        <a href="../services/game-development.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Game Development</a>
+                        <a href="../services/HPC.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">High-Performance Computing</a>
+                        <a href="../services/Resourcing.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Resourcing</a>
                     </div>
                 </div>
 
                 <div class="border-b border-white/10 pb-4">
-                    <button onclick="toggleAccordion('mobile-products-list', 'products-icon')" class="w-full flex items-center justify-center gap-2 py-2 group">
+                    <button onclick="toggleAccordion('mobile-products-list', 'products-icon')"
+                        class="w-full flex items-center justify-center gap-2 py-2 group">
                         <span class="text-audvikPurple text-xs uppercase tracking-widest font-bold">Our Products</span>
-                        <svg id="products-icon" class="w-4 h-4 text-audvikPurple transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg id="products-icon" class="w-4 h-4 text-audvikPurple transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
                     </button>
+
                     <div id="mobile-products-list" class="hidden flex-col gap-3 pt-4 text-sm items-center">
-                        <a href="../products/realm.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Realm (AI)</a>
-                        <a href="../products/ordo.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">ORDO (Orchestration)</a>
-                        <a href="../products/a-helg.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">A-Helg (Health)</a>
+                        <a href="../products/realm.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Realm (AI)</a>
+                        <a href="../products/ordo.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">ORDO (Orchestration)</a>
+                        <a href="../products/a-helg.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">A-Helg (Health)</a>
                     </div>
                 </div>
 
-                <a href="../blog.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Blog</a>
-                <a href="../about.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">About us</a>
-                <a href="../contactus.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Contact us</a>
-                <a href="../SuccessStories.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Success Stories</a>
-                
- <button class="nav-btn-primary w-full py-4 mt-2" onclick="toggleMobileMenu(); openCalendly(event)">
+                <a href="../blog.html" class="text-white border-b border-white/10 pb-4"
+                    onclick="toggleMobileMenu()">Blog</a>
+                <a href="../about.html" class="text-white border-b border-white/10 pb-4"
+                    onclick="toggleMobileMenu()">About
+                    us</a>
+                <a href="../contactus.html" class="text-white border-b border-white/10 pb-4"
+                    onclick="toggleMobileMenu()">Contact us</a>
+                <a href="../SuccessStories.html" class="text-white border-b border-white/10 pb-4"
+                    onclick="toggleMobileMenu()">Success Stories</a>
+
+                <button class="nav-btn-primary w-full py-4 mt-2" onclick="toggleMobileMenu(); openCalendly(event)">
                     Get Started
-                </button>                <button class="text-gray-400 text-sm mt-4 mb-10" onclick="toggleMobileMenu()">Close Menu</button>
+                </button>
+                <button class="text-gray-400 text-sm mt-4 mb-10" onclick="toggleMobileMenu()">Close Menu</button>
             </div>
         </div>
     </nav>
 
 
     <main class="relative z-10">
-        
+
+        <div
+            class="absolute top-[-100px] left-[-100px] w-96 h-96 bg-[#FFD700]/20 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-[20%] right-[-200px] w-[500px] h-[500px] bg-[#FF8C00]/20 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
         <section class="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden pt-20">
             <div class="max-w-[1200px] w-full text-center">
-                
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-audvikPurple/30 bg-audvikPurple/5 backdrop-blur-sm mb-6 md:mb-8 scroll-reveal">
-                    <span class="w-1.5 h-1.5 bg-audvikPurple rounded-full animate-pulse"></span>
-                    <span class="font-mono text-[10px] text-audvikPurple uppercase tracking-widest">System Decryption</span>
+
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FFD700]/30 bg-[#FFD700]/10 backdrop-blur-sm mb-6 md:mb-8 scroll-reveal shadow-[0_0_10px_rgba(255,215,0,0.1)]">
+                    <span class="w-1.5 h-1.5 bg-[#FFD700] rounded-full animate-pulse"></span>
+                    <span class="font-mono text-[10px] text-audvikPurple uppercase tracking-widest">System
+                        Decryption</span>
                 </div>
 
-                <h1 class="font-display text-4xl md:text-7xl font-bold leading-tight mb-6 md:mb-8 scroll-reveal drop-shadow-2xl">
+                <h1
+                    class="font-display text-4xl md:text-7xl font-bold leading-tight mb-6 md:mb-8 scroll-reveal drop-shadow-2xl">
                     Too Many Scientists, <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-audvikBlue to-audvikPurple">Too Less IT.</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-audvikBlue to-audvikPurple">Too
+                        Less IT.</span>
                 </h1>
 
-                <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-12 max-w-2xl mx-auto scroll-reveal delay-100 drop-shadow-md">
-                    We bridged the gap between complex scientific data and IT infrastructure, transforming a "black box" legacy system into a scalable, serverless solution.
+                <p
+                    class="text-gray-300 text-base md:text-lg leading-relaxed mb-12 max-w-2xl mx-auto scroll-reveal delay-100 drop-shadow-md">
+                    We bridged the gap between complex scientific data and IT infrastructure, transforming a "black box"
+                    legacy system into a scalable, serverless solution.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto w-full scroll-reveal delay-200">
-                    <div class="glass-card p-6 relative group">
-                        <div class="marker-corner tl"></div><div class="marker-corner br"></div>
+                    <div
+                        class="glass-card p-6 relative group border border-white/5 hover:border-[#FFD700]/30 transition-colors">
+                        <div class="marker-corner tl border-l-[#FFD700] border-t-[#FFD700]"></div>
+                        <div class="marker-corner br border-r-[#FFD700] border-b-[#FFD700]"></div>
                         <div class="text-3xl md:text-4xl font-bold text-white mb-1">50k€</div>
                         <div class="text-xs text-gray-400 uppercase tracking-widest">Savings in 1st Year</div>
                     </div>
-                    <div class="glass-card p-6 relative group">
-                        <div class="marker-corner tl"></div><div class="marker-corner br"></div>
+                    <div
+                        class="glass-card p-6 relative group border border-white/5 hover:border-[#FF8C00]/30 transition-colors">
+                        <div class="marker-corner tl border-l-[#FF8C00] border-t-[#FF8C00]"></div>
+                        <div class="marker-corner br border-r-[#FF8C00] border-b-[#FF8C00]"></div>
                         <div class="text-3xl md:text-4xl font-bold text-white mb-1">40%</div>
                         <div class="text-xs text-gray-400 uppercase tracking-widest">Reduction in Runtime</div>
                     </div>
-                    <div class="glass-card p-6 relative group">
-                        <div class="marker-corner tl"></div><div class="marker-corner br"></div>
+                    <div
+                        class="glass-card p-6 relative group border border-white/5 hover:border-[#FFA751]/30 transition-colors">
+                        <div class="marker-corner tl border-l-[#FFA751] border-t-[#FFA751]"></div>
+                        <div class="marker-corner br border-r-[#FFA751] border-b-[#FFA751]"></div>
                         <div class="text-3xl md:text-4xl font-bold text-white mb-1">4 Wks</div>
                         <div class="text-xs text-gray-400 uppercase tracking-widest">Decryption Time</div>
                     </div>
@@ -373,12 +717,15 @@
             </div>
         </section>
 
-        <section class="py-16 md:py-20 border-y border-white/5 bg-black/30 backdrop-blur-sm">
+        <section class="py-16 md:py-20 border-y border-white/5 bg-transparent backdrop-blur-sm">
             <div class="max-w-[1000px] mx-auto px-6 text-center scroll-reveal">
                 <h2 class="font-display text-2xl md:text-3xl font-bold mb-6">The "Black Box" Problem</h2>
-                <div class="relative p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10">
+                <div
+                    class="relative p-6 md:p-8 rounded-2xl bg-white/5 border border-[#FFD700]/20 shadow-[0_0_20px_rgba(255,215,0,0.05)]">
                     <p class="text-base md:text-lg text-gray-300 leading-relaxed italic">
-                        "A complex system built by scientists with **zero documentation** and complex forked containerization left the IT team in the dark. No one understood the data flow, making migration impossible."
+                        "A complex system built by scientists with **zero documentation** and complex forked
+                        containerization left the IT team in the dark. No one understood the data flow, making migration
+                        impossible."
                     </p>
                 </div>
             </div>
@@ -386,45 +733,58 @@
 
         <section class="py-16 md:py-24">
             <div class="max-w-[1200px] mx-auto px-6">
-                
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 relative">
-                    <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-audvikBlue/30 to-transparent"></div>
+                    <div
+                        class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#FFD700]/30 to-transparent">
+                    </div>
 
                     <div class="space-y-6 md:space-y-8 scroll-reveal">
                         <h3 class="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span class="w-8 h-8 rounded bg-red-500/10 flex items-center justify-center text-red-500 text-sm">⚠</span>
+                            <span
+                                class="w-8 h-8 rounded bg-red-500/10 flex items-center justify-center text-red-500 text-sm">⚠</span>
                             The Complexity
                         </h3>
                         <div class="glass-card p-6 border-l-2 border-l-red-500 rounded-r-xl">
                             <h4 class="font-bold text-white text-sm mb-1">Lack of Knowledge</h4>
-                            <p class="text-xs text-gray-400">Zero documentation meant the system logic was a mystery to the IT team.</p>
+                            <p class="text-xs text-gray-400">Zero documentation meant the system logic was a mystery to
+                                the IT team.</p>
                         </div>
                         <div class="glass-card p-6 border-l-2 border-l-red-500 rounded-r-xl">
                             <h4 class="font-bold text-white text-sm mb-1">Forked Containerization</h4>
-                            <p class="text-xs text-gray-400">Highly complex and non-standard container setup made deployment fragile.</p>
+                            <p class="text-xs text-gray-400">Highly complex and non-standard container setup made
+                                deployment fragile.</p>
                         </div>
                         <div class="glass-card p-6 border-l-2 border-l-red-500 rounded-r-xl">
                             <h4 class="font-bold text-white text-sm mb-1">Data Flow Obscurity</h4>
-                            <p class="text-xs text-gray-400">Nobody knew how data moved from input to output within the scientific models.</p>
+                            <p class="text-xs text-gray-400">Nobody knew how data moved from input to output within the
+                                scientific models.</p>
                         </div>
                     </div>
 
                     <div class="space-y-6 md:space-y-8 scroll-reveal delay-100">
                         <h3 class="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span class="w-8 h-8 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue text-sm">✓</span>
+                            <span
+                                class="w-8 h-8 rounded bg-[#FFD700]/10 flex items-center justify-center text-[#FFD700] text-sm">✓</span>
                             The Decryption
                         </h3>
-                        <div class="glass-card p-6 border-l-2 border-l-audvikBlue rounded-r-xl">
+                        <div
+                            class="glass-card p-6 border-l-2 border-l-[#FFD700] rounded-r-xl hover:bg-[#FFD700]/5 transition-colors">
                             <h4 class="font-bold text-white text-sm mb-1">Reverse Engineering</h4>
-                            <p class="text-xs text-gray-400">Developed an in-depth understanding of system modules to "chart" the problem.</p>
+                            <p class="text-xs text-gray-400">Developed an in-depth understanding of system modules to
+                                "chart" the problem.</p>
                         </div>
-                        <div class="glass-card p-6 border-l-2 border-l-audvikBlue rounded-r-xl">
+                        <div
+                            class="glass-card p-6 border-l-2 border-l-[#FF8C00] rounded-r-xl hover:bg-[#FF8C00]/5 transition-colors">
                             <h4 class="font-bold text-white text-sm mb-1">Serverless & Containerized</h4>
-                            <p class="text-xs text-gray-400">Re-architected using a hybrid serverless methodology for flexibility & scalability.</p>
+                            <p class="text-xs text-gray-400">Re-architected using a hybrid serverless methodology for
+                                flexibility & scalability.</p>
                         </div>
-                        <div class="glass-card p-6 border-l-2 border-l-audvikBlue rounded-r-xl">
+                        <div
+                            class="glass-card p-6 border-l-2 border-l-[#FFA751] rounded-r-xl hover:bg-[#FFA751]/5 transition-colors">
                             <h4 class="font-bold text-white text-sm mb-1">Custom Dashboards</h4>
-                            <p class="text-xs text-gray-400">Designed interactive dashboards to help users derive quick insights from simulation data.</p>
+                            <p class="text-xs text-gray-400">Designed interactive dashboards to help users derive quick
+                                insights from simulation data.</p>
                         </div>
                     </div>
 
@@ -434,19 +794,29 @@
 
         <section class="py-16 md:py-20 bg-white/5 border-y border-white/5">
             <div class="max-w-[1200px] mx-auto px-6 text-center">
-                <span class="text-xs font-mono text-gray-500 uppercase tracking-widest block mb-12">Technology Backbone</span>
+                <span class="text-xs font-mono text-gray-500 uppercase tracking-widest block mb-12">Technology
+                    Backbone</span>
                 <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-90">
-                    <div class="flex flex-col items-center gap-4 group">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-16 h-16 group-hover:scale-110 transition-transform drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-                        <span class="text-sm font-bold text-gray-300">Java</span>
+                    <div
+                        class="flex flex-col items-center gap-4 group hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                            class="w-16 h-16 drop-shadow-[0_0_15px_rgba(255,215,0,0.1)]">
+                        <span
+                            class="text-sm font-bold text-gray-300 group-hover:text-[#FFD700] transition-colors">Java</span>
                     </div>
-                    <div class="flex flex-col items-center gap-4 group">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" class="w-16 h-16 group-hover:scale-110 transition-transform drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-                        <span class="text-sm font-bold text-gray-300">C#</span>
+                    <div
+                        class="flex flex-col items-center gap-4 group hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                            class="w-16 h-16 drop-shadow-[0_0_15px_rgba(255,215,0,0.1)]">
+                        <span
+                            class="text-sm font-bold text-gray-300 group-hover:text-[#FF8C00] transition-colors">C#</span>
                     </div>
-                    <div class="flex flex-col items-center gap-4 group">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" class="w-16 h-16 group-hover:scale-110 transition-transform drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-                        <span class="text-sm font-bold text-gray-300">AngularJS</span>
+                    <div
+                        class="flex flex-col items-center gap-4 group hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                            class="w-16 h-16 drop-shadow-[0_0_15px_rgba(255,215,0,0.1)]">
+                        <span
+                            class="text-sm font-bold text-gray-300 group-hover:text-[#FFA751] transition-colors">AngularJS</span>
                     </div>
                 </div>
             </div>
@@ -458,47 +828,77 @@
                     <h2 class="font-display text-2xl md:text-3xl font-bold">Key Benefits</h2>
                     <p class="text-gray-400 mt-2">Turning confusion into clarity.</p>
                 </div>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                    <div class="p-6 md:p-8 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-audvikBlue/50 transition-all group text-center hover:-translate-y-2">
-                        <div class="w-16 h-16 mx-auto bg-audvikBlue/10 rounded-2xl flex items-center justify-center text-audvikBlue mb-6 group-hover:bg-audvikBlue group-hover:text-white transition-colors">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div
+                        class="p-6 md:p-8 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-[#FFD700]/50 transition-all group text-center hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 mx-auto bg-[#FFD700]/10 rounded-2xl flex items-center justify-center text-[#FFD700] mb-6 group-hover:bg-[#FFD700] group-hover:text-black transition-colors">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2">50k€ Savings</h3>
-                        <p class="text-sm text-gray-400">Consolidation in IT infrastructure brought in 50k savings in the 1st year.</p>
+                        <p class="text-sm text-gray-400">Consolidation in IT infrastructure brought in 50k savings in
+                            the 1st year.</p>
                     </div>
 
-                    <div class="p-6 md:p-8 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-audvikPink/50 transition-all group text-center hover:-translate-y-2">
-                        <div class="w-16 h-16 mx-auto bg-audvikPink/10 rounded-2xl flex items-center justify-center text-audvikPink mb-6 group-hover:bg-audvikPink group-hover:text-white transition-colors">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <div
+                        class="p-6 md:p-8 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-[#FF8C00]/50 transition-all group text-center hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 mx-auto bg-[#FF8C00]/10 rounded-2xl flex items-center justify-center text-[#FF8C00] mb-6 group-hover:bg-[#FF8C00] group-hover:text-black transition-colors">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2">40% Faster</h3>
-                        <p class="text-sm text-gray-400">Slashed the run-time of the application by 40% in the very first month.</p>
+                        <p class="text-sm text-gray-400">Slashed the run-time of the application by 40% in the very
+                            first month.</p>
                     </div>
 
-                    <div class="p-6 md:p-8 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-audvikPurple/50 transition-all group text-center hover:-translate-y-2">
-                        <div class="w-16 h-16 mx-auto bg-audvikPurple/10 rounded-2xl flex items-center justify-center text-audvikPurple mb-6 group-hover:bg-audvikPurple group-hover:text-white transition-colors">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <div
+                        class="p-6 md:p-8 rounded-2xl bg-[#0A0A0C] border border-white/10 hover:border-[#FFA751]/50 transition-all group text-center hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 mx-auto bg-[#FFA751]/10 rounded-2xl flex items-center justify-center text-[#FFA751] mb-6 group-hover:bg-[#FFA751] group-hover:text-black transition-colors">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2">User Efficiency</h3>
-                        <p class="text-sm text-gray-400">Enhancement in the application aids user community to interact & share information faster.</p>
+                        <p class="text-sm text-gray-400">Enhancement in the application aids user community to interact
+                            & share information faster.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="py-16 md:py-24 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-audvikBlue/5 to-audvikPurple/5 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#FFD700]/5 to-[#FF8C00]/5 pointer-events-none"></div>
             <div class="max-w-[900px] mx-auto px-6 relative z-10 scroll-reveal">
-                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-14 text-center shadow-2xl relative">
-                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-[#050508] border border-audvikBlue/30 rounded-full flex items-center justify-center text-audvikBlue text-3xl shadow-[0_0_20px_rgba(87,153,210,0.3)]">❝</div>
+                <div
+                    class="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-14 text-center shadow-2xl relative">
+                    <div
+                        class="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-[#050508] border border-[#FFD700]/30 rounded-full flex items-center justify-center text-[#FFD700] text-3xl shadow-[0_0_20px_rgba(255,215,0,0.3)]">
+                        ❝</div>
+
                     <p class="text-base md:text-2xl font-light text-gray-200 leading-relaxed italic mb-8 md:mb-10 pt-4">
-                        "With the help of AudvikLabs cutting edge cloud station, our organization experienced a remarkable transformation of our legacy applications, resulting in unparalleled productivity and efficiency."
+                        "With the help of AudvikLabs cutting edge cloud station, our organization experienced a
+                        remarkable transformation of our legacy applications, resulting in unparalleled productivity and
+                        efficiency."
                     </p>
                     <div class="flex flex-col items-center gap-3">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-audvikBlue to-audvikPurple p-[2px]">
-                            <div class="w-full h-full rounded-full bg-[#050508] flex items-center justify-center overflow-hidden">
-                                <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#FFD700] to-[#FF8C00] p-[2px]">
+                            <div
+                                class="w-full h-full rounded-full bg-[#050508] flex items-center justify-center overflow-hidden">
+                                <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
                             </div>
                         </div>
                         <div>
@@ -510,121 +910,152 @@
             </div>
         </section>
 
+        <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#FFD700]/40 via-[#FF8C00]/20 to-transparent blur-[80px] pointer-events-none z-0 mix-blend-screen">
+        </div>
+
     </main>
 
-       <footer id="contact" class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden mt-auto">
-            
-            <div class="absolute top-0 left-1/4 w-[300px] md:w-[500px] h-[500px] bg-audvikBlue/5 rounded-full blur-[120px] pointer-events-none"></div>
-            <div class="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[500px] bg-audvikPurple/5 rounded-full blur-[120px] pointer-events-none"></div>
-        
-            <div class="max-w-[1400px] mx-auto px-6 relative z-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
-                    
-                    <div class="lg:col-span-4 space-y-8">
-                        <div>
-                            <img src="../asserts/Audvik Logo.svg" alt="Audvik" class="h-12 w-auto mb-6">
-                            <p class="text-blue-100/60 text-sm leading-relaxed max-w-sm">
-                                AudvikLabs is a global engineering studio expert in Serverless Architecture, Cloud Migration, Generative AI, and Quantum Computing.
+    <footer id="contact" class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden mt-auto">
+
+        <div
+            class="absolute top-0 left-1/4 w-[300px] md:w-[500px] h-[500px] bg-audvikBlue/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[500px] bg-audvikPurple/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="max-w-[1400px] mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+
+                <div class="lg:col-span-4 space-y-8">
+                    <div>
+                        <img src="../asserts/Audvik Logo.svg" alt="Audvik" class="h-12 w-auto mb-6">
+                        <p class="text-blue-100/60 text-sm leading-relaxed max-w-sm">
+                            AudvikLabs is a global engineering studio expert in Serverless Architecture, Cloud
+                            Migration, Generative AI, and Quantum Computing.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <a href="mailto:bd@audviklabs.com"
+                            class="group flex items-center gap-3 text-white transition-colors">
+                            <div
+                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-audvikBlue group-hover:shadow-[0_0_15px_#5799D2] transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span
+                                class="font-medium group-hover:text-audvikBlue transition-colors">bd@audviklabs.com</span>
+                        </a>
+
+                        <div class="flex items-center gap-3 text-gray-400">
+                            <div
+                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-sm">
+                                <span class="block hover:text-white transition-colors">+91 80711 76992</span>
+                                <span class="block hover:text-white transition-colors">+91 97645 43918</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-[10px] font-bold text-audvikBlue tracking-widest uppercase mb-4">Accreditations
+                        </p>
+                        <div class="flex gap-6">
+                            <div
+                                class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
+                                <img src="../asserts/ISO/ISO.png" alt="ISO" class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
+                                <img src="../asserts/ISO/AICPA.png" alt="AICPA" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div class="flex items-center gap-4 mb-6 pb-4 border-b border-white/10">
+                        <img src="../asserts/flag/India .jpg" alt="India"
+                            class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,153,51,0.2)] object-cover">
+                        <h4 class="font-display font-bold text-lg text-white tracking-wide">India</h4>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="relative pl-4 border-l-2 border-audvikBlue/30">
+                            <strong class="text-audvikBlue text-xs uppercase tracking-wider block mb-1">Headquarters
+                                (Bengaluru)</strong>
+                            <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
+                                15/1, 185/2, 185/A, 18th Main Rd,<br>Jayanagar 9th Block, 560041
                             </p>
                         </div>
-                        
-                        <div class="space-y-3">
-                            <a href="mailto:bd@audviklabs.com" class="group flex items-center gap-3 text-white transition-colors">
-                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-audvikBlue group-hover:shadow-[0_0_15px_#5799D2] transition-all duration-300">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                </div>
-                                <span class="font-medium group-hover:text-audvikBlue transition-colors">bd@audviklabs.com</span>
-                            </a>
-                            
-                            <div class="flex items-center gap-3 text-gray-400">
-                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/5">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                </div>
-                                <div class="text-sm">
-                                    <span class="block hover:text-white transition-colors">+91 80711 76992</span>
-                                    <span class="block hover:text-white transition-colors">+91 97645 43918</span>
-                                </div>
-                            </div>
+
+                        <div class="relative pl-4 border-l-2 border-white/10">
+                            <strong class="text-gray-300 text-xs uppercase tracking-wider block mb-1">Bengaluru
+                                (Mail)</strong>
+                            <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
+                                5th Floor, Trifecta Adatto,<br>Garudachar Palya, 560048
+                            </p>
                         </div>
-        
+
+                        <div class="relative pl-4 border-l-2 border-white/10">
+                            <strong class="text-gray-300 text-xs uppercase tracking-wider block mb-1">Noida</strong>
+                            <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
+                                C2, Sector 1, Block C,<br>GTB Nagar, UP 201301
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div class="mb-6 pb-4 border-b border-white/10">
+                        <h4 class="font-display font-bold text-lg text-white tracking-wide">Global Locations</h4>
+                    </div>
+
+                    <div class="space-y-8">
                         <div>
-                            <p class="text-[10px] font-bold text-audvikBlue tracking-widest uppercase mb-4">Accreditations</p>
-                            <div class="flex gap-6">
-                                <div class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
-                                    <img src="../asserts/ISO/ISO.png" alt="ISO" class="w-full h-full object-cover">
-                                </div>
-                                
-                                <div class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
-                                    <img src="../asserts/ISO/AICPA.png" alt="AICPA" class="w-full h-full object-cover">
-                                </div>
+                            <div class="flex items-center gap-4 mb-3">
+                                <img src="../asserts/flag/UK.jpg" alt="UK"
+                                    class="h-8 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
+                                <h5 class="font-bold text-white text-sm">United Kingdom</h5>
                             </div>
+                            <p
+                                class="text-gray-400 text-sm leading-relaxed pl-6 border-l border-white/10 hover:text-gray-200 transition-colors">
+                                350 Hoole Lane, Chester<br>CH2 3ES, UK
+                            </p>
                         </div>
-                    </div>
-                    
-                    <div class="lg:col-span-3">
-                        <div class="flex items-center gap-4 mb-6 pb-4 border-b border-white/10">
-                            <img src="../asserts/flag/India .jpg" alt="India" class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,153,51,0.2)] object-cover">
-                            <h4 class="font-display font-bold text-lg text-white tracking-wide">India</h4>
-                        </div>
-                        
-                        <div class="space-y-6">
-                            <div class="relative pl-4 border-l-2 border-audvikBlue/30">
-                                <strong class="text-audvikBlue text-xs uppercase tracking-wider block mb-1">Headquarters (Bengaluru)</strong>
-                                <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
-                                    15/1, 185/2, 185/A, 18th Main Rd,<br>Jayanagar 9th Block, 560041
-                                </p>
-                            </div>
-                            
-                            <div class="relative pl-4 border-l-2 border-white/10">
-                                <strong class="text-gray-300 text-xs uppercase tracking-wider block mb-1">Bengaluru (Mail)</strong>
-                                <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
-                                    5th Floor, Trifecta Adatto,<br>Garudachar Palya, 560048
-                                </p>
-                            </div>
-        
-                            <div class="relative pl-4 border-l-2 border-white/10">
-                                <strong class="text-gray-300 text-xs uppercase tracking-wider block mb-1">Noida</strong>
-                                <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
-                                    C2, Sector 1, Block C,<br>GTB Nagar, UP 201301
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="lg:col-span-3">
-                        <div class="mb-6 pb-4 border-b border-white/10">
-                            <h4 class="font-display font-bold text-lg text-white tracking-wide">Global Locations</h4>
-                        </div>
-        
-                        <div class="space-y-8">
-                            <div>
-                                <div class="flex items-center gap-4 mb-3">
-                                     <img src="../asserts/flag/UK.jpg" alt="UK" class="h-8 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
-                                    <h5 class="font-bold text-white text-sm">United Kingdom</h5>
-                                </div>
-                                <p class="text-gray-400 text-sm leading-relaxed pl-6 border-l border-white/10 hover:text-gray-200 transition-colors">
-                                    350 Hoole Lane, Chester<br>CH2 3ES, UK
-                                </p>
-                            </div>
-        
-                            <div>
-                                <div class="flex items-center gap-4 mb-3">
-                                    <img src="../asserts/flag/Netherlands.jpg" alt="Netherlands" class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
-                                    <h5 class="font-bold text-white text-sm">Netherlands</h5>
-                                </div>
-                                <p class="text-gray-400 text-sm leading-relaxed pl-6 border-l border-white/10 hover:text-gray-200 transition-colors">
-                                    Hoogoorddreef, 55,2<br>1101 BE The Netherlands
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="lg:col-span-2 flex flex-col justify-between">
+
                         <div>
+                            <div class="flex items-center gap-4 mb-3">
+                                <img src="../asserts/flag/Netherlands.jpg" alt="Netherlands"
+                                    class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
+                                <h5 class="font-bold text-white text-sm">Netherlands</h5>
+                            </div>
+                            <p
+                                class="text-gray-400 text-sm leading-relaxed pl-6 border-l border-white/10 hover:text-gray-200 transition-colors">
+                                Hoogoorddreef, 55,2<br>1101 BE The Netherlands
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 flex flex-col justify-between">
+                    <div>
                         <h4 class="font-display font-bold text-lg text-white mb-6 pb-4 border-b border-white/10">Explore
                         </h4>
                         <ul class="space-y-4">
-                           <li><a href="../products/realm.html"
+                            <li><a href="../products/realm.html"
                                     class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
                                     <span
                                         class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
@@ -656,44 +1087,59 @@
                                 </a></li>
                         </ul>
                     </div>
-        
-                        <div class="mt-8 pt-6 border-t border-white/10">
-                            <p class="text-[10px] font-bold text-audvikBlue tracking-widest uppercase mb-4">Tech Partners</p>
-                            
-                            <div class="flex items-center gap-8">
-                                <div class="w-28 h-28 flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer" title="Google Cloud">
-                                    <img src="../asserts/tools/cloud.png" alt="Google Cloud" class="w-full h-full object-contain">
-                                </div>
-        
-                                <div class="w-28 h-28 flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer" title="Databricks">
-                                     <img src="../asserts/tools/Data Bricks.png" alt="Databricks" class="w-full h-full object-contain">
-                                </div>
+
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <p class="text-[10px] font-bold text-audvikBlue tracking-widest uppercase mb-4">Tech Partners
+                        </p>
+
+                        <div class="flex items-center gap-8">
+                            <div class="w-28 h-28 flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer"
+                                title="Google Cloud">
+                                <img src="../asserts/tools/cloud.png" alt="Google Cloud"
+                                    class="w-full h-full object-contain">
+                            </div>
+
+                            <div class="w-28 h-28 flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer"
+                                title="Databricks">
+                                <img src="../asserts/tools/Data Bricks.png" alt="Databricks"
+                                    class="w-full h-full object-contain">
                             </div>
                         </div>
                     </div>
-        
                 </div>
-        
-                <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
-                    
-                    <div class="text-xs text-gray-500 whitespace-nowrap order-3 md:order-1">
-                        &copy; 2026 AudvikLabs Inc. All rights reserved.
-                    </div>
-                    
-                    <div class="flex items-center gap-6 order-1 md:order-2">
-                         <a href="https://x.com/AudvikLabs" class="text-gray-400 hover:text-white transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
-                         <a href="https://www.linkedin.com/company/audvik-labs/" class="text-gray-400 hover:text-white transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                    </div>
-        
-                    <div class="flex gap-6 text-xs text-gray-500 font-medium order-2 md:order-3">
-                        <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                        <a href="#" class="hover:text-white transition-colors">Terms</a>
-                        <a href="#" class="hover:text-white transition-colors">Cookies</a>
-                    </div>
+
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+
+                <div class="text-xs text-gray-500 whitespace-nowrap order-3 md:order-1">
+                    &copy; 2026 AudvikLabs Inc. All rights reserved.
+                </div>
+
+                <div class="flex items-center gap-6 order-1 md:order-2">
+                    <a href="https://x.com/AudvikLabs" class="text-gray-400 hover:text-white transition-colors"><svg
+                            class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                        </svg></a>
+                    <a href="https://www.linkedin.com/company/audvik-labs/"
+                        class="text-gray-400 hover:text-white transition-colors"><svg class="w-5 h-5"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg></a>
+                </div>
+
+                <div class="flex gap-6 text-xs text-gray-500 font-medium order-2 md:order-3">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
                 </div>
             </div>
-        </footer>
-        
+        </div>
+    </footer>
+
     <script>
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -708,4 +1154,5 @@
         sr.reveal('.scroll-reveal', { interval: 100 });
     </script>
 </body>
+
 </html>

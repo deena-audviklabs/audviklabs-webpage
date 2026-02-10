@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +51,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #050508;
+            background-color: #001133;
             color: white;
             width: 100%;
             max-width: 100%;
@@ -256,13 +257,17 @@
             overflow: hidden;
         }
 
+/* --- SERVICE CARDS HOVER (Matches Audvik Blue Theme) --- */
         .service-card:hover {
             background: rgba(255, 255, 255, 0.07);
-            /* Brighter Sunrise Orange Border (Hover) */
-            border-color: #FF8C00; 
+            
+            /* Border: Audvik Blue */
+            border-color:#FFD700; 
+            
             transform: translateY(-5px);
-            /* Warm Sunrise Glow */
-            box-shadow: 0 10px 30px -5px rgba(255, 140, 0, 0.25);
+            
+            /* Glow: Soft Blue */
+            box-shadow: 0 10px 30px -5px rgba(87, 153, 210, 0.3);
         }
         
         /* Optional: Force icons to use the Sunrise Orange on hover if you want extra pop */
@@ -601,13 +606,13 @@
             <div
                 class="liquid-nav-pill w-[95%] max-w-md lg:w-fit lg:max-w-none flex items-center justify-between gap-8 px-6 py-4 relative z-50 transition-all duration-300">
 
-                <a href="#" class="flex-shrink-0">
+                <a href="index.html" class="flex-shrink-0">
                     <img src="asserts/Audvik Logo.svg" alt="Audvik Labs Logo" class="h-8 md:h-10 w-auto drop-shadow-lg">
                 </a>
 
                 <div class="hidden lg:flex items-center gap-8">
 
-                    <a href="#" class="nav-link text-white flex items-center gap-2">
+                    <a href="index.html" class="nav-link text-white flex items-center gap-2">
                         <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
                         Home
                     </a>
@@ -1859,8 +1864,8 @@
 
             </div>
         </section>
+        
     <footer id="contact" class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden">
-
         <div
             class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-audvikBlue/5 rounded-full blur-[120px] pointer-events-none">
         </div>
