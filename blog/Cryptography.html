@@ -26,10 +26,17 @@
         }
     </script>
     <style>
+        html,
         body {
+            margin: 0;
+            padding: 0;
             background-color: #050508;
             color: white;
-            margin: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+            /* scroll-behavior: smooth; */
         }
 
         .prose-text p {
@@ -49,28 +56,27 @@
             letter-spacing: -0.02em;
         }
 
-        /* --- NAVBAR STYLES --- */
+        /* --- NAVBAR STYLES (GOLD OUTLINE & GLOW) --- */
         .liquid-nav-pill {
             background: rgba(10, 15, 25, 0.6);
             backdrop-filter: blur(40px) saturate(200%);
-            -webkit-backdrop-filter: blur(40px) saturate(200%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-top: 1px solid rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
             border-radius: 9999px;
             transition: all 0.3s ease;
         }
 
         .liquid-nav-pill:hover {
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
-            background: rgba(15, 18, 25, 0.7);
+            border-color: rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            background: rgba(15, 18, 25, 0.8);
         }
 
         .nav-btn-primary {
             border-radius: 9999px;
             background: linear-gradient(135deg, #5799D2, #7966CD);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 215, 0, 0.3);
             color: #ffffff;
             font-weight: 600;
             font-size: 0.85rem;
@@ -78,7 +84,7 @@
         }
 
         .nav-btn-primary:hover {
-            box-shadow: 0 0 15px rgba(121, 102, 205, 0.5);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
 
         .nav-link {
@@ -89,9 +95,10 @@
         }
 
         .nav-link:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
+        
 
 
         /* Form Inputs */
@@ -116,7 +123,7 @@
 
 <body class="bg-[#050508]">
 
-    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
+   <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
         <div class="w-full mx-auto relative flex items-center justify-center">
 
             <div
@@ -128,11 +135,14 @@
                 </a>
 
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="index.html" class="nav-link text-white flex items-center gap-2">Home</a>
+
+                    <a href="../index.html" class="nav-link text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
+                        Home
+                    </a>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="#services"
-                            class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                        <a href="#services" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Services
                             <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,7 +158,7 @@
                                 <div class="grid grid-cols-2 gap-1">
                                     <div class="space-y-1">
                                         <a href="../services/Business-Intelligence.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -164,7 +174,7 @@
                                                 Intelligence</span>
                                         </a>
                                         <a href="../services/gen-ai.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -180,7 +190,7 @@
                                                 AI</span>
                                         </a>
                                         <a href="../services/cloud-implementation.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -196,7 +206,7 @@
                                                 Implementation</span>
                                         </a>
                                         <a href="../services/MobileAppDev.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-blue-500/10 flex items-center justify-center text-blue-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -212,7 +222,7 @@
                                                 App Dev</span>
                                         </a>
                                         <a href="../services/QualityAssurance.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-green-500/10 flex items-center justify-center text-green-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -227,7 +237,7 @@
                                                 Assurance</span>
                                         </a>
                                         <a href="../services/serverless-services.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -241,7 +251,7 @@
                                                 Deployment</span>
                                         </a>
                                         <a href="../services/Blockchain-Development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-red-500/10 flex items-center justify-center text-red-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -259,7 +269,7 @@
 
                                     <div class="space-y-1">
                                         <a href="../services/Bot-Development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -275,7 +285,7 @@
                                                 Development</span>
                                         </a>
                                         <a href="../services/Quantam-Computing.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -291,7 +301,7 @@
                                                 Computing</span>
                                         </a>
                                         <a href="../services/MachineLearning.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center text-teal-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -306,7 +316,7 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">ML-Ops</span>
                                         </a>
                                         <a href="../services/DevSecOps.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -321,7 +331,7 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">DevSecOps</span>
                                         </a>
                                         <a href="../services/game-development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -337,7 +347,7 @@
                                                 Development</span>
                                         </a>
                                         <a href="../services/HPC.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-sky-500/10 flex items-center justify-center text-sky-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -353,7 +363,7 @@
                                                 Computing</span>
                                         </a>
                                         <a href="../services/Resourcing.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-rose-500/10 flex items-center justify-center text-rose-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -374,8 +384,7 @@
                     </div>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="#products"
-                            class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                        <a href="#" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Products
                             <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -390,7 +399,7 @@
                                 class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl overflow-hidden ring-1 ring-white/5">
                                 <div class="space-y-1">
                                     <a href="../products/realm.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue group-hover/item:bg-audvikBlue group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -407,7 +416,7 @@
                                     </a>
 
                                     <a href="../products/ordo.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple group-hover/item:bg-audvikPurple group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -426,7 +435,7 @@
                                     </a>
 
                                     <a href="../products/a-helg.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink group-hover/item:bg-audvikPink group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -447,13 +456,10 @@
                         </div>
                     </div>
 
-
-                    <a href="../blog.html" class="nav-link flex items-center gap-2">Blog
-                        <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
-                    </a>
+                    <a href="../blog.html" class="nav-link">Blog</a>
                     <a href="../about.html" class="nav-link">About us</a>
                     <a href="../contactus.html" class="nav-link">Contact us</a>
-                    <a href="../blog.html" class="nav-link"> Success Stories </a>
+                    <a href="../SuccessStories.html" class="nav-link">Success Stories</a>
                 </div>
 
                 <div class="hidden lg:flex items-center pl-4 border-l border-white/10">
@@ -468,6 +474,7 @@
                             d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
+
             </div>
         </div>
 
@@ -475,8 +482,7 @@
             class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 lg:hidden flex flex-col pt-32 px-6 overflow-y-auto">
             <div class="flex flex-col gap-6 text-lg text-center pb-12">
 
-                <a href="index.html" class="text-white border-b border-white/10 pb-4"
-                    onclick="toggleMobileMenu()">Home</a>
+                <a href="#" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Home</a>
 
                 <div class="border-b border-white/10 pb-4">
                     <button onclick="toggleAccordion('mobile-services-list', 'services-icon')"
@@ -545,7 +551,8 @@
                 <a href="../blog.html" class="text-white border-b border-white/10 pb-4"
                     onclick="toggleMobileMenu()">Blog</a>
                 <a href="../about.html" class="text-white border-b border-white/10 pb-4"
-                    onclick="toggleMobileMenu()">About us</a>
+                    onclick="toggleMobileMenu()">About
+                    us</a>
                 <a href="../contactus.html" class="text-white border-b border-white/10 pb-4"
                     onclick="toggleMobileMenu()">Contact us</a>
                 <a href="../SuccessStories.html" class="text-white border-b border-white/10 pb-4"
@@ -553,220 +560,238 @@
 
                 <button class="nav-btn-primary w-full py-4 mt-2" onclick="toggleMobileMenu(); openCalendly(event)">
                     Get Started
-                </button> <button class="text-gray-400 text-sm mt-4 mb-10" onclick="toggleMobileMenu()">Close
-                    Menu</button>
+                </button>
+                <button class="text-gray-400 text-sm mt-4 mb-10" onclick="toggleMobileMenu()">Close Menu</button>
             </div>
         </div>
     </nav>
 
-    <main class="pt-32 pb-20 px-4">
-        <div class="fixed top-0 left-0 w-full h-1.5 z-[9999] bg-transparent pointer-events-none">
-            <div id="scroll-progress"
-                class="h-full bg-gradient-to-r from-blue-400 to-purple-500 w-0 shadow-[0_0_15px_rgba(59,130,246,0.8)] transition-all duration-100 ease-out">
+    <main class="pt-32 pb-20 px-4 relative z-10">
+    <div class="fixed top-0 left-0 w-full h-1.5 z-[9999] bg-transparent pointer-events-none">
+        <div id="scroll-progress"
+            class="h-full bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-600 w-0 shadow-[0_0_15px_rgba(234,179,8,0.8)] transition-all duration-100 ease-out">
+        </div>
+    </div>
+
+    <article class="max-w-[800px] mx-auto">
+
+        <div class="mb-10 text-center reveal">
+            <span
+                class="inline-block px-3 py-1 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-500 text-xs font-bold uppercase tracking-widest mb-6">
+                Cybersecurity
+            </span>
+            <h1
+                class="text-3xl md:text-5xl font-display font-bold leading-tight mb-6 text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400">
+                Cryptography and Secure Communications: A Comprehensive Guide
+            </h1>
+            <h2 class="text-xl text-gray-400 font-light mb-6">
+                Safeguarding Data in Healthcare, Education, and HPC
+            </h2>
+            <div class="flex items-center justify-center gap-4 text-sm text-gray-500 font-mono">
+                <span>Jan 30, 2026</span>
+                <span>•</span>
+                <span>8 min read</span>
             </div>
         </div>
 
-        <article class="max-w-[800px] mx-auto">
-
-            <div class="mb-10 text-center">
-                <span
-                    class="inline-block px-3 py-1 rounded-full border border-audvikBlue/30 bg-audvikBlue/10 text-audvikBlue text-xs font-bold uppercase tracking-widest mb-6">
-                    Cybersecurity
-                </span>
-                <h1
-                    class="text-3xl md:text-5xl font-display font-bold leading-tight mb-6 text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400">
-                    Cryptography and Secure Communications: A Comprehensive Guide
-                </h1>
-                <h2 class="text-xl text-gray-400 font-light mb-6">
-                    Safeguarding Data in Healthcare, Education, and HPC
-                </h2>
-                <div class="flex items-center justify-center gap-4 text-sm text-gray-500 font-mono">
-                    <span>Jan 30, 2026</span>
-                    <span>•</span>
-                    <span>8 min read</span>
-                </div>
-            </div>
-
-            <div
-                class="w-full h-[400px] rounded-2xl overflow-hidden mb-12 border border-white/10 relative shadow-2xl group bg-gray-900">
+        <div class="reveal relative group mb-12">
+            <div class="absolute -inset-6 bg-gradient-to-tr from-yellow-500/30 via-orange-600/30 to-transparent rounded-[2.5rem] blur-3xl opacity-0 group-hover:opacity-80 transition-opacity duration-700"></div>
+            
+            <div class="relative w-full h-[400px] rounded-2xl overflow-hidden border-2 border-yellow-500/30 bg-[#0a0a0f] shadow-2xl transition-all duration-500 group-hover:border-yellow-400">
                 <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop"
                     class="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
                     alt="Cybersecurity and Encryption Code">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#050508] to-transparent opacity-60"></div>
             </div>
+        </div>
 
-            <div class="prose-text text-lg border-b border-white/10 pb-12 mb-16 text-gray-300 leading-relaxed">
+        <div class="prose-text text-lg border-b border-white/10 pb-12 mb-16 text-gray-300 leading-relaxed">
 
-                <p class="mb-8 text-xl font-light text-white">
-                    In our digitized world, where information flows seamlessly across networks, the need for security
-                    has never been more paramount. Cryptography and secure communications stand at the forefront of
-                    safeguarding our data from unauthorized access and cyber threats.
-                </p>
+            <p class="mb-8 text-xl font-light text-white reveal">
+                In our digitized world, where information flows seamlessly across networks, the need for security
+                has never been more paramount. Cryptography and secure communications stand at the forefront of
+                safeguarding our data from unauthorized access and cyber threats.
+            </p>
 
-                <h3 class="text-2xl font-bold text-white mb-4 mt-12">What is Cryptography?</h3>
-                <p class="mb-6">
-                    Cryptography is the art and science of encrypting and decrypting information to protect it from
-                    unauthorized access. In simple terms, it transforms readable data (plaintext) into an unreadable
-                    format (ciphertext), ensuring that only authorized parties can interpret the message.
-                </p>
-                <p class="mb-6">
-                    From military origins to modern business applications, cryptography has evolved to become essential
-                    for anyone—including small businesses—facing the risk of data breaches.
-                </p>
+            <h3 class="text-2xl font-bold text-white mb-4 mt-12 reveal">What is Cryptography?</h3>
+            <p class="mb-6 reveal">
+                Cryptography is the art and science of encrypting and decrypting information to protect it from
+                unauthorized access. In simple terms, it transforms readable data (plaintext) into an unreadable
+                format (ciphertext), ensuring that only authorized parties can interpret the message.
+            </p>
+            
+            
 
-                <div class="space-y-4 mb-12">
-                    <h4 class="text-xl font-bold text-audvikBlue mb-3">Types of Cryptography</h4>
-                    <p><strong class="text-white">Symmetric Key Cryptography:</strong> Uses a single key for both
-                        encryption and decryption (e.g., AES for data in transit).</p>
-                    <p><strong class="text-white">Asymmetric Key Cryptography:</strong> Uses a public key for encryption
-                        and a private key for decryption (e.g., SSL/TLS for internet security).</p>
-                    <p><strong class="text-white">Hash Functions:</strong> Transforms input data into a fixed-size
-                        string of characters to verify integrity and store passwords.</p>
-                    <p><strong class="text-white">Digital Signatures:</strong> Validates the authenticity and integrity
-                        of a message, making it legally binding.</p>
-                </div>
+[Image of Symmetric vs Asymmetric Encryption diagram]
 
-                <div class="bg-white/5 border-l-4 border-audvikBlue p-6 my-10 rounded-r-lg">
-                    <h3 class="text-xl font-bold text-white mb-4">Why Secure Communications Matter</h3>
-                    <ul class="space-y-3 list-disc list-inside text-gray-300">
-                        <li><strong class="text-white">Data Protection:</strong> Prevents unauthorized access.</li>
-                        <li><strong class="text-white">Confidentiality:</strong> Guarantees privacy during transmission.
-                        </li>
-                        <li><strong class="text-white">Integrity Assurance:</strong> Ensures data is not altered in
-                            transit.</li>
-                        <li><strong class="text-white">Authentication:</strong> Verifies the identity of communicating
-                            parties.</li>
-                        <li><strong class="text-white">Regulatory Compliance:</strong> Adheres to strict data laws via
-                            encryption.</li>
-                    </ul>
-                </div>
+            
+            <p class="mb-6 reveal">
+                From military origins to modern business applications, cryptography has evolved to become essential
+                for anyone—including small businesses—facing the risk of data breaches.
+            </p>
 
-                <h3 class="text-2xl font-bold text-white mb-4 mt-12">Cryptography in High-Performance Computing (HPC)
-                </h3>
-                <p class="mb-6">
-                    HPC environments process vast amounts of sensitive data. Cryptography is vital here for:
-                </p>
-                <ul class="space-y-2 pl-4 border-l border-white/20 mb-12">
-                    <li><strong class="text-white">Data Security:</strong> Encrypted storage maintains confidentiality
-                        for massive datasets.</li>
-                    <li><strong class="text-white">Secure Collaboration:</strong> Allows researchers to share data
-                        securely across institutions.</li>
-                    <li><strong class="text-white">Compliance:</strong> Meets strict requirements for industries like
-                        healthcare and finance using HPC.</li>
+            <div class="space-y-4 mb-12 reveal">
+                <h4 class="text-xl font-bold text-yellow-500 mb-3">Types of Cryptography</h4>
+                <p><strong class="text-white">Symmetric Key Cryptography:</strong> Uses a single key for both
+                    encryption and decryption (e.g., AES for data in transit).</p>
+                <p><strong class="text-white">Asymmetric Key Cryptography:</strong> Uses a public key for encryption
+                    and a private key for decryption (e.g., SSL/TLS for internet security).</p>
+                <p><strong class="text-white">Hash Functions:</strong> Transforms input data into a fixed-size
+                    string of characters to verify integrity and store passwords.</p>
+                <p><strong class="text-white">Digital Signatures:</strong> Validates the authenticity and integrity
+                    of a message, making it legally binding.</p>
+            </div>
+
+            <div class="bg-white/5 border-l-4 border-yellow-500 p-6 my-10 rounded-r-lg border-y border-r border-yellow-500/20 reveal backdrop-blur-sm">
+                <h3 class="text-xl font-bold text-white mb-4">Why Secure Communications Matter</h3>
+                <ul class="space-y-3 list-disc list-inside text-gray-300">
+                    <li><strong class="text-white">Data Protection:</strong> Prevents unauthorized access.</li>
+                    <li><strong class="text-white">Confidentiality:</strong> Guarantees privacy during transmission.
+                    </li>
+                    <li><strong class="text-white">Integrity Assurance:</strong> Ensures data is not altered in
+                        transit.</li>
+                    <li><strong class="text-white">Authentication:</strong> Verifies the identity of communicating
+                        parties.</li>
+                    <li><strong class="text-white">Regulatory Compliance:</strong> Adheres to strict data laws via
+                        encryption.</li>
                 </ul>
+            </div>
 
-                <h2 class="text-3xl font-display font-bold text-white mb-8">Industry Applications</h2>
+            <h3 class="text-2xl font-bold text-white mb-4 mt-12 reveal">Cryptography in High-Performance Computing (HPC)
+            </h3>
+            <p class="mb-6 reveal">
+                HPC environments process vast amounts of sensitive data. Cryptography is vital here for:
+            </p>
+            <ul class="space-y-2 pl-4 border-l border-yellow-500/30 mb-12 reveal">
+                <li><strong class="text-white">Data Security:</strong> Encrypted storage maintains confidentiality
+                    for massive datasets.</li>
+                <li><strong class="text-white">Secure Collaboration:</strong> Allows researchers to share data
+                    securely across institutions.</li>
+                <li><strong class="text-white">Compliance:</strong> Meets strict requirements for industries like
+                    healthcare and finance using HPC.</li>
+            </ul>
 
-                <div
-                    class="w-full h-[300px] rounded-xl overflow-hidden mb-10 border border-white/10 relative bg-gray-800">
+            <h2 class="text-3xl font-display font-bold text-white mb-8 reveal">Industry Applications</h2>
+
+            <div class="reveal relative group mb-10">
+                <div class="absolute -inset-4 bg-orange-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative w-full h-[300px] rounded-xl overflow-hidden border-2 border-yellow-500/20 bg-[#0a0a0f]">
                     <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop"
-                        class="w-full h-full object-cover opacity-70" alt="Digital Lock and Network Security">
-                </div>
-
-                <div class="space-y-12">
-                    <div>
-                        <h3 class="text-2xl font-bold text-audvikBlue mb-3">1. Healthcare</h3>
-                        <p class="mb-4">With the rise of Telehealth and EHRs, encryption is critical for patient
-                            privacy.</p>
-                        <ul class="list-disc list-inside text-gray-300 space-y-2">
-                            <li><strong>Patient Records:</strong> Encrypting records to block unauthorized access.</li>
-                            <li><strong>Compliance:</strong> Essential for meeting HIPAA requirements.</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-2xl font-bold text-audvikBlue mb-3">2. Education</h3>
-                        <p class="mb-4">Institutions use cryptography to protect student data and maintain academic
-                            integrity.</p>
-                        <ul class="list-disc list-inside text-gray-300 space-y-2">
-                            <li><strong>Secure Online Exams:</strong> Prevents cheating and ensures authentic
-                                assessment.</li>
-                            <li><strong>Data Protection:</strong> Safeguards sensitive student information.</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-2xl font-bold text-audvikBlue mb-3">3. Information Technology (IT)</h3>
-                        <p class="mb-4">From securing networks to software development, IT relies heavily on encryption
-                            protocols like VPNs to ensure data confidentiality during transmission.</p>
-                    </div>
-                </div>
-
-                <h2 class="text-3xl font-display font-bold text-white mb-8 mt-16">Benefits of Implementation</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-                        <h4 class="text-xl font-bold text-white mb-3">Scalability</h4>
-                        <p class="text-sm">As data volumes grow, encryption allows businesses to secure large datasets
-                            without performance degradation. It offers flexibility to scale security models alongside
-                            cloud infrastructure.</p>
-                    </div>
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-                        <h4 class="text-xl font-bold text-white mb-3">Cost-Effectiveness</h4>
-                        <p class="text-sm">Reduces the long-term risk of costly data breaches. Implementing cryptography
-                            aids in regulatory compliance, helping organizations avoid hefty fines and remediation
-                            costs.</p>
-                    </div>
-                </div>
-
-                <div class="mb-12">
-                    <h3 class="text-2xl font-bold text-white mb-4">Challenges to Consider</h3>
-                    <p class="mb-4">While crucial, cryptography presents challenges such as <strong>Key
-                            Management</strong> (protecting the keys themselves) and potential <strong>Performance
-                            Overheads</strong> if not implemented correctly. User awareness is also critical to ensure
-                        protocols are followed.</p>
-                </div>
-
-                <div
-                    class="mt-16 p-8 bg-gradient-to-br from-audvikBlue/20 to-transparent rounded-2xl border border-audvikBlue/20">
-                    <h3 class="text-2xl font-bold text-white mb-4">Conclusion</h3>
-                    <p>
-                        Cryptography is not just a tool for securing data; it’s a cornerstone of trust in our digital
-                        communications. By leveraging these principles across healthcare, education, and IT, businesses
-                        can safeguard their assets and remain compliant. As we move forward, understanding these
-                        measures is key to staying secure in an interconnected world.
-                    </p>
+                        class="w-full h-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105" alt="Digital Lock and Network Security">
                 </div>
             </div>
 
-            <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-                <div
-                    class="absolute top-0 right-0 w-64 h-64 bg-audvikBlue/10 rounded-full blur-[80px] pointer-events-none">
+            <div class="space-y-12">
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold text-yellow-500 mb-3">1. Healthcare</h3>
+                    <p class="mb-4">With the rise of Telehealth and EHRs, encryption is critical for patient
+                        privacy.</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li><strong>Patient Records:</strong> Encrypting records to block unauthorized access.</li>
+                        <li><strong>Compliance:</strong> Essential for meeting HIPAA requirements.</li>
+                    </ul>
                 </div>
 
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold text-yellow-500 mb-3">2. Education</h3>
+                    <p class="mb-4">Institutions use cryptography to protect student data and maintain academic
+                        integrity.</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li><strong>Secure Online Exams:</strong> Prevents cheating and ensures authentic
+                            assessment.</li>
+                        <li><strong>Data Protection:</strong> Safeguards sensitive student information.</li>
+                    </ul>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold text-yellow-500 mb-3">3. Information Technology (IT)</h3>
+                    <p class="mb-4">From securing networks to software development, IT relies heavily on encryption
+                        protocols like VPNs to ensure data confidentiality during transmission.</p>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-display font-bold text-white mb-8 mt-16 reveal">Benefits of Implementation</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <div class="bg-white/5 p-6 rounded-2xl border-2 border-yellow-500/20 hover:border-yellow-400 transition-all duration-300 reveal group">
+                    <h4 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">Scalability</h4>
+                    <p class="text-sm">As data volumes grow, encryption allows businesses to secure large datasets
+                        without performance degradation. It offers flexibility to scale security models alongside
+                        cloud infrastructure.</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-2xl border-2 border-yellow-500/20 hover:border-yellow-400 transition-all duration-300 reveal group">
+                    <h4 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">Cost-Effectiveness</h4>
+                    <p class="text-sm">Reduces the long-term risk of costly data breaches. Implementing cryptography
+                        aids in regulatory compliance, helping organizations avoid hefty fines and remediation
+                        costs.</p>
+                </div>
+            </div>
+
+            <div class="mb-12 reveal">
+                <h3 class="text-2xl font-bold text-white mb-4">Challenges to Consider</h3>
+                <p class="mb-4">While crucial, cryptography presents challenges such as <strong>Key
+                        Management</strong> (protecting the keys themselves) and potential <strong>Performance
+                        Overheads</strong> if not implemented correctly. User awareness is also critical to ensure
+                    protocols are followed.</p>
+            </div>
+
+            <div class="reveal mt-16 p-8 bg-gradient-to-br from-yellow-500/10 via-orange-600/5 to-transparent rounded-2xl border-2 border-yellow-500/30 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 blur-3xl pointer-events-none"></div>
+                <h3 class="text-2xl font-bold text-white mb-4 relative z-10">Conclusion</h3>
+                <p class="relative z-10">
+                    Cryptography is not just a tool for securing data; it’s a cornerstone of trust in our digital
+                    communications. By leveraging these principles across healthcare, education, and IT, businesses
+                    can safeguard their assets and remain compliant. As we move forward, understanding these
+                    measures is key to staying secure in an interconnected world.
+                </p>
+            </div>
+        </div>
+
+        <div class="relative py-12 mb-10 overflow-hidden rounded-[3rem] reveal">
+            <div class="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-orange-600/20 rounded-full blur-[110px] pointer-events-none"></div>
+            <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-yellow-500/20 rounded-full blur-[70px] pointer-events-none"></div>
+            
+            <div class="relative z-10 bg-white/5 border-2 border-yellow-500/20 rounded-3xl p-8 md:p-12 backdrop-blur-md">
                 <h3 class="font-display text-2xl font-bold text-white mb-2 relative z-10">Leave a comment</h3>
                 <p class="text-gray-500 text-sm mb-8 relative z-10">Your email address will not be published. Required
                     fields are marked *</p>
+
+                <div id="commentsList" class="mb-12 space-y-6">
+                    <div class="text-center p-8 border border-white/5 rounded-2xl bg-white/10">
+                        <p class="text-gray-400 text-sm font-mono tracking-widest uppercase">Loading discussion...</p>
+                    </div>
+                </div>
 
                 <form class="space-y-6 relative z-10">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Name *</label>
-                            <input type="text" class="glass-input" placeholder="John Doe">
+                            <input type="text" class="glass-input focus:border-yellow-500/50 transition-colors" placeholder="John Doe">
                         </div>
                         <div class="space-y-2">
                             <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Email *</label>
-                            <input type="email" class="glass-input" placeholder="john@example.com">
+                            <input type="email" class="glass-input focus:border-yellow-500/50 transition-colors" placeholder="john@example.com">
                         </div>
                     </div>
 
                     <div class="space-y-2">
                         <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Comment *</label>
-                        <textarea rows="4" class="glass-input" placeholder="Write your thoughts here..."></textarea>
+                        <textarea rows="4" class="glass-input focus:border-yellow-500/50 transition-colors"
+                            placeholder="Write your thoughts here..."></textarea>
                     </div>
 
                     <div class="flex items-center gap-4">
                         <button type="submit"
-                            class="px-8 py-3 rounded-full bg-gradient-to-r from-audvikBlue to-audvikPurple text-white font-bold text-sm shadow-lg shadow-audvikBlue/25 hover:shadow-audvikBlue/40 transform hover:-translate-y-1 transition-all duration-300">
+                            class="px-8 py-3 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold text-sm shadow-xl hover:scale-105 transition-all duration-300">
                             Post Comment
                         </button>
                     </div>
                 </form>
             </div>
+        </div>
 
-        </article>
-    </main>
-
+    </article>
+</main>
     <footer id="contact" class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden mt-auto">
         <div
             class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-audvikBlue/5 rounded-full blur-[120px] pointer-events-none">

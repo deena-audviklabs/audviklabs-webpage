@@ -14,10 +14,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-        <!-- Calendly COnfiguration -->
+    <!-- Calendly COnfiguration -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script src="../calendly-init.js"></script>    
+    <script src="../calendly-init.js"></script>
 
     <script>
         tailwind.config = {
@@ -171,42 +171,58 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #050508;
+            background-color: #001133;
             color: white;
+            width: 100%;
+            max-width: 100%;
             overflow-x: hidden;
+            position: relative;
             scroll-behavior: smooth;
         }
 
         /* --- BACKGROUND --- */
-        /* Removed Neural Canvas styles, kept z-index for content */
         .content-layer {
             position: relative;
             z-index: 10;
         }
 
-        /* --- NAVBAR STYLES --- */
+        /* --- NAVBAR STYLES (GOLD & SUNRISE THEME) --- */
         .liquid-nav-pill {
             background: rgba(10, 15, 25, 0.6);
             backdrop-filter: blur(40px) saturate(200%);
-            -webkit-backdrop-filter: blur(40px) saturate(200%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-top: 1px solid rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
             border-radius: 9999px;
-            /* Full pill shape */
             transition: all 0.3s ease;
         }
 
         .liquid-nav-pill:hover {
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
-            background: rgba(15, 18, 25, 0.7);
+            border-color: rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            background: rgba(15, 18, 25, 0.8);
         }
 
+        /* Base Link Style */
+        .nav-link {
+            color: #d1d5db;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Link Hover: Shifts to Gold/Yellow with a glow */
+        .nav-link:hover {
+            color: #FFD700 !important;
+            /* Forces Gold color */
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(251, 146, 60, 0.3);
+        }
+
+        /* Button: Original Colors + Light Yellow Hover */
         .nav-btn-primary {
             border-radius: 9999px;
             background: linear-gradient(135deg, #5799D2, #7966CD);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 215, 0, 0.3);
             color: #ffffff;
             font-weight: 600;
             font-size: 0.85rem;
@@ -214,81 +230,11 @@
         }
 
         .nav-btn-primary:hover {
-            box-shadow: 0 0 15px rgba(121, 102, 205, 0.5);
-        }
-
-        .nav-link {
-            color: #d1d5db;
-            transition: color 0.2s;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .nav-link:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        /* --- BUTTONS --- */
-        .nav-btn-primary {
-            border-radius: 9999px;
-            background: linear-gradient(135deg, #5799D2, #7966CD);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn-primary:hover {
-            box-shadow: 0 0 15px rgba(121, 102, 205, 0.5);
-        }
-
-        .nav-link {
-            color: #d1d5db;
-            transition: color 0.2s;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .nav-link:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        /* --- UTILS --- */
-        .hero-btn-primary {
-            position: relative;
-            border-radius: 9999px;
-            background: linear-gradient(90deg, #5799D2, #7966CD);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 0 30px rgba(87, 153, 210, 0.4);
-            color: white;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .hero-btn-primary:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 0 50px rgba(87, 153, 210, 0.6);
-        }
-
-        .shine-effect::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: 0.5s;
-        }
-
-        .hero-btn-primary:hover::before {
-            left: 100%;
+            background: #fef08a !important;
+            /* light-yellow-200 */
+            color: #000000 !important;
+            border-color: #fef08a;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
 
         /* Floating Animation for Static Blobs */
@@ -357,27 +303,30 @@
                 </a>
 
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../index.html" class="nav-link text-white flex items-center gap-2">Home</a>
+
+                    <a href="../index.html" class="nav-link text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
+                        Home
+                    </a>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="#services"
-                            class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                        <a href="#services" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Services
-                            <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
                             <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
+
                         <div
                             class="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[500px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
                             <div
                                 class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-3 shadow-2xl overflow-hidden ring-1 ring-white/5">
                                 <div class="grid grid-cols-2 gap-1">
                                     <div class="space-y-1">
-                                        <a href="Business-Intelligence.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/Business-Intelligence.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -392,8 +341,8 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">Business
                                                 Intelligence</span>
                                         </a>
-                                        <a href="gen-ai.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/gen-ai.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -408,8 +357,8 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">Generative
                                                 AI</span>
                                         </a>
-                                        <a href="cloud-implementation.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/cloud-implementation.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -424,8 +373,8 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">Cloud
                                                 Implementation</span>
                                         </a>
-                                        <a href="MobileAppDev.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/MobileAppDev.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-blue-500/10 flex items-center justify-center text-blue-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -440,8 +389,8 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">Mobile
                                                 App Dev</span>
                                         </a>
-                                        <a href="QualityAssurance.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/QualityAssurance.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-green-500/10 flex items-center justify-center text-green-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -455,8 +404,8 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">Quality
                                                 Assurance</span>
                                         </a>
-                                        <a href="serverless-services.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/serverless-services.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -469,8 +418,8 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">Serverless
                                                 Deployment</span>
                                         </a>
-                                        <a href="Blockchain-Development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/Blockchain-Development.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-red-500/10 flex items-center justify-center text-red-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -485,9 +434,10 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">Blockchain</span>
                                         </a>
                                     </div>
+
                                     <div class="space-y-1">
-                                        <a href="Bot-Development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/Bot-Development.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -502,8 +452,8 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">Bot
                                                 Development</span>
                                         </a>
-                                        <a href="Quantam-Computing.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/Quantam-Computing.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -518,8 +468,8 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">Quantum
                                                 Computing</span>
                                         </a>
-                                        <a href="MachineLearning.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/MachineLearning.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center text-teal-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -533,8 +483,8 @@
                                             <span
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">ML-Ops</span>
                                         </a>
-                                        <a href="DevSecOps.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/DevSecOps.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -548,8 +498,8 @@
                                             <span
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">DevSecOps</span>
                                         </a>
-                                        <a href="game-development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/game-development.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -564,8 +514,8 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">Game
                                                 Development</span>
                                         </a>
-                                        <a href="HPC.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/HPC.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-sky-500/10 flex items-center justify-center text-sky-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -580,8 +530,8 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">High-Performance
                                                 Computing</span>
                                         </a>
-                                        <a href="Resourcing.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        <a href="../services/Resourcing.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-rose-500/10 flex items-center justify-center text-rose-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -602,8 +552,7 @@
                     </div>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="#products"
-                            class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                        <a href="#" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Products
                             <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -611,13 +560,14 @@
                                     d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
+
                         <div
                             class="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
                             <div
                                 class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl overflow-hidden ring-1 ring-white/5">
                                 <div class="space-y-1">
                                     <a href="../products/realm.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue group-hover/item:bg-audvikBlue group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -625,13 +575,16 @@
                                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                             </svg>
                                         </div>
-                                        <div><span
-                                                class="block text-white text-sm font-medium leading-none">Realm</span><span
+                                        <div>
+                                            <span class="block text-white text-sm font-medium leading-none">Realm</span>
+                                            <span
                                                 class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">AI
-                                                Platform</span></div>
+                                                Platform</span>
+                                        </div>
                                     </a>
+
                                     <a href="../products/ordo.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple group-hover/item:bg-audvikPurple group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -642,13 +595,15 @@
                                                 </path>
                                             </svg>
                                         </div>
-                                        <div><span
-                                                class="block text-white text-sm font-medium leading-none">ORDO</span><span
+                                        <div>
+                                            <span class="block text-white text-sm font-medium leading-none">ORDO</span>
+                                            <span
                                                 class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">Orchestration</span>
                                         </div>
                                     </a>
+
                                     <a href="../products/a-helg.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink group-hover/item:bg-audvikPink group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -656,10 +611,13 @@
                                                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                             </svg>
                                         </div>
-                                        <div><span
-                                                class="block text-white text-sm font-medium leading-none">A-Helg</span><span
+                                        <div>
+                                            <span
+                                                class="block text-white text-sm font-medium leading-none">A-Helg</span>
+                                            <span
                                                 class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">Health
-                                                Analyzer</span></div>
+                                                Analyzer</span>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -684,14 +642,15 @@
                             d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
+
             </div>
         </div>
 
         <div id="mobile-menu"
             class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 lg:hidden flex flex-col pt-32 px-6 overflow-y-auto">
             <div class="flex flex-col gap-6 text-lg text-center pb-12">
-                <a href="../index.html" class="text-white border-b border-white/10 pb-4"
-                    onclick="toggleMobileMenu()">Home</a>
+
+                <a href="#" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Home</a>
 
                 <div class="border-b border-white/10 pb-4">
                     <button onclick="toggleAccordion('mobile-services-list', 'services-icon')"
@@ -703,34 +662,35 @@
                             </path>
                         </svg>
                     </button>
+
                     <div id="mobile-services-list" class="hidden flex-col gap-3 pt-4 text-sm items-center">
-                        <a href="Business-Intelligence.html" onclick="toggleMobileMenu()"
+                        <a href="../services/Business-Intelligence.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Business Intelligence</a>
-                        <a href="gen-ai.html" onclick="toggleMobileMenu()"
+                        <a href="../services/gen-ai.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Generative AI</a>
-                        <a href="cloud-implementation.html" onclick="toggleMobileMenu()"
+                        <a href="../services/cloud-implementation.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Cloud Implementation</a>
-                        <a href="MobileAppDev.html" onclick="toggleMobileMenu()"
+                        <a href="../services/MobileAppDev.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Mobile App Dev</a>
-                        <a href="QualityAssurance.html" onclick="toggleMobileMenu()"
+                        <a href="../services/QualityAssurance.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Quality Assurance</a>
-                        <a href="serverless-services.html" onclick="toggleMobileMenu()"
+                        <a href="../services/serverless-services.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Serverless Deployment</a>
-                        <a href="Blockchain-Development.html" onclick="toggleMobileMenu()"
+                        <a href="../services/Blockchain-Development.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Blockchain</a>
-                        <a href="Bot-Development.html" onclick="toggleMobileMenu()"
+                        <a href="../services/Bot-Development.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Bot Development</a>
-                        <a href="Quantam-Computing.html" onclick="toggleMobileMenu()"
+                        <a href="../services/Quantam-Computing.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Quantum Computing</a>
-                        <a href="MachineLearning.html" onclick="toggleMobileMenu()"
+                        <a href="../services/MachineLearning.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">ML-Ops</a>
-                        <a href="DevSecOps.html" onclick="toggleMobileMenu()"
+                        <a href="../services/DevSecOps.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">DevSecOps</a>
-                        <a href="game-development.html" onclick="toggleMobileMenu()"
+                        <a href="../services/game-development.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Game Development</a>
-                        <a href="HPC.html" onclick="toggleMobileMenu()"
+                        <a href="../services/HPC.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">High-Performance Computing</a>
-                        <a href="Resourcing.html" onclick="toggleMobileMenu()"
+                        <a href="../services/Resourcing.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Resourcing</a>
                     </div>
                 </div>
@@ -745,6 +705,7 @@
                             </path>
                         </svg>
                     </button>
+
                     <div id="mobile-products-list" class="hidden flex-col gap-3 pt-4 text-sm items-center">
                         <a href="../products/realm.html" onclick="toggleMobileMenu()"
                             class="text-gray-400 hover:text-white transition-colors">Realm (AI)</a>
@@ -758,7 +719,8 @@
                 <a href="../blog.html" class="text-white border-b border-white/10 pb-4"
                     onclick="toggleMobileMenu()">Blog</a>
                 <a href="../about.html" class="text-white border-b border-white/10 pb-4"
-                    onclick="toggleMobileMenu()">About us</a>
+                    onclick="toggleMobileMenu()">About
+                    us</a>
                 <a href="../contactus.html" class="text-white border-b border-white/10 pb-4"
                     onclick="toggleMobileMenu()">Contact us</a>
                 <a href="../SuccessStories.html" class="text-white border-b border-white/10 pb-4"
@@ -766,8 +728,8 @@
 
                 <button class="nav-btn-primary w-full py-4 mt-2" onclick="toggleMobileMenu(); openCalendly(event)">
                     Get Started
-                </button> <button class="text-gray-400 text-sm mt-4 mb-10" onclick="toggleMobileMenu()">Close
-                    Menu</button>
+                </button>
+                <button class="text-gray-400 text-sm mt-4 mb-10" onclick="toggleMobileMenu()">Close Menu</button>
             </div>
         </div>
     </nav>
@@ -891,17 +853,22 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
                     <div
-                        class="bg-white/5 border border-white/10 rounded-3xl p-8 flex items-center justify-center min-h-[400px] group overflow-hidden relative">
+                        class="bg-[#0A0D14]/60 border border-[#FFD700]/30 rounded-3xl p-8 flex items-center justify-center min-h-[400px] group overflow-hidden relative transition-all duration-500 hover:border-[#FFD700]">
+
+                        <div
+                            class="absolute -bottom-20 -left-20 w-64 h-64 bg-orange-600/10 rounded-full blur-[80px] group-hover:bg-yellow-500/20 transition-all duration-700">
+                        </div>
 
                         <img src="../services/Asserts/how do we help.png" alt="Migration Infographic"
+                            class="relative z-10 transition-transform duration-700 group-hover:scale-105"
                             onerror="this.style.display='none'; console.log('Image failed to load from: ' + this.src);" />
 
-                        <div class="text-gray-500 text-center relative z-10">
-
-                        </div>
+                        <div class="text-gray-500 text-center relative z-10"></div>
                     </div>
+
                     <div>
-                        <h2 class="text-3xl font-bold mb-6 text-white">How Do We Help?</h2>
+                        <h2 class="text-3xl font-bold mb-6 text-white">How Do We <span
+                                class="text-[#FFD700]">Help?</span></h2>
                         <div class="space-y-4 text-gray-400 leading-relaxed">
                             <p>We help you with the migration of applications and data centers to a more secure
                                 environment. We also help our clients seamlessly scale, migrate, and choose application
@@ -909,64 +876,113 @@
                             <p>If you recently moved to the cloud and are not happy with performance, we can help you
                                 optimize and ensure smooth operations or reverse cloud migration back to local data
                                 centers.</p>
-                            <p class="text-white font-medium italic border-l-2 border-blue-500 pl-4">We have experience
-                                migrating more than 100 legacy systems in the cloud.</p>
+
+                            <p class="text-white font-medium italic border-l-4 border-gradient-to-b from-[#FFD700] to-orange-500 pl-4 py-1"
+                                style="border-image: linear-gradient(to bottom, #FFD700, #f97316) 1;">
+                                We have experience migrating more than 100 legacy systems in the cloud.
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="mb-32">
-                    <h2 class="text-3xl font-bold mb-12 text-center text-white">Our Approach</h2>
+                    <h2 class="text-3xl font-bold mb-12 text-center text-white">
+                        Our <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-[#FFD700] to-orange-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]">Approach</span>
+                    </h2>
+
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
                         <div
-                            class="bg-white/5 border-l-2 border-pink-500 p-6 rounded-r-2xl hover:bg-white/[0.08] transition-colors">
-                            <span class="text-pink-500 font-bold text-xl">01</span>
-                            <h3 class="font-bold text-white mt-2 mb-4">Assessment</h3>
-                            <ul class="text-sm text-gray-400 space-y-2">
-                                <li>• Understand business scenario</li>
-                                <li>• Explore suitable solutions</li>
-                                <li>• Check technical feasibility</li>
-                            </ul>
+                            class="relative bg-white/5 border-l-4 border-[#FFD700] p-6 rounded-r-2xl overflow-hidden transition-all duration-500 group hover:shadow-[0_0_25px_rgba(245,158,11,0.2)]">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                            </div>
+
+                            <div class="relative z-10">
+                                <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-orange-500 font-black text-2xl tracking-tighter">01</span>
+                                <h3
+                                    class="font-bold text-white mt-2 mb-4 group-hover:text-yellow-200 transition-colors">
+                                    Assessment</h3>
+                                <ul class="text-sm text-gray-400 space-y-2 group-hover:text-gray-100 transition-colors">
+                                    <li>• Understand business scenario</li>
+                                    <li>• Explore suitable solutions</li>
+                                    <li>• Check technical feasibility</li>
+                                </ul>
+                            </div>
                         </div>
+
                         <div
-                            class="bg-white/5 border-l-2 border-blue-500 p-6 rounded-r-2xl hover:bg-white/[0.08] transition-colors">
-                            <span class="text-blue-500 font-bold text-xl">02</span>
-                            <h3 class="font-bold text-white mt-2 mb-4">Planning</h3>
-                            <ul class="text-sm text-gray-400 space-y-2">
-                                <li>• Architecture design</li>
-                                <li>• Deployment plan</li>
-                                <li>• Detailed roadmap</li>
-                            </ul>
+                            class="relative bg-white/5 border-l-4 border-[#FFD700] p-6 rounded-r-2xl overflow-hidden transition-all duration-500 group hover:shadow-[0_0_25px_rgba(245,158,11,0.2)]">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-orange-500 font-black text-2xl tracking-tighter">02</span>
+                                <h3
+                                    class="font-bold text-white mt-2 mb-4 group-hover:text-yellow-200 transition-colors">
+                                    Planning</h3>
+                                <ul class="text-sm text-gray-400 space-y-2 group-hover:text-gray-100 transition-colors">
+                                    <li>• Architecture design</li>
+                                    <li>• Deployment plan</li>
+                                    <li>• Detailed roadmap</li>
+                                </ul>
+                            </div>
                         </div>
+
                         <div
-                            class="bg-white/5 border-l-2 border-teal-500 p-6 rounded-r-2xl hover:bg-white/[0.08] transition-colors">
-                            <span class="text-teal-500 font-bold text-xl">03</span>
-                            <h3 class="font-bold text-white mt-2 mb-4">Deployment</h3>
-                            <ul class="text-sm text-gray-400 space-y-2">
-                                <li>• Plan execution</li>
-                                <li>• Migration checklist</li>
-                                <li>• Application transition</li>
-                            </ul>
+                            class="relative bg-white/5 border-l-4 border-[#FFD700] p-6 rounded-r-2xl overflow-hidden transition-all duration-500 group hover:shadow-[0_0_25px_rgba(245,158,11,0.2)]">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-orange-500 font-black text-2xl tracking-tighter">03</span>
+                                <h3
+                                    class="font-bold text-white mt-2 mb-4 group-hover:text-yellow-200 transition-colors">
+                                    Deployment</h3>
+                                <ul class="text-sm text-gray-400 space-y-2 group-hover:text-gray-100 transition-colors">
+                                    <li>• Plan execution</li>
+                                    <li>• Migration checklist</li>
+                                    <li>• Application transition</li>
+                                </ul>
+                            </div>
                         </div>
+
                         <div
-                            class="bg-white/5 border-l-2 border-green-500 p-6 rounded-r-2xl hover:bg-white/[0.08] transition-colors">
-                            <span class="text-green-500 font-bold text-xl">04</span>
-                            <h3 class="font-bold text-white mt-2 mb-4">Optimization</h3>
-                            <ul class="text-sm text-gray-400 space-y-2">
-                                <li>• Review process</li>
-                                <li>• Identify improvements</li>
-                                <li>• Introduce new features</li>
-                            </ul>
+                            class="relative bg-white/5 border-l-4 border-[#FFD700] p-6 rounded-r-2xl overflow-hidden transition-all duration-500 group hover:shadow-[0_0_25px_rgba(245,158,11,0.2)]">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-orange-500 font-black text-2xl tracking-tighter">04</span>
+                                <h3
+                                    class="font-bold text-white mt-2 mb-4 group-hover:text-yellow-200 transition-colors">
+                                    Optimization</h3>
+                                <ul class="text-sm text-gray-400 space-y-2 group-hover:text-gray-100 transition-colors">
+                                    <li>• Review process</li>
+                                    <li>• Identify improvements</li>
+                                    <li>• Introduce new features</li>
+                                </ul>
+                            </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="py-20 px-4 bg-transparent">
                     <section class="py-20 px-4 bg-[#020617] overflow-hidden">
                         <div class="max-w-7xl mx-auto">
                             <div class="text-center mb-16">
-                                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Why AudvikLabs For Your
-                                    Cloud?</h2>
-                                <div class="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+                                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                                    Why AudvikLabs For Your <span
+                                        class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-[#FFD700] to-orange-500">Cloud?</span>
+                                </h2>
+                                <div
+                                    class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto rounded-full">
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -974,279 +990,254 @@
 
                                 <div class="cloud-card group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-500 ease-out flex flex-col"
                                     style="transform-style: preserve-3d;">
-                                    <div class="spotlight pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-300"
-                                        style="background: radial-gradient(600px circle at var(--x) var(--y), rgba(59, 130, 246, 0.15), transparent 80%);">
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"
+                                        style="background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(249, 115, 22, 0.1) 50%, transparent 100%);">
                                     </div>
                                     <div
                                         class="relative bg-[#0f172a]/90 h-full rounded-2xl flex flex-col overflow-hidden">
                                         <div
-                                            class="bg-white p-4 text-center group-hover:bg-blue-50 transition-colors duration-300">
-                                            <h3 class="text-blue-900 font-bold uppercase tracking-wider">Cloud Strategy
-                                                Service</h3>
+                                            class="bg-white/10 p-4 text-center group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-500">
+                                            <h3
+                                                class="text-white group-hover:text-black font-bold uppercase tracking-wider">
+                                                Cloud Strategy Service</h3>
                                         </div>
                                         <div class="p-8 relative flex-grow" style="transform: translateZ(20px);">
                                             <ul class="space-y-3 text-gray-200">
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Cloud readiness
-                                                    assessment</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Cloud architecture
-                                                    audit</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Define Cloudmap and
-                                                    strategy</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Multi cloud strategy
-                                                    and cloud</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Cloud readiness assessment</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Cloud architecture audit</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Define Cloudmap and strategy</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Multi cloud strategy and cloud</li>
                                             </ul>
                                             <span
-                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-white/10 transition-all duration-700"
-                                                style="transform: translateZ(30px);">1</span>
+                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-yellow-500/10 transition-all duration-700">1</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="cloud-card group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-500 ease-out flex flex-col"
                                     style="transform-style: preserve-3d;">
-                                    <div class="spotlight pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-300"
-                                        style="background: radial-gradient(600px circle at var(--x) var(--y), rgba(59, 130, 246, 0.15), transparent 80%);">
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"
+                                        style="background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(249, 115, 22, 0.1) 50%, transparent 100%);">
                                     </div>
                                     <div
                                         class="relative bg-[#0f172a]/90 h-full rounded-2xl flex flex-col overflow-hidden">
                                         <div
-                                            class="bg-white p-4 text-center group-hover:bg-blue-50 transition-colors duration-300">
-                                            <h3 class="text-blue-900 font-bold uppercase tracking-wider">Application
-                                                Development</h3>
+                                            class="bg-white/10 p-4 text-center group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-500">
+                                            <h3
+                                                class="text-white group-hover:text-black font-bold uppercase tracking-wider">
+                                                Application Development</h3>
                                         </div>
                                         <div class="p-8 relative flex-grow" style="transform: translateZ(20px);">
                                             <ul class="space-y-3 text-gray-200">
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Migrating and
-                                                    developing application</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Roadmap for
-                                                    infrastructure</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Application Support
-                                                    Services</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Migrating and developing application</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Roadmap for infrastructure</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Application Support Services</li>
                                             </ul>
                                             <span
-                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-white/10 transition-all duration-700"
-                                                style="transform: translateZ(30px);">2</span>
+                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-yellow-500/10 transition-all duration-700">2</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="cloud-card group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-500 ease-out flex flex-col"
                                     style="transform-style: preserve-3d;">
-                                    <div class="spotlight pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-300"
-                                        style="background: radial-gradient(600px circle at var(--x) var(--y), rgba(59, 130, 246, 0.15), transparent 80%);">
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"
+                                        style="background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(249, 115, 22, 0.1) 50%, transparent 100%);">
                                     </div>
                                     <div
                                         class="relative bg-[#0f172a]/90 h-full rounded-2xl flex flex-col overflow-hidden">
                                         <div
-                                            class="bg-white p-4 text-center group-hover:bg-blue-50 transition-colors duration-300">
-                                            <h3 class="text-blue-900 font-bold uppercase tracking-wider">Maintenance &
-                                                Security</h3>
+                                            class="bg-white/10 p-4 text-center group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-500">
+                                            <h3
+                                                class="text-white group-hover:text-black font-bold uppercase tracking-wider">
+                                                Maintenance & Security</h3>
                                         </div>
                                         <div class="p-8 relative flex-grow" style="transform: translateZ(20px);">
                                             <ul class="space-y-3 text-gray-200">
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Continuous monitoring
-                                                </li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Performance
-                                                    optimization</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Security and risk
-                                                    assessment</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Continuous monitoring</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Performance optimization</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Security and risk assessment</li>
                                             </ul>
                                             <span
-                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-white/10 transition-all duration-700"
-                                                style="transform: translateZ(30px);">3</span>
+                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-yellow-500/10 transition-all duration-700">3</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="cloud-card group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-500 ease-out flex flex-col"
                                     style="transform-style: preserve-3d;">
-                                    <div class="spotlight pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-300"
-                                        style="background: radial-gradient(600px circle at var(--x) var(--y), rgba(59, 130, 246, 0.15), transparent 80%);">
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"
+                                        style="background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(249, 115, 22, 0.1) 50%, transparent 100%);">
                                     </div>
                                     <div
                                         class="relative bg-[#0f172a]/90 h-full rounded-2xl flex flex-col overflow-hidden">
                                         <div
-                                            class="bg-white p-4 text-center group-hover:bg-blue-50 transition-colors duration-300">
-                                            <h3 class="text-blue-900 font-bold uppercase tracking-wider">Cloud Migration
-                                                Service</h3>
+                                            class="bg-white/10 p-4 text-center group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-500">
+                                            <h3
+                                                class="text-white group-hover:text-black font-bold uppercase tracking-wider">
+                                                Cloud Migration Service</h3>
                                         </div>
                                         <div class="p-8 relative flex-grow" style="transform: translateZ(20px);">
                                             <ul class="space-y-3 text-gray-200">
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Application Readiness
-                                                    Assessment</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Cloud-to-cloud
-                                                    movement</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Migration of workload
-                                                </li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Application Readiness Assessment</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Cloud-to-cloud movement</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Migration of workload</li>
                                             </ul>
                                             <span
-                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-white/10 transition-all duration-700"
-                                                style="transform: translateZ(30px);">4</span>
+                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-yellow-500/10 transition-all duration-700">4</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="cloud-card group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-500 ease-out flex flex-col"
                                     style="transform-style: preserve-3d;">
-                                    <div class="spotlight pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-300"
-                                        style="background: radial-gradient(600px circle at var(--x) var(--y), rgba(59, 130, 246, 0.15), transparent 80%);">
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"
+                                        style="background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(249, 115, 22, 0.1) 50%, transparent 100%);">
                                     </div>
                                     <div
                                         class="relative bg-[#0f172a]/90 h-full rounded-2xl flex flex-col overflow-hidden">
                                         <div
-                                            class="bg-white p-4 text-center group-hover:bg-blue-50 transition-colors duration-300">
-                                            <h3 class="text-blue-900 font-bold uppercase tracking-wider">Disaster
-                                                Recovery</h3>
+                                            class="bg-white/10 p-4 text-center group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-500">
+                                            <h3
+                                                class="text-white group-hover:text-black font-bold uppercase tracking-wider">
+                                                Disaster Recovery</h3>
                                         </div>
                                         <div class="p-8 relative flex-grow" style="transform: translateZ(20px);">
                                             <ul class="space-y-3 text-gray-200">
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Application security
-                                                    testing</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Management of all
-                                                    backups</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Customized DR plans
-                                                </li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Application security testing</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Management of all backups</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Customized DR plans</li>
                                             </ul>
                                             <span
-                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-white/10 transition-all duration-700"
-                                                style="transform: translateZ(30px);">5</span>
+                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-yellow-500/10 transition-all duration-700">5</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="cloud-card group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-500 ease-out flex flex-col"
                                     style="transform-style: preserve-3d;">
-                                    <div class="spotlight pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-300"
-                                        style="background: radial-gradient(600px circle at var(--x) var(--y), rgba(59, 130, 246, 0.15), transparent 80%);">
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"
+                                        style="background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(249, 115, 22, 0.1) 50%, transparent 100%);">
                                     </div>
                                     <div
                                         class="relative bg-[#0f172a]/90 h-full rounded-2xl flex flex-col overflow-hidden">
                                         <div
-                                            class="bg-white p-4 text-center group-hover:bg-blue-50 transition-colors duration-300">
-                                            <h3 class="text-blue-900 font-bold uppercase tracking-wider">Monitoring
-                                                Services</h3>
+                                            class="bg-white/10 p-4 text-center group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-500">
+                                            <h3
+                                                class="text-white group-hover:text-black font-bold uppercase tracking-wider">
+                                                Monitoring Services</h3>
                                         </div>
                                         <div class="p-8 relative flex-grow" style="transform: translateZ(20px);">
                                             <ul class="space-y-3 text-gray-200">
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Cloud application
-                                                    monitoring</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Personalized
-                                                    parameters</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Personalized alerts
-                                                </li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Cloud application monitoring</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Personalized parameters</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Personalized alerts</li>
                                             </ul>
                                             <span
-                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-white/10 transition-all duration-700"
-                                                style="transform: translateZ(30px);">6</span>
+                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-yellow-500/10 transition-all duration-700">6</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="cloud-card group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-500 ease-out flex flex-col"
                                     style="transform-style: preserve-3d;">
-                                    <div class="spotlight pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-300"
-                                        style="background: radial-gradient(600px circle at var(--x) var(--y), rgba(59, 130, 246, 0.15), transparent 80%);">
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"
+                                        style="background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(249, 115, 22, 0.1) 50%, transparent 100%);">
                                     </div>
                                     <div
                                         class="relative bg-[#0f172a]/90 h-full rounded-2xl flex flex-col overflow-hidden">
                                         <div
-                                            class="bg-white p-4 text-center group-hover:bg-blue-50 transition-colors duration-300">
-                                            <h3 class="text-blue-900 font-bold uppercase tracking-wider">Managed
-                                                Services</h3>
+                                            class="bg-white/10 p-4 text-center group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-500">
+                                            <h3
+                                                class="text-white group-hover:text-black font-bold uppercase tracking-wider">
+                                                Managed Services</h3>
                                         </div>
                                         <div class="p-8 relative flex-grow" style="transform: translateZ(20px);">
                                             <ul class="space-y-3 text-gray-200">
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Infrastructure
-                                                    governance</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Performance
-                                                    optimization</li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Improvement plans
-                                                </li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Infrastructure governance</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Performance optimization</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Improvement plans</li>
                                             </ul>
                                             <span
-                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-white/10 transition-all duration-700"
-                                                style="transform: translateZ(30px);">7</span>
+                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-yellow-500/10 transition-all duration-700">7</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="cloud-card group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-500 ease-out flex flex-col"
                                     style="transform-style: preserve-3d;">
-                                    <div class="spotlight pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-300"
-                                        style="background: radial-gradient(600px circle at var(--x) var(--y), rgba(59, 130, 246, 0.15), transparent 80%);">
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"
+                                        style="background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(249, 115, 22, 0.1) 50%, transparent 100%);">
                                     </div>
                                     <div
                                         class="relative bg-[#0f172a]/90 h-full rounded-2xl flex flex-col overflow-hidden">
                                         <div
-                                            class="bg-white p-4 text-center group-hover:bg-blue-50 transition-colors duration-300">
-                                            <h3 class="text-blue-900 font-bold uppercase tracking-wider">Infra
-                                                Management</h3>
+                                            class="bg-white/10 p-4 text-center group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-500">
+                                            <h3
+                                                class="text-white group-hover:text-black font-bold uppercase tracking-wider">
+                                                Infra Management</h3>
                                         </div>
                                         <div class="p-8 relative flex-grow" style="transform: translateZ(20px);">
                                             <ul class="space-y-3 text-gray-200">
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Data center design
-                                                </li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Operation management
-                                                </li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Application
-                                                    deployment</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Data center design</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Operation management</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Application deployment</li>
                                             </ul>
                                             <span
-                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-white/10 transition-all duration-700"
-                                                style="transform: translateZ(30px);">8</span>
+                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-yellow-500/10 transition-all duration-700">8</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="cloud-card group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-500 ease-out flex flex-col"
                                     style="transform-style: preserve-3d;">
-                                    <div class="spotlight pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-300"
-                                        style="background: radial-gradient(600px circle at var(--x) var(--y), rgba(59, 130, 246, 0.15), transparent 80%);">
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"
+                                        style="background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(249, 115, 22, 0.1) 50%, transparent 100%);">
                                     </div>
                                     <div
                                         class="relative bg-[#0f172a]/90 h-full rounded-2xl flex flex-col overflow-hidden">
                                         <div
-                                            class="bg-white p-4 text-center group-hover:bg-blue-50 transition-colors duration-300">
-                                            <h3 class="text-blue-900 font-bold uppercase tracking-wider">Cloud
-                                                Modernization</h3>
+                                            class="bg-white/10 p-4 text-center group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-500">
+                                            <h3
+                                                class="text-white group-hover:text-black font-bold uppercase tracking-wider">
+                                                Cloud Modernization</h3>
                                         </div>
                                         <div class="p-8 relative flex-grow" style="transform: translateZ(20px);">
                                             <ul class="space-y-3 text-gray-200">
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Agile native platform
-                                                </li>
-                                                <li class="flex items-start"><span
-                                                        class="bullet text-blue-400 mr-2">•</span> Governance and policy
-                                                </li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Agile native platform</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Governance and policy</li>
+                                                <li class="flex items-start"><span class="text-[#FFD700] mr-2">•</span>
+                                                    Cloud performance audit</li>
                                             </ul>
                                             <span
-                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-white/10 transition-all duration-700"
-                                                style="transform: translateZ(30px);">9</span>
+                                                class="absolute bottom-4 right-6 text-7xl font-bold text-white/5 italic group-hover:text-yellow-500/10 transition-all duration-700">9</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1259,99 +1250,147 @@
 
                     <div class="text-center mb-16">
                         <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Why Choose Us</h2>
-                        <div class="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+                        <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto rounded-full"></div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto w-full px-4">
 
                         <div
-                            class="group bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)]">
+                            class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(251,146,60,0.3)]">
+
                             <div
-                                class="w-3 h-3 rounded-full bg-blue-500 mb-4 group-hover:scale-125 transition-transform">
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                             </div>
-                            <span
-                                class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">On-demand
-                                availability</span>
+
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div
+                                    class="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 mb-4 group-hover:scale-150 transition-transform shadow-[0_0_12px_rgba(255,215,0,0.5)]">
+                                </div>
+
+                                <span
+                                    class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">On-demand
+                                    availability</span>
+                            </div>
                         </div>
 
                         <div
-                            class="group bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)]">
+                            class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(251,146,60,0.3)]">
                             <div
-                                class="w-3 h-3 rounded-full bg-blue-500 mb-4 group-hover:scale-125 transition-transform">
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                             </div>
-                            <span
-                                class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Reduced
-                                time-to-market</span>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div
+                                    class="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 mb-4 group-hover:scale-150 transition-transform shadow-[0_0_12px_rgba(255,215,0,0.5)]">
+                                </div>
+                                <span
+                                    class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Reduced
+                                    time-to-market</span>
+                            </div>
                         </div>
 
                         <div
-                            class="group bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)]">
+                            class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(251,146,60,0.3)]">
                             <div
-                                class="w-3 h-3 rounded-full bg-blue-500 mb-4 group-hover:scale-125 transition-transform">
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                             </div>
-                            <span
-                                class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Efficient
-                                resource utilization</span>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div
+                                    class="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 mb-4 group-hover:scale-150 transition-transform shadow-[0_0_12px_rgba(255,215,0,0.5)]">
+                                </div>
+                                <span
+                                    class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Efficient
+                                    resource utilization</span>
+                            </div>
                         </div>
 
                         <div
-                            class="group bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)]">
+                            class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(251,146,60,0.3)]">
                             <div
-                                class="w-3 h-3 rounded-full bg-blue-500 mb-4 group-hover:scale-125 transition-transform">
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                             </div>
-                            <span
-                                class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Improved
-                                security</span>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div
+                                    class="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 mb-4 group-hover:scale-150 transition-transform shadow-[0_0_12px_rgba(255,215,0,0.5)]">
+                                </div>
+                                <span
+                                    class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Improved
+                                    security</span>
+                            </div>
                         </div>
 
                         <div
-                            class="group bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)]">
+                            class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(251,146,60,0.3)]">
                             <div
-                                class="w-3 h-3 rounded-full bg-blue-500 mb-4 group-hover:scale-125 transition-transform">
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                             </div>
-                            <span
-                                class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Better
-                                performance</span>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div
+                                    class="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 mb-4 group-hover:scale-150 transition-transform shadow-[0_0_12px_rgba(255,215,0,0.5)]">
+                                </div>
+                                <span
+                                    class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Better
+                                    performance</span>
+                            </div>
                         </div>
 
                         <div
-                            class="group bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)]">
+                            class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(251,146,60,0.3)]">
                             <div
-                                class="w-3 h-3 rounded-full bg-blue-500 mb-4 group-hover:scale-125 transition-transform">
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                             </div>
-                            <span
-                                class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">World-class
-                                expertise</span>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div
+                                    class="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 mb-4 group-hover:scale-150 transition-transform shadow-[0_0_12px_rgba(255,215,0,0.5)]">
+                                </div>
+                                <span
+                                    class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">World-class
+                                    expertise</span>
+                            </div>
                         </div>
 
                         <div
-                            class="group bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)]">
+                            class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(251,146,60,0.3)]">
                             <div
-                                class="w-3 h-3 rounded-full bg-blue-500 mb-4 group-hover:scale-125 transition-transform">
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                             </div>
-                            <span
-                                class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Proven
-                                use case with clients</span>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div
+                                    class="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 mb-4 group-hover:scale-150 transition-transform shadow-[0_0_12px_rgba(255,215,0,0.5)]">
+                                </div>
+                                <span
+                                    class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Proven
+                                    use case with clients</span>
+                            </div>
                         </div>
 
                         <div
-                            class="group bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)]">
+                            class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(251,146,60,0.3)]">
                             <div
-                                class="w-3 h-3 rounded-full bg-blue-500 mb-4 group-hover:scale-125 transition-transform">
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                             </div>
-                            <span
-                                class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Best-in-class
-                                architecture</span>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div
+                                    class="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 mb-4 group-hover:scale-150 transition-transform shadow-[0_0_12px_rgba(255,215,0,0.5)]">
+                                </div>
+                                <span
+                                    class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Best-in-class
+                                    architecture</span>
+                            </div>
                         </div>
 
                         <div
-                            class="group bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-white/10 hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)]">
+                            class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(251,146,60,0.3)]">
                             <div
-                                class="w-3 h-3 rounded-full bg-blue-500 mb-4 group-hover:scale-125 transition-transform">
+                                class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                             </div>
-                            <span
-                                class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Subject
-                                Matter Expertise</span>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div
+                                    class="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 mb-4 group-hover:scale-150 transition-transform shadow-[0_0_12px_rgba(255,215,0,0.5)]">
+                                </div>
+                                <span
+                                    class="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">Subject
+                                    Matter Expertise</span>
+                            </div>
                         </div>
 
                     </div>
@@ -1359,14 +1398,14 @@
                 <div class="max-w-4xl mx-auto mt-20">
                     <h2 class="text-3xl font-bold mb-12 text-center text-white">Frequently Asked Questions</h2>
                     <div class="space-y-4">
-
                         <details
-                            class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300">
+                            class="group bg-white/5 border border-yellow-500/30 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400">
                             <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                                <span class="font-medium text-white group-hover:text-blue-400 transition-colors">What
-                                    are cloud implementation services?</span>
+                                <span class="font-medium text-white group-hover:text-yellow-400 transition-colors">
+                                    What are cloud implementation services?
+                                </span>
                                 <span
-                                    class="text-blue-400 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+                                    class="text-yellow-500 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
                             </summary>
                             <div
                                 class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4 animate-in fade-in slide-in-from-top-2 duration-300">
@@ -1377,12 +1416,13 @@
                         </details>
 
                         <details
-                            class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300">
+                            class="group bg-white/5 border border-yellow-500/30 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400">
                             <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                                <span class="font-medium text-white group-hover:text-blue-400 transition-colors">Why is
-                                    Cloud implementation necessary for your services?</span>
+                                <span class="font-medium text-white group-hover:text-yellow-400 transition-colors">
+                                    Why is Cloud implementation necessary for your services?
+                                </span>
                                 <span
-                                    class="text-blue-400 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+                                    class="text-yellow-500 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
                             </summary>
                             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
                                 Cloud implementation allows businesses to demand development and delivery of their
@@ -1392,12 +1432,13 @@
                         </details>
 
                         <details
-                            class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300">
+                            class="group bg-white/5 border border-yellow-500/30 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400">
                             <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                                <span class="font-medium text-white group-hover:text-blue-400 transition-colors">What is
-                                    Cloud Migration?</span>
+                                <span class="font-medium text-white group-hover:text-yellow-400 transition-colors">
+                                    What is Cloud Migration?
+                                </span>
                                 <span
-                                    class="text-blue-400 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+                                    class="text-yellow-500 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
                             </summary>
                             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
                                 Cloud Migration is the process of moving applications and data from on-premise data
@@ -1407,12 +1448,13 @@
                         </details>
 
                         <details
-                            class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300">
+                            class="group bg-white/5 border border-yellow-500/30 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400">
                             <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                                <span class="font-medium text-white group-hover:text-blue-400 transition-colors">What
-                                    are some prerequisites and necessary steps for cloud implementation?</span>
+                                <span class="font-medium text-white group-hover:text-yellow-400 transition-colors">
+                                    What are some prerequisites and necessary steps for cloud implementation?
+                                </span>
                                 <span
-                                    class="text-blue-400 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+                                    class="text-yellow-500 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
                             </summary>
                             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
                                 Our approach involves a four-step process: Assessment (understanding business scenarios
@@ -1422,12 +1464,13 @@
                         </details>
 
                         <details
-                            class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300">
+                            class="group bg-white/5 border border-yellow-500/30 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400">
                             <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                                <span class="font-medium text-white group-hover:text-blue-400 transition-colors">What
-                                    contingency plans do we offer?</span>
+                                <span class="font-medium text-white group-hover:text-yellow-400 transition-colors">
+                                    What contingency plans do we offer?
+                                </span>
                                 <span
-                                    class="text-blue-400 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
+                                    class="text-yellow-500 text-2xl transition-transform duration-300 group-open:rotate-45">+</span>
                             </summary>
                             <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
                                 We provide Disaster Recovery and Management services, which include application security
@@ -1435,7 +1478,6 @@
                                 business continuity.
                             </div>
                         </details>
-
                     </div>
                 </div>
 
@@ -1456,7 +1498,7 @@
 
                     <div class="lg:col-span-4 space-y-8">
                         <div>
-                            <img src="../services/Asserts/Audvik Logo.svg" alt="Audvik" class="h-12 w-auto mb-6">
+                            <img src="../asserts/Audvik Logo.svg" alt="Audvik" class="h-12 w-auto mb-6">
                             <p class="text-blue-100/60 text-sm leading-relaxed max-w-sm">
                                 AudvikLabs is a global engineering studio expert in Serverless Architecture, Cloud
                                 Migration, Generative AI, and Quantum Computing.
@@ -1500,14 +1542,12 @@
                             <div class="flex gap-6">
                                 <div
                                     class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
-                                    <img src="../services/Asserts/ISO/ISO.png" alt="ISO"
-                                        class="w-full h-full object-cover">
+                                    <img src="../asserts/ISO/ISO.png" alt="ISO" class="w-full h-full object-cover">
                                 </div>
 
                                 <div
                                     class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
-                                    <img src="../services/Asserts/ISO/AICPA.png" alt="AICPA"
-                                        class="w-full h-full object-cover">
+                                    <img src="../asserts/ISO/AICPA.png" alt="AICPA" class="w-full h-full object-cover">
                                 </div>
                             </div>
                         </div>
@@ -1515,7 +1555,7 @@
 
                     <div class="lg:col-span-3">
                         <div class="flex items-center gap-4 mb-6 pb-4 border-b border-white/10">
-                            <img src="../services/Asserts/flag/India .jpg" alt="India"
+                            <img src="../asserts/flag/India .jpg" alt="India"
                                 class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,153,51,0.2)] object-cover">
                             <h4 class="font-display font-bold text-lg text-white tracking-wide">India</h4>
                         </div>
@@ -1554,7 +1594,7 @@
                         <div class="space-y-8">
                             <div>
                                 <div class="flex items-center gap-4 mb-3">
-                                    <img src="../services/Asserts/flag/UK.jpg" alt="UK"
+                                    <img src="../asserts/flag/UK.jpg" alt="UK"
                                         class="h-8 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
                                     <h5 class="font-bold text-white text-sm">United Kingdom</h5>
                                 </div>
@@ -1566,7 +1606,7 @@
 
                             <div>
                                 <div class="flex items-center gap-4 mb-3">
-                                    <img src="../services/Asserts/flag/Netherlands.jpg" alt="Netherlands"
+                                    <img src="../asserts/flag/Netherlands.jpg" alt="Netherlands"
                                         class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
                                     <h5 class="font-bold text-white text-sm">Netherlands</h5>
                                 </div>
