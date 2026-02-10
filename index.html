@@ -61,6 +61,7 @@
             position: relative;
             scroll-behavior: smooth;
         }
+
         /* --- LENIS SCROLL --- */
         html.lenis,
         html.lenis body {
@@ -142,7 +143,7 @@
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
-/* --- 1. GOLDEN HOUR TEXT (Deep Orange -> Warm Gold) --- */
+        /* --- 1. GOLDEN HOUR TEXT (Deep Orange -> Warm Gold) --- */
         .gold-metallic-text {
             /* The Golden Hour Gradient */
             background: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
@@ -167,10 +168,10 @@
             font-size: 1rem;
             transition: all 0.4s ease;
             overflow: hidden;
-            
+
             /* GOLDEN HOUR GLOW (Warm Orange Shadow) */
-            box-shadow: 0 0 25px rgba(255, 140, 0, 0.4); 
-            
+            box-shadow: 0 0 25px rgba(255, 140, 0, 0.4);
+
             display: flex;
             align-items: center;
             justify-content: center;
@@ -180,7 +181,7 @@
         .hero-btn-primary:hover {
             transform: translateY(-2px);
             /* Intense Sunrise Glow */
-            box-shadow: 0 0 40px rgba(255, 140, 0, 0.7); 
+            box-shadow: 0 0 40px rgba(255, 140, 0, 0.7);
             border-color: #FFD700;
         }
 
@@ -201,11 +202,11 @@
 
         .hero-btn-secondary:hover {
             /* Warm Tint */
-            background: rgba(255, 140, 0, 0.1); 
+            background: rgba(255, 140, 0, 0.1);
             /* Orange/Gold Border */
-            border-color: #FF8C00; 
+            border-color: #FF8C00;
             /* Warm Glow */
-            box-shadow: 0 0 25px rgba(255, 140, 0, 0.3); 
+            box-shadow: 0 0 25px rgba(255, 140, 0, 0.3);
             transform: translateY(-2px);
         }
 
@@ -247,11 +248,11 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
-/* --- SERVICE CARDS (Sunrise Gold Theme) --- */
+        /* --- SERVICE CARDS (Sunrise Gold Theme) --- */
         .service-card {
             background: rgba(255, 255, 255, 0.03);
             /* Subtle Sunrise Border (Default) */
-            border: 1px solid rgba(255, 140, 0, 0.15); 
+            border: 1px solid rgba(255, 140, 0, 0.15);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -260,6 +261,8 @@
 /* --- SERVICE CARDS HOVER (Matches Audvik Blue Theme) --- */
         .service-card:hover {
             background: rgba(255, 255, 255, 0.07);
+            /* Brighter Sunrise Orange Border (Hover) */
+            border-color: #FF8C00;
             
             /* Border: Audvik Blue */
             border-color:#FFD700; 
@@ -269,7 +272,7 @@
             /* Glow: Soft Blue */
             box-shadow: 0 10px 30px -5px rgba(87, 153, 210, 0.3);
         }
-        
+
         /* Optional: Force icons to use the Sunrise Orange on hover if you want extra pop */
         /* .service-card:hover svg { color: #FF8C00; } */
         .shine-effect::before {
@@ -376,7 +379,8 @@
         .floating-blob {
             animation: float-blob 10s ease-in-out infinite;
         }
-      /* --- MODERN CLIENT CARDS (Always in Color) --- */
+
+        /* --- MODERN CLIENT CARDS (Always in Color) --- */
         .client-modern-card {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px);
@@ -397,11 +401,12 @@
             max-height: 60px;
             width: auto;
             object-fit: contain;
-            
+
             /* UPDATED: Always Full Color & Visible */
-            opacity: 1; 
-            filter: none; /* No grayscale, always original colors */
-            
+            opacity: 1;
+            filter: none;
+            /* No grayscale, always original colors */
+
             transition: all 0.4s ease;
             position: relative;
             z-index: 10;
@@ -412,11 +417,13 @@
             transform: translateY(-5px);
             background: rgba(20, 20, 25, 0.8);
             /* Golden Hour Orange Border */
-            border-color: #FF8C00; 
+            border-color: #FF8C00;
             /* UPDATED: Brighter Outer Glow & Stronger Inner Glow */
-            box-shadow: 
-                0 10px 40px -10px rgba(255, 140, 0, 0.4), /* Outer Glow */
-                inset 0 0 40px rgba(255, 140, 0, 0.2);    /* Inner Box Light */
+            box-shadow:
+                0 10px 40px -10px rgba(255, 140, 0, 0.4),
+                /* Outer Glow */
+                inset 0 0 40px rgba(255, 140, 0, 0.2);
+            /* Inner Box Light */
         }
 
         .client-modern-card:hover img {
@@ -441,14 +448,16 @@
         .client-modern-card:hover::before {
             opacity: 1;
         }
+
         /* --- TECHNOLOGIES CARD (Compact & Sunrise Themed) --- */
-  /* --- TECHNOLOGIES CARD (Compact & Sunrise Themed) --- */
+        /* --- TECHNOLOGIES CARD (Compact & Sunrise Themed) --- */
         .tech-spotlight-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle default border */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            /* Subtle default border */
             border-radius: 16px;
             /* FIXED: Reduced padding to make cards compact */
-            padding: 1.25rem; 
+            padding: 1.25rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -462,21 +471,22 @@
 
         .tech-spotlight-card img {
             /* FIXED: Controlled height for sleeker look */
-            height: 35px; 
+            height: 35px;
             width: auto;
             object-fit: contain;
-            
+
             /* Icons always in color */
             opacity: 1;
-            filter: none; 
-            
+            filter: none;
+
             transition: all 0.3s ease;
             position: relative;
             z-index: 1;
         }
 
         .tech-spotlight-card span {
-            font-size: 0.75rem; /* Cleaner, smaller text */
+            font-size: 0.75rem;
+            /* Cleaner, smaller text */
             font-weight: 500;
             color: #6b7280;
             transition: all 0.3s ease;
@@ -489,7 +499,7 @@
             transform: translateY(-4px);
             background: rgba(20, 20, 25, 0.6);
             /* Golden Hour Orange Border */
-            border-color: #FF8C00; 
+            border-color: #FF8C00;
             /* Soft Sunrise Glow */
             box-shadow: 0 5px 20px -5px rgba(255, 140, 0, 0.25);
         }
@@ -499,18 +509,21 @@
         }
 
         .tech-spotlight-card:hover span {
-            color: #FFD700; /* Text turns Sun Yellow */
+            color: #FFD700;
+            /* Text turns Sun Yellow */
         }
-        
+
         /* Special override for the "And More" card */
         .tech-card-more {
             border: 1px dashed rgba(255, 140, 0, 0.3);
         }
+
         .tech-card-more:hover {
             border-color: #FFD700;
             background: rgba(255, 140, 0, 0.05);
         }
-                /* --- RICH GOLD SUNRISE GLOW --- */
+
+        /* --- RICH GOLD SUNRISE GLOW --- */
         .card-mouse-glow {
             position: absolute;
             width: 500px;
@@ -555,6 +568,7 @@
             filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
             display: inline-block;
         }
+
         /* --- AUDVIK BRAND GRADIENT TEXT --- */
         .audvik-brand-text {
             /* Gradient: Blue -> Deep Purple -> Pink */
@@ -563,35 +577,38 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
-            
+
             /* Optional: A soft blueish/purple glow instead of the gold one */
-            filter: drop-shadow(0 0 25px rgba(121, 102, 205, 0.4)); 
+            filter: drop-shadow(0 0 25px rgba(121, 102, 205, 0.4));
             font-weight: 700;
         }
+
         /* --- GOLD TEXT GLOW ON HOVER --- */
-.text-glow-hover {
-    transition: all 0.3s ease;
-}
+        .text-glow-hover {
+            transition: all 0.3s ease;
+        }
 
-.text-glow-hover:hover {
-    color: #FFD700; /* Force Gold Color on Hover */
-    text-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.4);
-    cursor: default;
-}
+        .text-glow-hover:hover {
+            color: #FFD700;
+            /* Force Gold Color on Hover */
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.4);
+            cursor: default;
+        }
 
-/* --- GOLD BACKGROUND HIGHLIGHT BLOB --- */
-.gold-highlight-blob {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 500px;
-    background: rgba(255, 215, 0, 0.15); /* Gold Color with transparency */
-    filter: blur(150px);
-    z-index: 0;
-    pointer-events: none;
-}
+        /* --- GOLD BACKGROUND HIGHLIGHT BLOB --- */
+        .gold-highlight-blob {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 500px;
+            background: rgba(255, 215, 0, 0.15);
+            /* Gold Color with transparency */
+            filter: blur(150px);
+            z-index: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -618,8 +635,7 @@
                     </a>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="#services"
-                            class="nav-link flex items-center gap-1.5 py-2 transition-colors">
+                        <a href="#services" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Services
                             <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1137,7 +1153,7 @@
                     </div>
                 </div>
 
-                 <div class="flex-1 w-full">
+                <div class="flex-1 w-full">
                     <div id="glow-card" class="liquid-card p-8 border border-white/10 relative overflow-hidden group"
                         data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
 
@@ -1366,7 +1382,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="services" class="py-24 px-4 relative bg-black/20">
             <div class="max-w-[1400px] mx-auto">
                 <div class="text-center mb-16">
@@ -1597,8 +1613,8 @@
             </div>
         </section>
 
-<section id="milestones" class="py-16 md:py-24 px-4 relative overflow-hidden bg-black/60 backdrop-blur-sm">
-            
+        <section id="milestones" class="py-16 md:py-24 px-4 relative overflow-hidden bg-black/60 backdrop-blur-sm">
+
             <div
                 class="absolute inset-0 bg-gradient-to-b from-[#FF8C00]/10 via-[#FFD700]/5 to-transparent pointer-events-none">
             </div>
@@ -1612,47 +1628,47 @@
                 </p>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-16">
-                    
+
                     <div
                         class="p-6 rounded-2xl bg-white/5 border border-[#FF8C00]/30 backdrop-blur-sm group hover:border-[#FF8C00] hover:shadow-[0_0_20px_rgba(255,140,0,0.2)] transition-all duration-300">
-                        <div
-                            class="text-4xl md:text-5xl font-bold text-white mb-2">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">
                             <span class="counter" data-target="250">0</span>+
                         </div>
-                        <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold group-hover:text-white transition-colors">
+                        <div
+                            class="text-xs text-gray-400 uppercase tracking-widest font-semibold group-hover:text-white transition-colors">
                             Projects Delivered
                         </div>
                     </div>
 
                     <div
                         class="p-6 rounded-2xl bg-white/5 border border-[#FF8C00]/30 backdrop-blur-sm group hover:border-[#FF8C00] hover:shadow-[0_0_20px_rgba(255,140,0,0.2)] transition-all duration-300">
-                        <div
-                            class="text-4xl md:text-5xl font-bold text-white mb-2">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">
                             <span class="counter" data-target="60">0</span>+
                         </div>
-                        <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold group-hover:text-white transition-colors">
+                        <div
+                            class="text-xs text-gray-400 uppercase tracking-widest font-semibold group-hover:text-white transition-colors">
                             Clients Globally
                         </div>
                     </div>
 
                     <div
                         class="p-6 rounded-2xl bg-white/5 border border-[#FF8C00]/30 backdrop-blur-sm group hover:border-[#FF8C00] hover:shadow-[0_0_20px_rgba(255,140,0,0.2)] transition-all duration-300">
-                        <div
-                            class="text-4xl md:text-5xl font-bold text-white mb-2">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">
                             <span class="counter" data-target="150">0</span>+
                         </div>
-                        <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold group-hover:text-white transition-colors">
+                        <div
+                            class="text-xs text-gray-400 uppercase tracking-widest font-semibold group-hover:text-white transition-colors">
                             Workforce Globally
                         </div>
                     </div>
 
                     <div
                         class="p-6 rounded-2xl bg-white/5 border border-[#FF8C00]/30 backdrop-blur-sm group hover:border-[#FF8C00] hover:shadow-[0_0_20px_rgba(255,140,0,0.2)] transition-all duration-300">
-                        <div
-                            class="text-4xl md:text-5xl font-bold text-white mb-2">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">
                             $<span class="counter" data-target="25">0</span>M+
                         </div>
-                        <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold group-hover:text-white transition-colors">
+                        <div
+                            class="text-xs text-gray-400 uppercase tracking-widest font-semibold group-hover:text-white transition-colors">
                             Savings Delivered
                         </div>
                     </div>
@@ -1661,7 +1677,7 @@
             </div>
         </section>
 
-  <section id="clients" class="py-24 px-4 relative bg-[#050508]">
+        <section id="clients" class="py-24 px-4 relative bg-[#050508]">
 
             <div
                 class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[300px] bg-gradient-to-t from-[#FF8C00]/10 to-transparent blur-[100px] pointer-events-none">
@@ -1864,6 +1880,14 @@
 
             </div>
         </section>
+        <footer id="contact" class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden">
+
+            <div
+                class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-audvikBlue/5 rounded-full blur-[120px] pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-audvikPurple/5 rounded-full blur-[120px] pointer-events-none">
+            </div>
         
     <footer id="contact" class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden">
         <div
@@ -1873,222 +1897,225 @@
             class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-audvikPurple/5 rounded-full blur-[120px] pointer-events-none">
         </div>
 
-        <div class="max-w-[1400px] mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
-                <div class="lg:col-span-4 space-y-8">
-                    <div>
-                        <img src="asserts/Audvik Logo.svg" alt="Audvik" class="h-12 w-auto mb-6">
-                        <p class="text-blue-100/60 text-sm leading-relaxed max-w-sm">
-                            AudvikLabs is a global engineering studio expert in Serverless Architecture, Cloud
-                            Migration, Generative AI, and Quantum Computing.
-                        </p>
-                    </div>
-
-                    <div class="space-y-3">
-                        <a href="mailto:bd@audviklabs.com"
-                            class="group flex items-center gap-3 text-white transition-colors">
-                            <div
-                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-audvikBlue group-hover:shadow-[0_0_15px_#5799D2] transition-all duration-300">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <span
-                                class="font-medium group-hover:text-audvikBlue transition-colors">bd@audviklabs.com</span>
-                        </a>
-
-                        <div class="flex items-center gap-3 text-gray-400">
-                            <div
-                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/5">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <div class="text-sm">
-                                <span class="block hover:text-white transition-colors">+91 80711 76992</span>
-                                <span class="block hover:text-white transition-colors">+91 97645 43918</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <p class="text-[10px] font-bold text-audvikBlue tracking-widest uppercase mb-4">Accreditations
-                        </p>
-                        <div class="flex gap-6">
-                            <div
-                                class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
-                                <img src="asserts/ISO/ISO.png" alt="ISO" class="w-full h-full object-cover">
-                            </div>
-
-                            <div
-                                class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
-                                <img src="asserts/ISO/AICPA.png" alt="AICPA" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3">
-                    <div class="flex items-center gap-4 mb-6 pb-4 border-b border-white/10">
-                        <img src="asserts/flag/India .jpg" alt="India"
-                            class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,153,51,0.2)] object-cover">
-                        <h4 class="font-display font-bold text-lg text-white tracking-wide">India</h4>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div class="relative pl-4 border-l-2 border-audvikBlue/30">
-                            <strong class="text-audvikBlue text-xs uppercase tracking-wider block mb-1">Headquarters
-                                (Bengaluru)</strong>
-                            <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
-                                15/1, 185/2, 185/A, 18th Main Rd,<br>Jayanagar 9th Block, 560041
-                            </p>
-                        </div>
-
-                        <div class="relative pl-4 border-l-2 border-white/10">
-                            <strong class="text-gray-300 text-xs uppercase tracking-wider block mb-1">Bengaluru
-                                (Mail)</strong>
-                            <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
-                                5th Floor, Trifecta Adatto,<br>Garudachar Palya, 560048
-                            </p>
-                        </div>
-
-                        <div class="relative pl-4 border-l-2 border-white/10">
-                            <strong class="text-gray-300 text-xs uppercase tracking-wider block mb-1">Noida</strong>
-                            <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
-                                C2, Sector 1, Block C,<br>GTB Nagar, UP 201301
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3">
-                    <div class="mb-6 pb-4 border-b border-white/10">
-                        <h4 class="font-display font-bold text-lg text-white tracking-wide">Global Locations</h4>
-                    </div>
-
-                    <div class="space-y-8">
+            <div class="max-w-[1400px] mx-auto px-6 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+                    <div class="lg:col-span-4 space-y-8">
                         <div>
-                            <div class="flex items-center gap-4 mb-3">
-                                <img src="asserts/flag/UK.jpg" alt="UK"
-                                    class="h-8 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
-                                <h5 class="font-bold text-white text-sm">United Kingdom</h5>
-                            </div>
-                            <p
-                                class="text-gray-400 text-sm leading-relaxed pl-6 border-l border-white/10 hover:text-gray-200 transition-colors">
-                                350 Hoole Lane, Chester<br>CH2 3ES, UK
+                            <img src="asserts/Audvik Logo.svg" alt="Audvik" class="h-12 w-auto mb-6">
+                            <p class="text-blue-100/60 text-sm leading-relaxed max-w-sm">
+                                AudvikLabs is a global engineering studio expert in Serverless Architecture, Cloud
+                                Migration, Generative AI, and Quantum Computing.
                             </p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <a href="mailto:bd@audviklabs.com"
+                                class="group flex items-center gap-3 text-white transition-colors">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-audvikBlue group-hover:shadow-[0_0_15px_#5799D2] transition-all duration-300">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium group-hover:text-audvikBlue transition-colors">bd@audviklabs.com</span>
+                            </a>
+
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/5">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="text-sm">
+                                    <span class="block hover:text-white transition-colors">+91 80711 76992</span>
+                                    <span class="block hover:text-white transition-colors">+91 97645 43918</span>
+                                </div>
+                            </div>
                         </div>
 
                         <div>
-                            <div class="flex items-center gap-4 mb-3">
-                                <img src="asserts/flag/Netherlands.jpg" alt="Netherlands"
-                                    class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
-                                <h5 class="font-bold text-white text-sm">Netherlands</h5>
-                            </div>
-                            <p
-                                class="text-gray-400 text-sm leading-relaxed pl-6 border-l border-white/10 hover:text-gray-200 transition-colors">
-                                Hoogoorddreef, 55,2<br>1101 BE The Netherlands
+                            <p class="text-[10px] font-bold text-audvikBlue tracking-widest uppercase mb-4">
+                                Accreditations
                             </p>
-                        </div>
-                    </div>
-                </div>
+                            <div class="flex gap-6">
+                                <div
+                                    class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
+                                    <img src="asserts/ISO/ISO.png" alt="ISO" class="w-full h-full object-cover">
+                                </div>
 
-                <div class="lg:col-span-2 flex flex-col justify-between">
-                    <div>
-                        <h4 class="font-display font-bold text-lg text-white mb-6 pb-4 border-b border-white/10">Explore
-                        </h4>
-                        <ul class="space-y-4">
-                            <li><a href="products/realm.html"
-                                    class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
-                                    <span
-                                        class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
-                                    Product
-                                </a></li>
-                            <li><a href="SuccessStories.html"
-                                    class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
-                                    <span
-                                        class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
-                                    Success Stories
-                                </a></li>
-                            <li><a href="careers.html"
-                                    class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
-                                    <span
-                                        class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
-                                    Careers
-                                </a></li>
-                            <li><a href="blog.html"
-                                    class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
-                                    <span
-                                        class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
-                                    Blog & Insights
-                                </a></li>
-                            <li><a href="contactus.html"
-                                    class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
-                                    <span
-                                        class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
-                                    Contact Us
-                                </a></li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-8 pt-6 border-t border-white/10">
-                        <p class="text-[10px] font-bold text-audvikBlue tracking-widest uppercase mb-4">Tech Partners
-                        </p>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-28 h-28 flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer"
-                                title="Google Cloud">
-                                <img src="asserts/tools/cloud.png" alt="Google Cloud"
-                                    class="w-full h-full object-contain">
-                            </div>
-
-                            <div class="w-28 h-28 flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer"
-                                title="Databricks">
-                                <img src="asserts/tools/Data Bricks.png" alt="Databricks"
-                                    class="w-full h-full object-contain">
+                                <div
+                                    class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
+                                    <img src="asserts/ISO/AICPA.png" alt="AICPA" class="w-full h-full object-cover">
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="lg:col-span-3">
+                        <div class="flex items-center gap-4 mb-6 pb-4 border-b border-white/10">
+                            <img src="asserts/flag/India .jpg" alt="India"
+                                class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,153,51,0.2)] object-cover">
+                            <h4 class="font-display font-bold text-lg text-white tracking-wide">India</h4>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="relative pl-4 border-l-2 border-audvikBlue/30">
+                                <strong class="text-audvikBlue text-xs uppercase tracking-wider block mb-1">Headquarters
+                                    (Bengaluru)</strong>
+                                <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
+                                    15/1, 185/2, 185/A, 18th Main Rd,<br>Jayanagar 9th Block, 560041
+                                </p>
+                            </div>
+
+                            <div class="relative pl-4 border-l-2 border-white/10">
+                                <strong class="text-gray-300 text-xs uppercase tracking-wider block mb-1">Bengaluru
+                                    (Mail)</strong>
+                                <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
+                                    5th Floor, Trifecta Adatto,<br>Garudachar Palya, 560048
+                                </p>
+                            </div>
+
+                            <div class="relative pl-4 border-l-2 border-white/10">
+                                <strong class="text-gray-300 text-xs uppercase tracking-wider block mb-1">Noida</strong>
+                                <p class="text-gray-400 text-sm leading-relaxed hover:text-gray-200 transition-colors">
+                                    C2, Sector 1, Block C,<br>GTB Nagar, UP 201301
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-3">
+                        <div class="mb-6 pb-4 border-b border-white/10">
+                            <h4 class="font-display font-bold text-lg text-white tracking-wide">Global Locations</h4>
+                        </div>
+
+                        <div class="space-y-8">
+                            <div>
+                                <div class="flex items-center gap-4 mb-3">
+                                    <img src="asserts/flag/UK.jpg" alt="UK"
+                                        class="h-8 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
+                                    <h5 class="font-bold text-white text-sm">United Kingdom</h5>
+                                </div>
+                                <p
+                                    class="text-gray-400 text-sm leading-relaxed pl-6 border-l border-white/10 hover:text-gray-200 transition-colors">
+                                    350 Hoole Lane, Chester<br>CH2 3ES, UK
+                                </p>
+                            </div>
+
+                            <div>
+                                <div class="flex items-center gap-4 mb-3">
+                                    <img src="asserts/flag/Netherlands.jpg" alt="Netherlands"
+                                        class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
+                                    <h5 class="font-bold text-white text-sm">Netherlands</h5>
+                                </div>
+                                <p
+                                    class="text-gray-400 text-sm leading-relaxed pl-6 border-l border-white/10 hover:text-gray-200 transition-colors">
+                                    Hoogoorddreef, 55,2<br>1101 BE The Netherlands
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-2 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-white mb-6 pb-4 border-b border-white/10">
+                                Explore
+                            </h4>
+                            <ul class="space-y-4">
+                                <li><a href="products/realm.html"
+                                        class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
+                                        <span
+                                            class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
+                                        Product
+                                    </a></li>
+                                <li><a href="SuccessStories.html"
+                                        class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
+                                        <span
+                                            class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
+                                        Success Stories
+                                    </a></li>
+                                <li><a href="careers.html"
+                                        class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
+                                        <span
+                                            class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
+                                        Careers
+                                    </a></li>
+                                <li><a href="blog.html"
+                                        class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
+                                        <span
+                                            class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
+                                        Blog & Insights
+                                    </a></li>
+                                <li><a href="contactus.html"
+                                        class="text-gray-400 hover:text-audvikBlue text-sm font-medium transition-colors flex items-center gap-2 group">
+                                        <span
+                                            class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-audvikBlue transition-colors"></span>
+                                        Contact Us
+                                    </a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-white/10">
+                            <p class="text-[10px] font-bold text-audvikBlue tracking-widest uppercase mb-4">Tech
+                                Partners
+                            </p>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-28 h-28 flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer"
+                                    title="Google Cloud">
+                                    <img src="asserts/tools/cloud.png" alt="Google Cloud"
+                                        class="w-full h-full object-contain">
+                                </div>
+
+                                <div class="w-28 h-28 flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer"
+                                    title="Databricks">
+                                    <img src="asserts/tools/Data Bricks.png" alt="Databricks"
+                                        class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
+                <div
+                    class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+
+                    <div class="text-xs text-gray-500 whitespace-nowrap order-3 md:order-1">
+                        &copy; 2026 Audvik Labs Inc. All rights reserved.
+                    </div>
+
+                    <div class="flex items-center gap-6 order-1 md:order-2">
+                        <a href="https://x.com/AudvikLabs" class="text-gray-400 hover:text-white transition-colors"><svg
+                                class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg></a>
+                        <a href="https://www.linkedin.com/company/audvik-labs/"
+                            class="text-gray-400 hover:text-white transition-colors"><svg class="w-5 h-5"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg></a>
+                    </div>
+
+                    <div class="flex gap-6 text-xs text-gray-500 font-medium order-2 md:order-3">
+                        <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                        <a href="#" class="hover:text-white transition-colors">Terms</a>
+                        <a href="#" class="hover:text-white transition-colors">Cookies</a>
+                    </div>
+                </div>
             </div>
+        </footer>
 
-            <div
-                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
-
-                <div class="text-xs text-gray-500 whitespace-nowrap order-3 md:order-1">
-                    &copy; 2026 Audvik Labs Inc. All rights reserved.
-                </div>
-
-                <div class="flex items-center gap-6 order-1 md:order-2">
-                    <a href="https://x.com/AudvikLabs" class="text-gray-400 hover:text-white transition-colors"><svg
-                            class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                        </svg></a>
-                    <a href="https://www.linkedin.com/company/audvik-labs/"
-                        class="text-gray-400 hover:text-white transition-colors"><svg class="w-5 h-5"
-                            fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg></a>
-                </div>
-
-                <div class="flex gap-6 text-xs text-gray-500 font-medium order-2 md:order-3">
-                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms</a>
-                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-          // --- INITIALIZE LENIS SMOOTH SCROLL ---
+        <script>
+            // --- INITIALIZE LENIS SMOOTH SCROLL ---
             const lenis = new Lenis({
                 duration: 1.2,
                 easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -2386,7 +2413,7 @@
                 glowElement.style.top = `${y}px`;
             });
 
-    </script>
+        </script>
 </body>
 
 </html>

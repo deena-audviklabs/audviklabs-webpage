@@ -40,39 +40,42 @@
          body {
             margin: 0;
             padding: 0;
-            background-color: #050508;
+            background-color: #001133;
             color: white;
+            width: 100%;
+            max-width: 100%;
             overflow-x: hidden;
+            position: relative;
             scroll-behavior: smooth;
         }
 
+        /* --- BACKGROUND --- */
         .content-layer {
             position: relative;
             z-index: 10;
         }
 
-        /* --- NAVBAR STYLES --- */
+        /* --- NAVBAR STYLES (GOLD OUTLINE & GLOW) --- */
         .liquid-nav-pill {
             background: rgba(10, 15, 25, 0.6);
             backdrop-filter: blur(40px) saturate(200%);
-            -webkit-backdrop-filter: blur(40px) saturate(200%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-top: 1px solid rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
             border-radius: 9999px;
             transition: all 0.3s ease;
         }
 
         .liquid-nav-pill:hover {
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
-            background: rgba(15, 18, 25, 0.7);
+            border-color: rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            background: rgba(15, 18, 25, 0.8);
         }
 
         .nav-btn-primary {
             border-radius: 9999px;
             background: linear-gradient(135deg, #5799D2, #7966CD);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 215, 0, 0.3);
             color: #ffffff;
             font-weight: 600;
             font-size: 0.85rem;
@@ -80,7 +83,7 @@
         }
 
         .nav-btn-primary:hover {
-            box-shadow: 0 0 15px rgba(121, 102, 205, 0.5);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
 
         .nav-link {
@@ -91,10 +94,10 @@
         }
 
         .nav-link:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
-        
+
         /* --- UTILS --- */
         .list-dot {
             height: 6px;
@@ -152,88 +155,259 @@
 </head>
 <body>
 
-    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
+   <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
         <div class="w-full mx-auto relative flex items-center justify-center">
-            
-            <div class="liquid-nav-pill w-[95%] max-w-md lg:w-fit lg:max-w-none flex items-center justify-between gap-8 px-6 py-4 relative z-50 transition-all duration-300">
-                
+
+            <div
+                class="liquid-nav-pill w-[95%] max-w-md lg:w-fit lg:max-w-none flex items-center justify-between gap-8 px-6 py-4 relative z-50 transition-all duration-300">
+
                 <a href="../index.html" class="flex-shrink-0">
-                    <img src="../asserts/Audvik Logo.svg" alt="Audvik Labs Logo" class="h-8 md:h-12 w-auto drop-shadow-lg">
+                    <img src="../asserts/Audvik Logo.svg" alt="Audvik Labs Logo"
+                        class="h-8 md:h-10 w-auto drop-shadow-lg">
                 </a>
 
                 <div class="hidden lg:flex items-center gap-8">
-                    
-                    <a href="../index.html" class="nav-link">Home</a>
+
+                    <a href="../index.html" class="nav-link text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
+                        Home
+                    </a>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="../index.html#services" class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                        <a href="#services" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Services
-                            <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
-                            <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </a>
 
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[500px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
-                            <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-3 shadow-2xl overflow-hidden ring-1 ring-white/5">
+                        <div
+                            class="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[500px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                            <div
+                                class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-3 shadow-2xl overflow-hidden ring-1 ring-white/5">
                                 <div class="grid grid-cols-2 gap-1">
                                     <div class="space-y-1">
-                                        <a href="../services/Business-Intelligence.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Business Intelligence</span>
+                                        <a href="../services/Business-Intelligence.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Business
+                                                Intelligence</span>
                                         </a>
-                                        <a href="../services/gen-ai.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Generative AI</span>
+                                        <a href="../services/gen-ai.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Generative
+                                                AI</span>
                                         </a>
-                                        <a href="../services/cloud-implementation.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Cloud Implementation</span>
+                                        <a href="../services/cloud-implementation.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Cloud
+                                                Implementation</span>
                                         </a>
-                                        <a href="../services/MobileAppDev.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-blue-500/10 flex items-center justify-center text-blue-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Mobile App Dev</span>
+                                        <a href="../services/MobileAppDev.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Mobile
+                                                App Dev</span>
                                         </a>
-                                        <a href="../services/QualityAssurance.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-green-500/10 flex items-center justify-center text-green-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Quality Assurance</span>
+                                        <a href="../services/QualityAssurance.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-green-500/10 flex items-center justify-center text-green-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Quality
+                                                Assurance</span>
                                         </a>
-                                        <a href="../services/serverless-services.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Serverless Deployment</span>
+                                        <a href="../services/serverless-services.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Serverless
+                                                Deployment</span>
                                         </a>
-                                        <a href="../services/Blockchain-Development.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-red-500/10 flex items-center justify-center text-red-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Blockchain</span>
+                                        <a href="../services/Blockchain-Development.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-red-500/10 flex items-center justify-center text-red-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Blockchain</span>
                                         </a>
                                     </div>
 
                                     <div class="space-y-1">
-                                        <a href="../services/Bot-Development.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Bot Development</span>
+                                        <a href="../services/Bot-Development.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Bot
+                                                Development</span>
                                         </a>
-                                        <a href="../services/Quantam-Computing.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Quantum Computing</span>
+                                        <a href="../services/Quantam-Computing.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Quantum
+                                                Computing</span>
                                         </a>
-                                        <a href="../services/MachineLearning.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center text-teal-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">ML-Ops</span>
+                                        <a href="../services/MachineLearning.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center text-teal-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">ML-Ops</span>
                                         </a>
-                                        <a href="../services/DevSecOps.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">DevSecOps</span>
+                                        <a href="../services/DevSecOps.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">DevSecOps</span>
                                         </a>
-                                        <a href="../services/game-development.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Game Development</span>
+                                        <a href="../services/game-development.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Game
+                                                Development</span>
                                         </a>
-                                        <a href="../services/HPC.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-sky-500/10 flex items-center justify-center text-sky-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">High-Performance Computing</span>
+                                        <a href="../services/HPC.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-sky-500/10 flex items-center justify-center text-sky-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">High-Performance
+                                                Computing</span>
                                         </a>
-                                        <a href="../services/Resourcing.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                            <div class="w-6 h-6 rounded bg-rose-500/10 flex items-center justify-center text-rose-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
-                                            <span class="text-gray-300 text-xs font-medium group-hover/item:text-white">Resourcing</span>
+                                        <a href="../services/Resourcing.html"
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                            <div
+                                                class="w-6 h-6 rounded bg-rose-500/10 flex items-center justify-center text-rose-400">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <span
+                                                class="text-gray-300 text-xs font-medium group-hover/item:text-white">Resourcing</span>
                                         </a>
                                     </div>
                                 </div>
@@ -242,44 +416,73 @@
                     </div>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="../products.html" class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                        <a href="#" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Products
-                            <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </a>
 
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
-                            <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl overflow-hidden ring-1 ring-white/5">
+                        <div
+                            class="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                            <div
+                                class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl overflow-hidden ring-1 ring-white/5">
                                 <div class="space-y-1">
-                                    <a href="../products/realm.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                        <div class="w-8 h-8 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue group-hover/item:bg-audvikBlue group-hover/item:text-white transition-colors">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    <a href="../products/realm.html"
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                        <div
+                                            class="w-8 h-8 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue group-hover/item:bg-audvikBlue group-hover/item:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                            </svg>
                                         </div>
                                         <div>
                                             <span class="block text-white text-sm font-medium leading-none">Realm</span>
-                                            <span class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">AI Platform</span>
+                                            <span
+                                                class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">AI
+                                                Platform</span>
                                         </div>
                                     </a>
 
-                                    <a href="../products/ordo.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                        <div class="w-8 h-8 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple group-hover/item:bg-audvikPurple group-hover/item:text-white transition-colors">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                                    <a href="../products/ordo.html"
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                        <div
+                                            class="w-8 h-8 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple group-hover/item:bg-audvikPurple group-hover/item:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                                </path>
+                                            </svg>
                                         </div>
                                         <div>
                                             <span class="block text-white text-sm font-medium leading-none">ORDO</span>
-                                            <span class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">Orchestration</span>
+                                            <span
+                                                class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">Orchestration</span>
                                         </div>
                                     </a>
 
-                                    <a href="../products/a-helg.html" class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
-                                        <div class="w-8 h-8 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink group-hover/item:bg-audvikPink group-hover/item:text-white transition-colors">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <a href="../products/a-helg.html"
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
+                                        <div
+                                            class="w-8 h-8 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink group-hover/item:bg-audvikPink group-hover/item:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
                                         </div>
                                         <div>
-                                            <span class="block text-white text-sm font-medium leading-none">A-Helg</span>
-                                            <span class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">Health Analyzer</span>
+                                            <span
+                                                class="block text-white text-sm font-medium leading-none">A-Helg</span>
+                                            <span
+                                                class="block text-[10px] text-gray-400 mt-1 group-hover/item:text-gray-300">Health
+                                                Analyzer</span>
                                         </div>
                                     </a>
-
                                 </div>
                             </div>
                         </div>
@@ -291,66 +494,106 @@
                     <a href="../SuccessStories.html" class="nav-link">Success Stories</a>
                 </div>
 
-               <div class="hidden lg:flex items-center pl-4 border-l border-white/10">
+                <div class="hidden lg:flex items-center pl-4 border-l border-white/10">
                     <button class="nav-btn-primary px-6 py-2" onclick="openCalendly()">
                         Get Started
                     </button>
                 </div>
 
                 <button id="mobile-menu-btn" class="lg:hidden text-white p-2" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
                 </button>
+
             </div>
         </div>
 
-        <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 lg:hidden flex flex-col pt-32 px-6 overflow-y-auto">
+        <div id="mobile-menu"
+            class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300 lg:hidden flex flex-col pt-32 px-6 overflow-y-auto">
             <div class="flex flex-col gap-6 text-lg text-center pb-12">
-                <a href="../index.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Home</a>
-                
+
+                <a href="#" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Home</a>
+
                 <div class="border-b border-white/10 pb-4">
-                    <button onclick="toggleAccordion('mobile-services-list', 'services-icon')" class="w-full flex items-center justify-center gap-2 py-2 group">
+                    <button onclick="toggleAccordion('mobile-services-list', 'services-icon')"
+                        class="w-full flex items-center justify-center gap-2 py-2 group">
                         <span class="text-audvikBlue text-xs uppercase tracking-widest font-bold">Our Services</span>
-                        <svg id="services-icon" class="w-4 h-4 text-audvikBlue transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg id="services-icon" class="w-4 h-4 text-audvikBlue transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
                     </button>
+
                     <div id="mobile-services-list" class="hidden flex-col gap-3 pt-4 text-sm items-center">
-                        <a href="../services/Business-Intelligence.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Business Intelligence</a>
-                        <a href="../services/gen-ai.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Generative AI</a>
-                        <a href="../services/cloud-implementation.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Cloud Implementation</a>
-                        <a href="../services/MobileAppDev.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Mobile App Dev</a>
-                        <a href="../services/QualityAssurance.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Quality Assurance</a>
-                        <a href="../services/serverless-services.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Serverless Deployment</a>
-                        <a href="../services/Blockchain-Development.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Blockchain</a>
-                        <a href="../services/Bot-Development.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Bot Development</a>
-                        <a href="../services/Quantam-Computing.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Quantum Computing</a>
-                        <a href="../services/MachineLearning.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">ML-Ops</a>
-                        <a href="../services/DevSecOps.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">DevSecOps</a>
-                        <a href="../services/game-development.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Game Development</a>
-                        <a href="../services/HPC.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">High-Performance Computing</a>
-                        <a href="../services/Resourcing.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Resourcing</a>
+                        <a href="../services/Business-Intelligence.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Business Intelligence</a>
+                        <a href="../services/gen-ai.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Generative AI</a>
+                        <a href="../services/cloud-implementation.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Cloud Implementation</a>
+                        <a href="../services/MobileAppDev.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Mobile App Dev</a>
+                        <a href="../services/QualityAssurance.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Quality Assurance</a>
+                        <a href="../services/serverless-services.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Serverless Deployment</a>
+                        <a href="../services/Blockchain-Development.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Blockchain</a>
+                        <a href="../services/Bot-Development.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Bot Development</a>
+                        <a href="../services/Quantam-Computing.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Quantum Computing</a>
+                        <a href="../services/MachineLearning.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">ML-Ops</a>
+                        <a href="../services/DevSecOps.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">DevSecOps</a>
+                        <a href="../services/game-development.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Game Development</a>
+                        <a href="../services/HPC.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">High-Performance Computing</a>
+                        <a href="../services/Resourcing.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Resourcing</a>
                     </div>
                 </div>
 
                 <div class="border-b border-white/10 pb-4">
-                    <button onclick="toggleAccordion('mobile-products-list', 'products-icon')" class="w-full flex items-center justify-center gap-2 py-2 group">
+                    <button onclick="toggleAccordion('mobile-products-list', 'products-icon')"
+                        class="w-full flex items-center justify-center gap-2 py-2 group">
                         <span class="text-audvikPurple text-xs uppercase tracking-widest font-bold">Our Products</span>
-                        <svg id="products-icon" class="w-4 h-4 text-audvikPurple transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg id="products-icon" class="w-4 h-4 text-audvikPurple transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
                     </button>
+
                     <div id="mobile-products-list" class="hidden flex-col gap-3 pt-4 text-sm items-center">
-                        <a href="../products/realm.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">Realm (AI)</a>
-                        <a href="../products/ordo.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">ORDO (Orchestration)</a>
-                        <a href="../products/a-helg.html" onclick="toggleMobileMenu()" class="text-gray-400 hover:text-white transition-colors">A-Helg (Health)</a>
+                        <a href="../products/realm.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">Realm (AI)</a>
+                        <a href="../products/ordo.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">ORDO (Orchestration)</a>
+                        <a href="../products/a-helg.html" onclick="toggleMobileMenu()"
+                            class="text-gray-400 hover:text-white transition-colors">A-Helg (Health)</a>
                     </div>
                 </div>
 
-                <a href="../blog.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Blog</a>
-                <a href="../about.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">About us</a>
-                <a href="../contactus.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Contact us</a>
-                <a href="../SuccessStories.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">Success Stories</a>
-                
-<button class="nav-btn-primary w-full py-4 mt-2" 
-        onclick="toggleMobileMenu(); openCalendly(event)">
-    Get Started
-</button>                <button class="text-gray-400 text-sm mt-4 mb-10" onclick="toggleMobileMenu()">Close Menu</button>
+                <a href="../blog.html" class="text-white border-b border-white/10 pb-4"
+                    onclick="toggleMobileMenu()">Blog</a>
+                <a href="../about.html" class="text-white border-b border-white/10 pb-4"
+                    onclick="toggleMobileMenu()">About
+                    us</a>
+                <a href="../contactus.html" class="text-white border-b border-white/10 pb-4"
+                    onclick="toggleMobileMenu()">Contact us</a>
+                <a href="../SuccessStories.html" class="text-white border-b border-white/10 pb-4"
+                    onclick="toggleMobileMenu()">Success Stories</a>
+
+                <button class="nav-btn-primary w-full py-4 mt-2" onclick="toggleMobileMenu(); openCalendly(event)">
+                    Get Started
+                </button>
+                <button class="text-gray-400 text-sm mt-4 mb-10" onclick="toggleMobileMenu()">Close Menu</button>
             </div>
         </div>
     </nav>
@@ -367,92 +610,140 @@
         </div>
     </section>
 
-    <section class="py-12 md:py-20 px-6">
-        <div class="max-w-6xl mx-auto">
+   <section class="relative group py-12 md:py-20 px-6 overflow-visible">
+    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[300px] w-full bg-orange-500/5 blur-[120px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="glass-card p-6 md:p-10 rounded-3xl grid md:grid-cols-2 gap-12 items-center border border-white/10 transition-all duration-700 hover:border-orange-400/50 hover:shadow-[0_0_50px_-10px_rgba(255,215,0,0.2)]">
             
-            <div class="glass-card p-6 md:p-10 rounded-3xl grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-display font-bold mb-6">What is Generative AI?</h2>
-                    <p class="text-slate-300 leading-relaxed mb-6">
-                        Generative Artificial Intelligence, or generative AI, is a subset of artificial intelligence that focuses on using neural networks to generate data, content, or solutions.
-                    </p>
-                    <p class="text-slate-400 leading-relaxed">
-                        Unlike traditional AI models that are task-specific, generative AI models have the capability to create new and valuable outputs based on patterns learned from large datasets. These models can generate text, images, music, code, and more, making them versatile tools for businesses.
-                    </p>
-                </div>
-                <div class="flex justify-center">
-                    <div class="w-full aspect-video rounded-2xl bg-slate-800/50 border border-white/5 flex items-center justify-center">
-                        <span class="text-audvikBlue animate-pulse font-bold">
-                            <img class="AiNeuralImage" src="https://images.unsplash.com/photo-1630155923002-17db0f219f1f?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%; height:100%; object-fit: cover; border-radius: 1rem;">
-                        </span>
-                    </div>
+            <div>
+                <h2 class="text-3xl font-display font-bold mb-6 text-white">
+                    What is <span class="text-[#FFD700]">Generative AI?</span>
+                </h2>
+                <p class="text-slate-300 leading-relaxed mb-6">
+                    Generative Artificial Intelligence, or generative AI, is a subset of artificial intelligence that focuses on using neural networks to generate data, content, or solutions.
+                </p>
+                <p class="text-slate-400 leading-relaxed">
+                    Unlike traditional AI models that are task-specific, generative AI models have the capability to create new and valuable outputs based on patterns learned from large datasets. These models can generate text, images, music, code, and more, making them versatile tools for businesses.
+                </p>
+            </div>
+
+            <div class="flex justify-center relative group/img">
+                <div class="absolute -inset-4 bg-orange-500/10 rounded-full blur-3xl opacity-0 group-hover/img:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                
+                <div class="relative z-10 w-full aspect-video rounded-2xl bg-transparent border border-white/10 flex items-center justify-center overflow-hidden transition-all duration-500 group-hover/img:border-[#FFD700]/50">
+                    <img class="AiNeuralImage" 
+                         src="https://images.unsplash.com/photo-1630155923002-17db0f219f1f?q=80&w=1332&auto=format&fit=crop" 
+                         style="width:100%; height:100%; object-fit: cover; border-radius: 1rem;">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="py-20 px-6 bg-[#080B12]">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-center text-4xl font-display font-bold mb-16">Our Approach</h2>
-            <div class="grid md:grid-cols-2 gap-10">
+    <section class="relative group py-20 px-6 overflow-visible">
+    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[400px] bg-orange-500/5 blur-[150px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+        <h2 class="text-center text-4xl font-display font-bold mb-16 text-white">
+            Our <span class="text-[#FFD700]">Approach</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="relative group/card">
+                <div class="absolute -inset-2 bg-gradient-to-br from-orange-500/10 to-yellow-500/10 rounded-2xl blur-2xl opacity-0 group-hover/card:opacity-100 transition-all duration-500 pointer-events-none"></div>
                 
-                <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-audvikBlue font-bold text-xl mb-6">Development Lifecycle</h3>
+                <div class="relative z-10 glass-card p-8 rounded-2xl border border-white/10 bg-transparent transition-all duration-500 group-hover/card:border-orange-400/50">
+                    <h3 class="text-[#FFD700] font-bold text-xl mb-6">Development Lifecycle</h3>
                     <ul class="space-y-4 text-slate-300">
-                        <li><span class="list-dot"></span> 1. Requirement Identification</li>
-                        <li><span class="list-dot"></span> 2. Data Modelling and Development</li>
-                        <li><span class="list-dot"></span> 3. Model Design and Training</li>
-                        <li><span class="list-dot"></span> 4. Deployment</li>
-                        <li><span class="list-dot"></span> 5. Maintenance</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-orange-400 shadow-[0_0_8px_#fb923c]"></span> 1. Requirement Identification</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-orange-400 shadow-[0_0_8px_#fb923c]"></span> 2. Data Modelling and Development</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-orange-400 shadow-[0_0_8px_#fb923c]"></span> 3. Model Design and Training</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-orange-400 shadow-[0_0_8px_#fb923c]"></span> 4. Deployment</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-orange-400 shadow-[0_0_8px_#fb923c]"></span> 5. Maintenance</li>
                     </ul>
                 </div>
+            </div>
+            
+            <div class="relative group/card">
+                <div class="absolute -inset-2 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-2xl blur-2xl opacity-0 group-hover/card:opacity-100 transition-all duration-500 pointer-events-none"></div>
                 
-                <div class="glass-card p-8 rounded-2xl border-l-4 border-audvikDeep">
-                    <h3 class="text-audvikDeep font-bold text-xl mb-6">Cross-Functional Expertise</h3>
+                <div class="relative z-10 glass-card p-8 rounded-2xl border border-white/10 bg-transparent transition-all duration-500 group-hover/card:border-yellow-400/50">
+                    <h3 class="text-[#FFD700] font-bold text-xl mb-6">Cross-Functional Expertise</h3>
                     <ul class="space-y-4 text-slate-300">
-                        <li><span class="list-dot" style="background:#7966CD; box-shadow: 0 0 10px #7966CD;"></span> NLP (Natural Language Processing)</li>
-                        <li><span class="list-dot" style="background:#7966CD; box-shadow: 0 0 10px #7966CD;"></span> Data Engineering</li>
-                        <li><span class="list-dot" style="background:#7966CD; box-shadow: 0 0 10px #7966CD;"></span> Machine Learning</li>
-                        <li><span class="list-dot" style="background:#7966CD; box-shadow: 0 0 10px #7966CD;"></span> HPC (High Performance Computing)</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-yellow-400 shadow-[0_0_10px_#facc15]"></span> NLP (Natural Language Processing)</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-yellow-400 shadow-[0_0_10px_#facc15]"></span> Data Engineering</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-yellow-400 shadow-[0_0_10px_#facc15]"></span> Machine Learning</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-yellow-400 shadow-[0_0_10px_#facc15]"></span> HPC (High Performance Computing)</li>
                     </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="py-24 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-center text-4xl font-display font-bold mb-16 uppercase tracking-widest">Why Choose Us</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-card p-8 rounded-xl">
+   <section class="relative group py-24 px-6 overflow-visible">
+    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[500px] bg-yellow-500/5 blur-[140px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+        <h2 class="text-center text-4xl font-display font-bold mb-16 uppercase tracking-widest text-white">
+            Why Choose Us
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="relative group/card">
+                <div class="absolute -inset-2 bg-yellow-500/15 rounded-xl blur-2xl opacity-0 group-hover/card:opacity-100 transition-all duration-500 pointer-events-none"></div>
+                <div class="relative z-10 glass-card p-8 rounded-xl border border-white/10 bg-transparent transition-all duration-500 group-hover/card:border-yellow-400/60">
                     <h4 class="text-white font-bold mb-3 text-lg">Unmatched Expertise</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">Our team of AI experts, data scientists, and machine learning engineers have a proven track record of delivering state-of-the-art solutions.</p>
                 </div>
-                <div class="glass-card p-8 rounded-xl">
+            </div>
+
+            <div class="relative group/card">
+                <div class="absolute -inset-2 bg-yellow-500/15 rounded-xl blur-2xl opacity-0 group-hover/card:opacity-100 transition-all duration-500 pointer-events-none"></div>
+                <div class="relative z-10 glass-card p-8 rounded-xl border border-white/10 bg-transparent transition-all duration-500 group-hover/card:border-yellow-400/60">
                     <h4 class="text-white font-bold mb-3 text-lg">Tailored Solutions</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">We do not believe in one-size-fits-all solutions. Your business is unique, and so are your needs. Our services align perfectly with your goals.</p>
                 </div>
-                <div class="glass-card p-8 rounded-xl">
+            </div>
+
+            <div class="relative group/card">
+                <div class="absolute -inset-2 bg-yellow-500/15 rounded-xl blur-2xl opacity-0 group-hover/card:opacity-100 transition-all duration-500 pointer-events-none"></div>
+                <div class="relative z-10 glass-card p-8 rounded-xl border border-white/10 bg-transparent transition-all duration-500 group-hover/card:border-yellow-400/60">
                     <h4 class="text-white font-bold mb-3 text-lg">Cutting-Edge Technology</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">We stay ahead of the curve, constantly innovating to bring you the latest advancements in Generative AI technology.</p>
                 </div>
-                <div class="glass-card p-8 rounded-xl">
+            </div>
+
+            <div class="relative group/card">
+                <div class="absolute -inset-2 bg-yellow-500/15 rounded-xl blur-2xl opacity-0 group-hover/card:opacity-100 transition-all duration-500 pointer-events-none"></div>
+                <div class="relative z-10 glass-card p-8 rounded-xl border border-white/10 bg-transparent transition-all duration-500 group-hover/card:border-yellow-400/60">
                     <h4 class="text-white font-bold mb-3 text-lg">Boost Efficiency</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">Automate repetitive tasks, allowing your team to focus on higher-value activities like strategy and creative design.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="py-20 px-6 border-y border-white/5 bg-gradient-to-b from-nightBlack to-[#0A0D14]">
-        <div class="max-w-4xl mx-auto text-center">
-            <span class="text-audvikBlue text-5xl font-serif">“</span>
-            <p class="text-2xl md:text-3xl font-light italic text-slate-200 leading-snug">
-                Our industry-recognized architects can help your organization implement best-in-class disaster recovery services-enabled IT infrastructure and help you realize the massive benefits of the cloud immediately.
-            </p>
-            <span class="text-audvikDeep text-5xl font-serif block mt-4">”</span>
-        </div>
-    </section>
+   <section class="relative group py-20 px-6 border-y border-white/5 bg-transparent overflow-hidden transition-all duration-700">
+    
+    <div class="absolute inset-x-0 bottom-0 h-0 group-hover:h-full bg-gradient-to-t from-yellow-500/10 via-orange-500/5 to-transparent transition-all duration-1000 ease-out pointer-events-none"></div>
+    
+    <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-0 group-hover:opacity-100 blur-[2px] transition-opacity duration-700"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+        <span class="text-white text-5xl font-serif opacity-40 group-hover:text-yellow-400 group-hover:opacity-100 transition-all duration-500">“</span>
+        
+        <p class="text-2xl md:text-3xl font-light italic text-white leading-snug transition-colors duration-500 group-hover:text-slate-100">
+            Our industry-recognized architects can help your organization implement best-in-class disaster recovery services-enabled IT infrastructure and help you realize the massive benefits of the cloud immediately.
+        </p>
+        
+        <span class="text-white text-5xl font-serif block mt-4 opacity-40 group-hover:text-yellow-400 group-hover:opacity-100 transition-all duration-500">”</span>
+    </div>
+
+    <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[80%] h-40 bg-yellow-500/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+</section>
 
     <footer id="contact" class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden mt-auto">
 
@@ -468,7 +759,7 @@
 
                     <div class="lg:col-span-4 space-y-8">
                         <div>
-                            <img src="../services/Asserts/Audvik Logo.svg" alt="Audvik" class="h-12 w-auto mb-6">
+                            <img src="../asserts/Audvik Logo.svg" alt="Audvik" class="h-12 w-auto mb-6">
                             <p class="text-blue-100/60 text-sm leading-relaxed max-w-sm">
                                 AudvikLabs is a global engineering studio expert in Serverless Architecture, Cloud
                                 Migration, Generative AI, and Quantum Computing.
@@ -512,12 +803,12 @@
                             <div class="flex gap-6">
                                 <div
                                     class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
-                                    <img src="../services/Asserts/ISO/ISO.png" alt="ISO" class="w-full h-full object-cover">
+                                    <img src="../asserts/ISO/ISO.png" alt="ISO" class="w-full h-full object-cover">
                                 </div>
 
                                 <div
                                     class="w-28 h-28 rounded-full flex items-center justify-center bg-white/5 border border-white/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
-                                    <img src="../services/Asserts/ISO/AICPA.png" alt="AICPA" class="w-full h-full object-cover">
+                                    <img src="../asserts/ISO/AICPA.png" alt="AICPA" class="w-full h-full object-cover">
                                 </div>
                             </div>
                         </div>
@@ -525,7 +816,7 @@
 
                     <div class="lg:col-span-3">
                         <div class="flex items-center gap-4 mb-6 pb-4 border-b border-white/10">
-                            <img src="../services/Asserts/flag/India .jpg" alt="India"
+                            <img src="../asserts/flag/India .jpg" alt="India"
                                 class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,153,51,0.2)] object-cover">
                             <h4 class="font-display font-bold text-lg text-white tracking-wide">India</h4>
                         </div>
@@ -564,7 +855,7 @@
                         <div class="space-y-8">
                             <div>
                                 <div class="flex items-center gap-4 mb-3">
-                                    <img src="../services/Asserts/flag/UK.jpg" alt="UK"
+                                    <img src="../asserts/flag/UK.jpg" alt="UK"
                                         class="h-8 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
                                     <h5 class="font-bold text-white text-sm">United Kingdom</h5>
                                 </div>
@@ -576,7 +867,7 @@
 
                             <div>
                                 <div class="flex items-center gap-4 mb-3">
-                                    <img src="../services/Asserts/flag/Netherlands.jpg" alt="Netherlands"
+                                    <img src="../asserts/flag/Netherlands.jpg" alt="Netherlands"
                                         class="h-10 w-auto rounded-md shadow-[0_0_15px_rgba(255,255,255,0.1)] object-cover">
                                     <h5 class="font-bold text-white text-sm">Netherlands</h5>
                                 </div>

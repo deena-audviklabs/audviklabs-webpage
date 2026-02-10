@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hardware as a Service | Audvik Labs</title>
-    <link rel="icon" type="image/svg+xml" href="logos/Audvik Logo Mark.svg">
+    <link rel="icon" type="image/svg+xml" href="../asserts/Audvik Logo Mark.svg">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -37,42 +37,45 @@
     </script>
 
     <style>
-       body {
+        body {
             margin: 0;
             padding: 0;
-            background-color: #050508;
+            background-color: #001133;
             color: white;
+            width: 100%;
+            max-width: 100%;
             overflow-x: hidden;
+            position: relative;
             scroll-behavior: smooth;
         }
 
+        /* --- BACKGROUND --- */
         .content-layer {
             position: relative;
             z-index: 10;
         }
 
-        /* --- NAVBAR STYLES --- */
+        /* --- NAVBAR STYLES (GOLD OUTLINE & GLOW) --- */
         .liquid-nav-pill {
             background: rgba(10, 15, 25, 0.6);
             backdrop-filter: blur(40px) saturate(200%);
-            -webkit-backdrop-filter: blur(40px) saturate(200%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-top: 1px solid rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
             border-radius: 9999px;
             transition: all 0.3s ease;
         }
 
         .liquid-nav-pill:hover {
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
-            background: rgba(15, 18, 25, 0.7);
+            border-color: rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            background: rgba(15, 18, 25, 0.8);
         }
 
         .nav-btn-primary {
             border-radius: 9999px;
             background: linear-gradient(135deg, #5799D2, #7966CD);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 215, 0, 0.3);
             color: #ffffff;
             font-weight: 600;
             font-size: 0.85rem;
@@ -80,20 +83,21 @@
         }
 
         .nav-btn-primary:hover {
-            box-shadow: 0 0 15px rgba(121, 102, 205, 0.5);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
 
         .nav-link {
             color: #d1d5db;
             transition: color 0.2s;
             font-size: 0.9rem;
-            font-weight: 500
+            font-weight: 500;
         }
 
         .nav-link:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
+
         
         /* --- UTILS --- */
         .hero-btn-primary {

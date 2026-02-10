@@ -61,15 +61,18 @@
     </script>
 
     <style>
+         html,
         body {
             margin: 0;
             padding: 0;
             background-color: #050508;
             color: white;
+            width: 100%;
+            max-width: 100%;
             overflow-x: hidden;
-            scroll-behavior: smooth;
+            position: relative;
+            /* scroll-behavior: smooth; */
         }
-
         /* --- UTILS --- */
         .content-layer {
             position: relative;
@@ -81,29 +84,27 @@
         }
 
 
-        /* --- NAVBAR STYLES --- */
+        /* --- NAVBAR STYLES (GOLD OUTLINE & GLOW) --- */
         .liquid-nav-pill {
             background: rgba(10, 15, 25, 0.6);
             backdrop-filter: blur(40px) saturate(200%);
-            -webkit-backdrop-filter: blur(40px) saturate(200%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-top: 1px solid rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
             border-radius: 9999px;
-            /* Full pill shape */
             transition: all 0.3s ease;
         }
 
         .liquid-nav-pill:hover {
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
-            background: rgba(15, 18, 25, 0.7);
+            border-color: rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            background: rgba(15, 18, 25, 0.8);
         }
 
         .nav-btn-primary {
             border-radius: 9999px;
             background: linear-gradient(135deg, #5799D2, #7966CD);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 215, 0, 0.3);
             color: #ffffff;
             font-weight: 600;
             font-size: 0.85rem;
@@ -111,7 +112,7 @@
         }
 
         .nav-btn-primary:hover {
-            box-shadow: 0 0 15px rgba(121, 102, 205, 0.5);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
 
         .nav-link {
@@ -122,10 +123,9 @@
         }
 
         .nav-link:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
-
         /* --- HERO BUTTONS --- */
         .hero-btn-primary {
             position: relative;
@@ -185,7 +185,7 @@
             <div
                 class="liquid-nav-pill w-[95%] max-w-md lg:w-fit lg:max-w-none flex items-center justify-between gap-8 px-6 py-4 relative z-50 transition-all duration-300">
 
-                <a href="#" class="flex-shrink-0">
+                <a href="../index.html" class="flex-shrink-0">
                     <img src="../asserts/Audvik Logo.svg" alt="Audvik Labs Logo"
                         class="h-8 md:h-10 w-auto drop-shadow-lg">
                 </a>
@@ -193,12 +193,12 @@
                 <div class="hidden lg:flex items-center gap-8">
 
                     <a href="../index.html" class="nav-link text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
                         Home
                     </a>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="#services"
-                            class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                        <a href="#services" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Services
                             <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -214,7 +214,7 @@
                                 <div class="grid grid-cols-2 gap-1">
                                     <div class="space-y-1">
                                         <a href="../services/Business-Intelligence.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -230,7 +230,7 @@
                                                 Intelligence</span>
                                         </a>
                                         <a href="../services/gen-ai.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -246,7 +246,7 @@
                                                 AI</span>
                                         </a>
                                         <a href="../services/cloud-implementation.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -262,7 +262,7 @@
                                                 Implementation</span>
                                         </a>
                                         <a href="../services/MobileAppDev.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-blue-500/10 flex items-center justify-center text-blue-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -278,7 +278,7 @@
                                                 App Dev</span>
                                         </a>
                                         <a href="../services/QualityAssurance.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-green-500/10 flex items-center justify-center text-green-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -293,7 +293,7 @@
                                                 Assurance</span>
                                         </a>
                                         <a href="../services/serverless-services.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -307,7 +307,7 @@
                                                 Deployment</span>
                                         </a>
                                         <a href="../services/Blockchain-Development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-red-500/10 flex items-center justify-center text-red-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -325,7 +325,7 @@
 
                                     <div class="space-y-1">
                                         <a href="../services/Bot-Development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -341,7 +341,7 @@
                                                 Development</span>
                                         </a>
                                         <a href="../services/Quantam-Computing.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -357,7 +357,7 @@
                                                 Computing</span>
                                         </a>
                                         <a href="../services/MachineLearning.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center text-teal-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -372,7 +372,7 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">ML-Ops</span>
                                         </a>
                                         <a href="../services/DevSecOps.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-orange-500/10 flex items-center justify-center text-orange-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -387,7 +387,7 @@
                                                 class="text-gray-300 text-xs font-medium group-hover/item:text-white">DevSecOps</span>
                                         </a>
                                         <a href="../services/game-development.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -403,7 +403,7 @@
                                                 Development</span>
                                         </a>
                                         <a href="../services/HPC.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-sky-500/10 flex items-center justify-center text-sky-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -419,7 +419,7 @@
                                                 Computing</span>
                                         </a>
                                         <a href="../services/Resourcing.html"
-                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                            class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                             <div
                                                 class="w-6 h-6 rounded bg-rose-500/10 flex items-center justify-center text-rose-400">
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
@@ -440,9 +440,8 @@
                     </div>
 
                     <div class="relative group h-full flex items-center">
-                        <a href="#" class="nav-link flex items-center gap-1.5 py-2 transition-colors hover:text-white">
+                        <a href="#" class="nav-link flex items-center gap-1.5 py-2 transition-colors">
                             Our Products
-                            <span class="w-1.5 h-1.5 rounded-full bg-audvikBlue shadow-[0_0_5px_#5799D2]"></span>
                             <svg class="w-2.5 h-2.5 text-gray-400 transition-transform duration-300 group-hover:-rotate-180 group-hover:text-audvikBlue"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -456,7 +455,7 @@
                                 class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl overflow-hidden ring-1 ring-white/5">
                                 <div class="space-y-1">
                                     <a href="../products/realm.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikBlue/10 flex items-center justify-center text-audvikBlue group-hover/item:bg-audvikBlue group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -473,7 +472,7 @@
                                     </a>
 
                                     <a href="../products/ordo.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikPurple/10 flex items-center justify-center text-audvikPurple group-hover/item:bg-audvikPurple group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -492,7 +491,7 @@
                                     </a>
 
                                     <a href="../products/a-helg.html"
-                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group/item">
+                                        class="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FFD700]/15 hover:shadow-[0_0_15px_rgba(255,215,0,0.15)] hover:border hover:border-[#FFD700]/30 border border-transparent transition-all group/item">
                                         <div
                                             class="w-8 h-8 rounded bg-audvikPink/10 flex items-center justify-center text-audvikPink group-hover/item:bg-audvikPink group-hover/item:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -587,7 +586,7 @@
                 <div class="border-b border-white/10 pb-4">
                     <button onclick="toggleAccordion('mobile-products-list', 'products-icon')"
                         class="w-full flex items-center justify-center gap-2 py-2 group">
-                        <span class="text-audvikPurple text-xs uppercase tracking-widest font-bold">OurProducts</span>
+                        <span class="text-audvikPurple text-xs uppercase tracking-widest font-bold">Our Products</span>
                         <svg id="products-icon" class="w-4 h-4 text-audvikPurple transition-transform duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
@@ -605,13 +604,14 @@
                     </div>
                 </div>
 
-                <a href="blog.html" class="text-white border-b border-white/10 pb-4"
+                <a href="../blog.html" class="text-white border-b border-white/10 pb-4"
                     onclick="toggleMobileMenu()">Blog</a>
-                <a href="about.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">About
+                <a href="../about.html" class="text-white border-b border-white/10 pb-4"
+                    onclick="toggleMobileMenu()">About
                     us</a>
-                <a href="contactus.html" class="text-white border-b border-white/10 pb-4"
+                <a href="../contactus.html" class="text-white border-b border-white/10 pb-4"
                     onclick="toggleMobileMenu()">Contact us</a>
-                <a href="SuccessStories.html" class="text-white border-b border-white/10 pb-4"
+                <a href="../SuccessStories.html" class="text-white border-b border-white/10 pb-4"
                     onclick="toggleMobileMenu()">Success Stories</a>
 
                 <button class="nav-btn-primary w-full py-4 mt-2" onclick="toggleMobileMenu(); openCalendly(event)">
@@ -628,234 +628,171 @@
 
         <main class="pt-32 pb-20 relative z-10">
 
-            <div class="absolute top-0 right-0 -z-10 pointer-events-none">
-                <div class="w-[800px] h-[600px] bg-audvikBlue/10 rounded-full blur-[120px]"></div>
-            </div>
+    <div class="absolute top-0 right-0 -z-10 pointer-events-none">
+        <div class="w-[800px] h-[600px] bg-audvikBlue/10 rounded-full blur-[120px]"></div>
+    </div>
 
-            <div class="max-w-[1400px] mx-auto px-6 mb-32">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div class="max-w-[1400px] mx-auto px-6 mb-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                    <div class="space-y-6">
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-audvikPink/30 bg-audvikPink/10 text-audvikPink text-xs font-bold uppercase tracking-widest">
-                            AI Powered Vision
-                        </div>
-
-                        <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight">
-                            Sync Your Digital Ecosystem <br>
-                            <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-audvikBlue via-audvikPurple to-audvikPink">Productivity
-                                with ORDO</span>
-                        </h1>
-
-                        <p class="text-blue-100/70 text-lg leading-relaxed max-w-lg">
-                            Streamline complexity with ORDO. Orchestrate your AI agents, tools, and processes into a
-                            single, high-performance rhythm that eliminates friction.
-                        </p>
-
-                        <button class="nav-btn-primary px-6 py-2" onclick="openCalendly()">
-                            Get In Touch Now
-                        </button>
-                    </div>
-
-                    <div class="relative w-full aspect-square md:aspect-[4/3] flex items-center justify-center animate-float"
-                        data-tilt>
-                        <svg width="600" height="450" viewBox="0 0 600 450" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" class="drop-shadow-2xl">
-                            <rect x="50" y="50" width="500" height="300" rx="12" fill="#0F1115" stroke="#334155"
-                                stroke-width="2" />
-                            <path d="M250 350 L250 400 L200 420 L400 420 L350 400 L350 350" fill="#0F1115"
-                                stroke="#334155" stroke-width="2" />
-
-                            <rect x="60" y="60" width="480" height="280" rx="8" fill="#1A1D24" />
-
-                            <path d="M60 130 H540 M60 200 H540 M60 270 H540" stroke="white" stroke-opacity="0.05" />
-                            <path d="M180 60 V340 M300 60 V340 M420 60 V340" stroke="white" stroke-opacity="0.05" />
-
-                            <g transform="translate(100, 150)">
-                                <rect x="-20" y="-20" width="100" height="80" rx="4" stroke="#10B981" stroke-width="2"
-                                    stroke-dasharray="4 2" fill="rgba(16, 185, 129, 0.1)" />
-                                <rect x="-20" y="-35" width="60" height="15" fill="#10B981" />
-                                <text x="-15" y="-24" fill="black" font-size="10" font-weight="bold"
-                                    font-family="sans-serif">BICYCLE</text>
-                                <circle cx="10" cy="40" r="15" stroke="white" stroke-width="2" />
-                                <circle cx="50" cy="40" r="15" stroke="white" stroke-width="2" />
-                                <path d="M10 40 L30 15 L50 40" stroke="white" stroke-width="2" />
-                                <path d="M30 15 L20 15" stroke="white" stroke-width="2" />
-                            </g>
-
-                            <g transform="translate(320, 100)">
-                                <rect x="0" y="0" width="140" height="100" rx="4" stroke="#F59E0B" stroke-width="2"
-                                    fill="rgba(245, 158, 11, 0.1)" />
-                                <rect x="0" y="-15" width="60" height="15" fill="#F59E0B" />
-                                <text x="5" y="-4" fill="black" font-size="10" font-weight="bold"
-                                    font-family="sans-serif">OBJECTS</text>
-                                <rect x="90" y="20" width="20" height="60" rx="2" stroke="white" stroke-width="2" />
-                                <rect x="95" y="10" width="10" height="10" fill="white" />
-                                <circle cx="40" cy="50" r="25" stroke="white" stroke-width="2" />
-                            </g>
-
-                            <g transform="translate(350, 240)">
-                                <rect x="0" y="0" width="150" height="80" rx="4" fill="#0F1115" stroke="#5799D2"
-                                    stroke-width="1" />
-                                <rect x="20" y="20" width="20" height="20" rx="2" fill="#5799D2" />
-                                <rect x="65" y="40" width="20" height="20" rx="2" fill="#A95AA3" />
-                                <rect x="110" y="20" width="20" height="20" rx="2" fill="#10B981" />
-                                <path d="M40 30 H65 M85 50 H110" stroke="white" stroke-width="1" />
-                            </g>
-
-                            <path d="M200 190 Q 280 190 320 150" stroke="#5799D2" stroke-width="2"
-                                stroke-dasharray="4 4" />
-                            <path d="M390 200 Q 425 220 425 240" stroke="#5799D2" stroke-width="2"
-                                stroke-dasharray="4 4" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-[1400px] mx-auto px-6 mb-32">
-                <div
-                    class="glass-panel p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
-                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-audvikPurple/20 blur-[80px]">
-                    </div>
-
-                    <div class="flex-shrink-0 relative">
-                        <div
-                            class="w-40 h-40 rounded-full bg-white/5 border border-white/10 flex items-center justify-center relative">
-                            <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-                                <circle cx="50" cy="50" r="45" stroke="#7966CD" stroke-width="1"
-                                    stroke-dasharray="5 5" />
-                                <circle cx="50" cy="50" r="35" stroke="#A95AA3" stroke-width="2" />
-                                <path
-                                    d="M50 25 C 65 25, 75 35, 75 50 C 75 65, 65 75, 50 75 C 35 75, 25 65, 25 50 C 25 35, 35 25, 50 25 Z"
-                                    stroke="white" stroke-width="2" />
-                                <circle cx="50" cy="50" r="12" fill="#5799D2" />
-                                <rect x="20" y="20" width="60" height="2" fill="#A95AA3" class="animate-scan" />
-                            </svg>
-                            <div
-                                class="absolute -bottom-6 text-center w-full font-bold text-xl tracking-widest text-white">
-                                ORDO</div>
-                        </div>
-                    </div>
-
-                    <div class="relative z-10">
-                        <h2 class="font-display text-3xl font-bold mb-4 text-audvikBlue">What is ORDO?</h2>
-                        <p class="text-gray-300 text-lg leading-relaxed">
-                            Ordo refers to a system for object recognition, detection, and orchestration, that
-                            identifies and localizes items in sensor data. It combines computer-vision models
-                            (classification, detection, tracking) and scene understanding to recognize objects and their
-                            relationships.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-[1400px] mx-auto px-6 space-y-24 mb-32">
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center feature-card p-6 rounded-2xl">
-                    <div class="order-2 md:order-1">
-                        <h3 class="font-display text-3xl font-bold mb-4 text-audvikPurple">Comprehensive Insights</h3>
-                        <p class="text-gray-400 leading-relaxed text-base">
-                            Ordo delivers end-to-end multimodal perception and reasoning—combining object detection,
-                            tracking, scene understanding, and LLM-driven decisioning into a unified pipeline. It
-                            supports flexible deployments (cloud, on-prem, edge), dynamic model routing/ensembling, and
-                            automated orchestration to optimize latency, cost, and accuracy.
-                        </p>
-                    </div>
-                    <div class="order-1 md:order-2 flex justify-center">
-                        <svg width="250" height="200" viewBox="0 0 250 200" fill="none">
-                            <path
-                                d="M125 40 C 80 40, 50 70, 50 110 C 50 150, 80 170, 125 170 C 170 170, 200 150, 200 110 C 200 70, 170 40, 125 40"
-                                fill="url(#grad1)" fill-opacity="0.2" stroke="#5799D2" stroke-width="2" />
-                            <circle cx="90" cy="90" r="5" fill="#fff" />
-                            <circle cx="160" cy="90" r="5" fill="#fff" />
-                            <circle cx="125" cy="130" r="5" fill="#fff" />
-                            <path d="M90 90 L125 130 L160 90 L90 90" stroke="white" stroke-opacity="0.5" />
-                            <path d="M90 90 L125 70 L160 90" stroke="white" stroke-opacity="0.5" />
-                            <defs>
-                                <linearGradient id="grad1" x1="50" y1="40" x2="200" y2="170"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#5799D2" />
-                                    <stop offset="1" stop-color="#A95AA3" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
+            <div class="reveal space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-audvikPink/30 bg-audvikPink/10 text-audvikPink text-xs font-bold uppercase tracking-widest">
+                    AI Powered Vision
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center feature-card p-6 rounded-2xl">
-                    <div class="flex justify-center">
-                        <svg width="280" height="200" viewBox="0 0 280 200" fill="none">
-                            <rect x="20" y="20" width="240" height="160" rx="8" fill="rgba(255,255,255,0.05)" />
-                            <rect x="40" y="100" width="20" height="60" rx="2" fill="#5799D2" />
-                            <rect x="70" y="70" width="20" height="90" rx="2" fill="#A95AA3" />
-                            <rect x="100" y="110" width="20" height="50" rx="2" fill="#7966CD" />
-                            <rect x="130" y="50" width="20" height="110" rx="2" fill="#5799D2" />
-                            <rect x="160" y="80" width="20" height="80" rx="2" fill="#A95AA3" />
-                            <path d="M40 100 L70 70 L100 110 L130 50 L160 80 L190 40" stroke="white" stroke-width="2"
-                                stroke-linecap="round" />
-                            <circle cx="190" cy="40" r="4" fill="white" />
-                            <rect x="180" y="10" width="50" height="20" rx="4" fill="white" />
-                            <text x="185" y="24" font-size="10" font-weight="bold" fill="black">98%</text>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-display text-3xl font-bold mb-4 text-audvikBlue">Customisable Graphs</h3>
-                        <p class="text-gray-400 leading-relaxed text-base">
-                            Interactive visualizations for metrics, detections, and events—choose chart types like line,
-                            bar, heatmap, scatter, and object-overlap views to represent real-time or historical data.
-                            Fully configurable metrics, time windows, aggregations, overlays/thresholds, annotations,
-                            color/layout themes, and interactive controls (filters, zoom, drill-down, playback).
-                        </p>
-                    </div>
-                </div>
+                <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight text-white">
+                    Sync Your Digital Ecosystem <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-audvikBlue via-audvikPurple to-audvikPink">Productivity with ORDO</span>
+                </h1>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center feature-card p-6 rounded-2xl">
-                    <div class="order-2 md:order-1">
-                        <h3 class="font-display text-3xl font-bold mb-4 text-audvikPurple">Software Life Cycle
-                            Monitoring</h3>
-                        <p class="text-gray-400 leading-relaxed text-base">
-                            Ordo monitors the entire software/model lifecycle—tracking code, data, and model versions
-                            across dev, CI/CD, staging, and production deployments. It captures runtime metrics
-                            (accuracy, latency, throughput, resource use), data and model drift, and automated
-                            test/validation results, triggering alerts when thresholds are crossed.
-                        </p>
-                    </div>
-                    <div class="order-1 md:order-2 flex justify-center">
-                        <svg width="220" height="220" viewBox="0 0 220 220" fill="none"
-                            class="animate-[spin_10s_linear_infinite]">
-                            <defs>
-                                <linearGradient id="gradLoop" x1="0" y1="0" x2="220" y2="220">
-                                    <stop stop-color="#5799D2" />
-                                    <stop offset="1" stop-color="#A95AA3" />
-                                </linearGradient>
-                            </defs>
-                            <path d="M110 20 A 90 90 0 0 1 200 110" stroke="url(#gradLoop)" stroke-width="20"
-                                stroke-linecap="round" />
-                            <path d="M200 110 A 90 90 0 0 1 110 200" stroke="url(#gradLoop)" stroke-width="20"
-                                stroke-linecap="round" stroke-opacity="0.7" />
-                            <path d="M110 200 A 90 90 0 0 1 20 110" stroke="url(#gradLoop)" stroke-width="20"
-                                stroke-linecap="round" stroke-opacity="0.5" />
-                            <path d="M20 110 A 90 90 0 0 1 110 20" stroke="url(#gradLoop)" stroke-width="20"
-                                stroke-linecap="round" stroke-opacity="0.3" />
+                <p class="text-blue-100/70 text-lg leading-relaxed max-w-lg">
+                    Streamline complexity with ORDO. Orchestrate your AI agents, tools, and processes into a
+                    single, high-performance rhythm that eliminates friction.
+                </p>
 
-                            <g transform="translate(110, 110) rotate(-45)">
-                                <rect x="-15" y="-15" width="30" height="30" rx="4" fill="white" />
-                            </g>
-                        </svg>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="text-center pb-20">
-                <button class="nav-btn-primary px-10 py-4" onclick="openCalendly()">
-                    Start Your Free Trial
+                <button class="nav-btn-primary px-8 py-3 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold hover:scale-105 transition-transform" onclick="openCalendly()">
+                    Get In Touch Now
                 </button>
             </div>
 
-        </main>
+            <div class="reveal relative group" data-tilt data-tilt-max="3">
+                <div class="absolute -inset-10 bg-gradient-to-tr from-yellow-500/40 via-orange-600/40 to-transparent rounded-[2.5rem] blur-3xl opacity-0 group-hover:opacity-80 transition-opacity duration-700">
+                </div>
+                <div class="relative rounded-[2rem] overflow-hidden border-2 border-yellow-500/40 shadow-2xl bg-[#0a0a0f] transition-all duration-500 group-hover:border-yellow-400 p-6">
+                    <svg width="600" height="450" viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto drop-shadow-2xl">
+                        <rect x="50" y="50" width="500" height="300" rx="12" fill="#0F1115" stroke="#eab308" stroke-width="2" />
+                        <path d="M250 350 L250 400 L200 420 L400 420 L350 400 L350 350" fill="#0F1115" stroke="#eab308" stroke-width="2" />
+                        <rect x="60" y="60" width="480" height="280" rx="8" fill="#1A1D24" />
+                        
+                        <g transform="translate(100, 150)">
+                            <rect x="-20" y="-20" width="120" height="90" rx="4" stroke="#eab308" stroke-width="2" stroke-dasharray="4 2" fill="rgba(234, 179, 8, 0.1)" />
+                            <rect x="-20" y="-35" width="70" height="15" fill="#eab308" />
+                            <text x="-15" y="-24" fill="black" font-size="10" font-weight="bold" font-family="sans-serif">IDENTIFIED</text>
+                            <circle cx="40" cy="30" r="20" stroke="white" stroke-width="1.5" stroke-opacity="0.3" />
+                        </g>
+                        
+                        <g transform="translate(350, 120)">
+                            <rect x="0" y="0" width="140" height="100" rx="4" stroke="#f97316" stroke-width="2" fill="rgba(249, 115, 22, 0.1)" />
+                            <rect x="0" y="-15" width="60" height="15" fill="#f97316" />
+                            <text x="5" y="-4" fill="black" font-size="10" font-weight="bold" font-family="sans-serif">ORCHESTRATE</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="max-w-[1400px] mx-auto px-6 mb-32">
+        <div class="p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-12 rounded-[3rem] border-2 border-yellow-500/30 bg-white/5 hover:bg-white/[0.08] hover:border-yellow-400 transition-all duration-500 reveal backdrop-blur-md">
+            <div class="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-500/10 blur-[80px] pointer-events-none"></div>
+
+            <div class="flex-shrink-0 relative">
+                <div class="w-40 h-40 rounded-full bg-white/5 border-2 border-yellow-500/40 flex items-center justify-center relative shadow-[0_0_30px_rgba(234,179,8,0.15)]">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="45" stroke="#eab308" stroke-width="1" stroke-dasharray="5 5" />
+                        <circle cx="50" cy="50" r="35" stroke="#A95AA3" stroke-width="2" />
+                        <circle cx="50" cy="50" r="12" fill="#5799D2" />
+                    </svg>
+                    <div class="absolute -bottom-6 text-center w-full font-bold text-xl tracking-widest text-white">ORDO</div>
+                </div>
+            </div>
+
+            <div class="relative z-10">
+                <h2 class="font-display text-3xl font-bold mb-4 text-audvikBlue">What is ORDO?</h2>
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Ordo refers to a system for object recognition, detection, and orchestration, that
+                    identifies and localizes items in sensor data. It combines computer-vision models
+                    (classification, detection, tracking) and scene understanding to recognize objects and their
+                    relationships.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-[1400px] mx-auto px-6 space-y-24 mb-32">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-8 rounded-3xl border-2 border-yellow-500/30 bg-white/5 hover:border-yellow-400 transition-all duration-500 reveal">
+            <div class="order-2 md:order-1">
+                <h3 class="font-display text-3xl font-bold mb-4 text-audvikPurple">Comprehensive Insights</h3>
+                <p class="text-gray-400 leading-relaxed text-base">
+                    Ordo delivers end-to-end multimodal perception and reasoning—combining object detection,
+                    tracking, scene understanding, and LLM-driven decisioning into a unified pipeline.
+                </p>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center group/img relative">
+                <div class="absolute -inset-6 bg-yellow-500/20 blur-2xl opacity-0 group-hover/img:opacity-100 transition-opacity"></div>
+                <div class="relative p-6 rounded-2xl bg-[#0a0a0f] border border-yellow-500/20">
+                    <svg width="250" height="200" viewBox="0 0 250 200" fill="none">
+                        <path d="M125 40 C 80 40, 50 70, 50 110 C 50 150, 80 170, 125 170 C 170 170, 200 150, 200 110 C 200 70, 170 40, 125 40" fill="url(#grad1)" fill-opacity="0.2" stroke="#eab308" stroke-width="2" />
+                        <defs>
+                            <linearGradient id="grad1" x1="50" y1="40" x2="200" y2="170" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#5799D2" />
+                                <stop offset="1" stop-color="#A95AA3" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-8 rounded-3xl border-2 border-yellow-500/30 bg-white/5 hover:border-yellow-400 transition-all duration-500 reveal">
+            <div class="flex justify-center group/img relative">
+                <div class="absolute -inset-6 bg-orange-600/20 blur-2xl opacity-0 group-hover/img:opacity-100 transition-opacity"></div>
+                <div class="relative p-6 rounded-2xl bg-[#0a0a0f] border border-yellow-500/20">
+                    <svg width="280" height="200" viewBox="0 0 280 200" fill="none">
+                        <rect x="20" y="20" width="240" height="160" rx="8" fill="rgba(255,255,255,0.05)" />
+                        <path d="M40 100 L70 70 L100 110 L130 50 L160 80 L190 40" stroke="#eab308" stroke-width="2" stroke-linecap="round" />
+                        <rect x="40" y="100" width="20" height="60" rx="2" fill="#5799D2" />
+                        <rect x="130" y="50" width="20" height="110" rx="2" fill="#A95AA3" />
+                    </svg>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-display text-3xl font-bold mb-4 text-audvikBlue">Customisable Graphs</h3>
+                <p class="text-gray-400 leading-relaxed text-base">
+                    Interactive visualizations for metrics, detections, and events—choose chart types like line,
+                    bar, heatmap, scatter, and object-overlap views to represent real-time data.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-8 rounded-3xl border-2 border-yellow-500/30 bg-white/5 hover:border-yellow-400 transition-all duration-500 reveal">
+            <div class="order-2 md:order-1">
+                <h3 class="font-display text-3xl font-bold mb-4 text-audvikPurple">Software Life Cycle Monitoring</h3>
+                <p class="text-gray-400 leading-relaxed text-base">
+                    Ordo monitors the entire software/model lifecycle—tracking code, data, and model versions
+                    across dev, CI/CD, staging, and production deployments.
+                </p>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center group/img relative">
+                <div class="absolute -inset-6 bg-yellow-500/20 blur-2xl opacity-0 group-hover/img:opacity-100 transition-opacity"></div>
+                <div class="relative p-8 rounded-full bg-[#0a0a0f] border border-yellow-500/20">
+                    <svg width="180" height="180" viewBox="0 0 220 220" fill="none" class="animate-[spin_12s_linear_infinite]">
+                        <path d="M110 20 A 90 90 0 0 1 200 110" stroke="#eab308" stroke-width="15" stroke-linecap="round" />
+                        <path d="M200 110 A 90 90 0 0 1 110 200" stroke="#A95AA3" stroke-width="15" stroke-linecap="round" />
+                        <path d="M110 200 A 90 90 0 0 1 20 110" stroke="#5799D2" stroke-width="15" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-24 border-t border-white/5 relative overflow-hidden reveal text-center rounded-[3rem]">
+        <div class="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-orange-600/20 rounded-full blur-[110px] pointer-events-none"></div>
+        <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[350px] h-[175px] bg-yellow-500/20 rounded-full blur-[70px] pointer-events-none"></div>
+
+        <div class="relative z-10">
+            <h2 class="font-display text-4xl font-bold mb-6 text-white">Experience Visionary <span class="text-audvikBlue">Orchestration</span></h2>
+            <p class="text-gray-400 text-xl max-w-4xl mx-auto mb-12 font-light">
+                Ready to eliminate friction and master your digital ecosystem? Start building with ORDO today.
+            </p>
+            <button class="nav-btn-primary px-10 py-4 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold hover:scale-105 transition-transform" onclick="openCalendly()">
+                Start Your Free Trial
+            </button>
+        </div>
+    </div>
+
+</main>
         <footer id="contact" class="relative pt-20 pb-10 bg-[#050508] border-t border-white/5 overflow-hidden mt-auto">
 
             <div
