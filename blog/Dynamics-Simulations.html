@@ -752,32 +752,33 @@
                     </div>
                 </div>
 
-                <form id="commentForm" class="space-y-6 relative z-10">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Name *</label>
-                            <input type="text" id="nameInput" class="glass-input focus:border-yellow-500/50 transition-colors" placeholder="John Doe" required>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Email *</label>
-                            <input type="email" id="emailInput" class="glass-input focus:border-yellow-500/50 transition-colors" placeholder="john@example.com"
-                                required>
-                        </div>
-                    </div>
+<form id="commentForm" class="space-y-6 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="space-y-2">
+            <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Name *</label>
+            <input type="text" id="nameInput" class="glass-input focus:border-yellow-500/50 transition-colors w-full p-3 rounded bg-white/5 border border-white/10 text-white outline-none" placeholder="John Doe" required>
+        </div>
 
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Comment *</label>
-                        <textarea id="commentInput" rows="4" class="glass-input focus:border-yellow-500/50 transition-colors"
-                            placeholder="Write your thoughts here..." required></textarea>
-                    </div>
+        <div class="space-y-2">
+            <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Email *</label>
+            <input type="email" id="emailInput" class="glass-input focus:border-yellow-500/50 transition-colors w-full p-3 rounded bg-white/5 border border-white/10 text-white outline-none" placeholder="john@example.com" required>
+            
+            <p id="emailError" class="text-red-500 text-xs font-bold mt-1 hidden"></p>
+        </div>
+    </div>
 
-                    <div class="flex items-center gap-4">
-                        <button type="submit"
-                            class="px-8 py-3 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold text-sm shadow-xl hover:scale-105 transition-all duration-300">
-                            Post Comment
-                        </button>
-                    </div>
-                </form>
+    <div class="space-y-2">
+        <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Comment *</label>
+        <textarea id="commentInput" rows="4" class="glass-input focus:border-yellow-500/50 transition-colors w-full p-3 rounded bg-white/5 border border-white/10 text-white outline-none" placeholder="Write your thoughts here..." required></textarea>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <button type="submit" class="px-8 py-3 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold text-sm shadow-xl hover:scale-105 transition-all duration-300">
+            Post Comment
+        </button>
+    </div>
+</form>
             </div>
         </div>
 
@@ -934,68 +935,80 @@
 
     <script>
 
-        function updateProgressBar() {
-            const progressBar = document.getElementById("scroll-progress");
-            if (!progressBar) return;
+function updateProgressBar() {
+        const progressBar = document.getElementById("scroll-progress");
+        if (!progressBar) return;
 
-            // Calculate scroll percentage
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-            const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
 
-            // Prevent division by zero if page is short
-            if (scrollHeight <= clientHeight) {
-                progressBar.style.width = "0%";
-                return;
-            }
-
-            const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
-            progressBar.style.width = scrolled + "%";
+        if (scrollHeight <= clientHeight) {
+            progressBar.style.width = "0%";
+            return;
         }
 
-        // Listen for scroll events
-        window.addEventListener("scroll", updateProgressBar);
+        const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        progressBar.style.width = scrolled + "%";
+    }
 
-        // Also run on load (in case user reloads halfway down the page)
-        window.addEventListener("load", updateProgressBar);
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('opacity-100')) {
-                menu.classList.remove('opacity-100', 'visible');
-                menu.classList.add('opacity-0', 'invisible');
-                document.body.style.overflow = ''; // Allow scrolling
-            } else {
-                menu.classList.remove('opacity-0', 'invisible');
-                menu.classList.add('opacity-100', 'visible');
-                document.body.style.overflow = 'hidden'; // Stop background scrolling
-            }
+    window.addEventListener("scroll", updateProgressBar);
+    window.addEventListener("load", updateProgressBar);
+
+    // 2. Mobile Menu Toggle
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('opacity-100')) {
+            menu.classList.remove('opacity-100', 'visible');
+            menu.classList.add('opacity-0', 'invisible');
+            document.body.style.overflow = ''; 
+        } else {
+            menu.classList.remove('opacity-0', 'invisible');
+            menu.classList.add('opacity-100', 'visible');
+            document.body.style.overflow = 'hidden'; 
         }
-        function toggleAccordion(listId, iconId) {
-            const list = document.getElementById(listId);
-            const icon = document.getElementById(iconId);
+    }
 
-            // Toggle the list visibility
-            if (list.classList.contains('hidden')) {
-                list.classList.remove('hidden');
-                list.classList.add('flex');
-                // Rotate icon down
-                icon.classList.add('rotate-180');
-            } else {
-                list.classList.add('hidden');
-                list.classList.remove('flex');
-                // Rotate icon back up
-                icon.classList.remove('rotate-180');
-            }
+    // 3. Accordion Toggle
+    function toggleAccordion(listId, iconId) {
+        const list = document.getElementById(listId);
+        const icon = document.getElementById(iconId);
+
+        if (list.classList.contains('hidden')) {
+            list.classList.remove('hidden');
+            list.classList.add('flex');
+            icon.classList.add('rotate-180');
+        } else {
+            list.classList.add('hidden');
+            list.classList.remove('flex');
+            icon.classList.remove('rotate-180');
         }
+    }
 
-// --- CONFIGURATION ---
-    const API_URL = "https://sheetdb.io/api/v1/btpya01irgaup"; 
+const API_URL = "https://sheetdb.io/api/v1/btpya01irgaup"; 
     const ADMIN_USER = "admin";
     const ADMIN_PASS = "1234";
     let isAdmin = false;
 
     document.addEventListener('DOMContentLoaded', () => {
         loadComments();
+        
+        // Add listener to clear error when user starts typing again
+        const emailInput = document.getElementById('emailInput');
+        const emailError = document.getElementById('emailError');
+        
+        if(emailInput) {
+            emailInput.addEventListener('input', function() {
+                // Remove red border
+                this.classList.remove('border-red-500');
+                // Add back the original subtle border
+                this.classList.add('border-white/10'); 
+                // Hide error text
+                emailError.classList.add('hidden');
+                emailError.innerText = "";
+            });
+        }
+        
         document.getElementById('commentForm').addEventListener('submit', handlePost);
     });
 
@@ -1005,12 +1018,41 @@
         const nameInput = document.getElementById('nameInput');
         const emailInput = document.getElementById('emailInput');
         const msgInput = document.getElementById('commentInput');
+        const emailError = document.getElementById('emailError'); // Get the error text element
         const btn = e.target.querySelector('button');
+
+        // --- VALIDATION START ---
+        const emailValue = emailInput.value.trim().toLowerCase();
+        const allowedDomains = ['gmail.com', 'yahoo.com', 'xxyy.com', 'audviklabs.com']; 
+        
+        let isValidEmail = false;
+        
+        // Check if email has @ and split it
+        if (emailValue.includes('@')) {
+            const domain = emailValue.split('@')[1];
+            if (allowedDomains.includes(domain)) {
+                isValidEmail = true;
+            }
+        }
+
+        if (!isValidEmail) {
+            // 1. Turn Input RED
+            emailInput.classList.remove('border-white/10'); // Remove default border
+            emailInput.classList.add('border-red-500');   // Add red border
+            
+            // 2. Show Error Message
+            emailError.innerText = "Error: Please use an allowed email (e.g., @gmail.com";
+            emailError.classList.remove('hidden');
+            
+            // 3. Stop execution
+            return; 
+        }
+        // --- VALIDATION END ---
 
         // Admin Check
         if (nameInput.value.toLowerCase() === ADMIN_USER && msgInput.value === ADMIN_PASS) {
             isAdmin = !isAdmin;
-            alert(isAdmin ? "Admin Mode: ON" : "Admin Mode: OFF");
+            alert(isAdmin ? "Admin Mode: ON" : "Admin Mode: OFF"); // Only alert for Admin toggle
             loadComments(); 
             return;
         }
@@ -1018,12 +1060,11 @@
         btn.innerText = "Posting...";
         btn.disabled = true;
 
-        // FIXED: Using 'comment' (singular) to match your Sheet header
         const newComment = {
             id: 'id_' + Date.now(),
             name: nameInput.value,
             email: emailInput.value,
-            comment: msgInput.value, // <--- CHANGED THIS FROM 'comments'
+            comment: msgInput.value, 
             date: new Date().toLocaleDateString()
         };
 
@@ -1034,17 +1075,22 @@
                 body: JSON.stringify({ data: newComment })
             });
 
-            // Clear inputs and reload
+            // Clear inputs
             nameInput.value = '';
             emailInput.value = '';
             msgInput.value = '';
+            
             loadComments();
 
         } catch (error) {
-            alert("Error posting comment.");
             console.error(error);
+            // Optional: Show error on the button or a general error area
+            btn.innerText = "Failed";
+            setTimeout(() => btn.innerText = "Post Comment", 2000);
         } finally {
-            btn.innerText = "Post Comment";
+            if(btn.innerText !== "Failed") {
+                btn.innerText = "Post Comment";
+            }
             btn.disabled = false;
         }
     }
@@ -1052,31 +1098,34 @@
     // --- 2. LOAD COMMENTS ---
     async function loadComments() {
         const list = document.getElementById('commentsList');
+        if (!list) return;
+
         try {
             const res = await fetch(API_URL);
             const data = await res.json();
             
             list.innerHTML = ""; 
             
+            if (!Array.isArray(data)) return;
+
             data.reverse().forEach(item => {
                 const card = document.createElement('div');
-                card.className = "bg-white/5 p-6 rounded-2xl border border-white/10 relative group transition-all hover:bg-white/10";
+                card.className = "bg-white/5 p-6 rounded-2xl border border-white/10 relative group transition-all hover:bg-white/10 mb-4";
                 
                 let adminControls = '';
                 if (isAdmin) {
-                    // FIXED: Passed 'item.comment' to edit function
+                    const safeComment = item.comment ? item.comment.replace(/'/g, "\\'") : "";
                     adminControls = `
                         <div class="absolute top-4 right-4 flex gap-2">
-                            <button onclick="editComment('${item.id}', '${item.comment}')" class="text-[10px] uppercase font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded hover:bg-blue-500 hover:text-white transition">Edit</button>
+                            <button onclick="editComment('${item.id}', '${safeComment}')" class="text-[10px] uppercase font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded hover:bg-blue-500 hover:text-white transition">Edit</button>
                             <button onclick="deleteComment('${item.id}')" class="text-[10px] uppercase font-bold text-red-400 bg-red-500/10 px-2 py-1 rounded hover:bg-red-500 hover:text-white transition">Delete</button>
                         </div>`;
                 }
 
-                // FIXED: Using item.comment (singular) to display text
                 card.innerHTML = `
                     <div class="flex justify-between items-start mb-3">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-audvikBlue to-audvikPurple flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-audvikBlue/20">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center text-black font-bold text-lg shadow-lg">
                                 ${item.name ? item.name.charAt(0).toUpperCase() : '?'}
                             </div>
                             <div>
@@ -1101,23 +1150,60 @@
         try {
             await fetch(`${API_URL}/id/${id}`, { method: 'DELETE' });
             loadComments();
-        } catch (e) { alert("Delete failed"); }
+        } catch (e) { console.log("Delete failed"); }
     };
 
     window.editComment = async (id, oldText) => {
-        const newText = prompt("Update comment:", document.getElementById(`text-${id}`).innerText);
-        if (newText) {
+        const currentText = document.getElementById(`text-${id}`) ? document.getElementById(`text-${id}`).innerText : oldText;
+        const newText = prompt("Update comment:", currentText);
+        if (newText && newText !== currentText) {
             try {
-                // FIXED: Updating 'comment' (singular) column
                 await fetch(`${API_URL}/id/${id}`, {
                     method: 'PATCH',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ data: { comment: newText } })
                 });
                 loadComments();
-            } catch (e) { alert("Update failed"); }
+            } catch (e) { console.log("Update failed"); }
         }
     };
+    
+    // --- UI HELPERS ---
+    function updateProgressBar() {
+        const progressBar = document.getElementById("scroll-progress");
+        if (!progressBar) return;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        if (scrollHeight <= clientHeight) { progressBar.style.width = "0%"; return; }
+        const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        progressBar.style.width = scrolled + "%";
+    }
+    window.addEventListener("scroll", updateProgressBar);
+    window.addEventListener("load", updateProgressBar);
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('opacity-100')) {
+            menu.classList.remove('opacity-100', 'visible');
+            menu.classList.add('opacity-0', 'invisible');
+            document.body.style.overflow = '';
+        } else {
+            menu.classList.remove('opacity-0', 'invisible');
+            menu.classList.add('opacity-100', 'visible');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function toggleAccordion(listId, iconId) {
+        const list = document.getElementById(listId);
+        const icon = document.getElementById(iconId);
+        if (list.classList.contains('hidden')) {
+            list.classList.remove('hidden'); list.classList.add('flex'); icon.classList.add('rotate-180');
+        } else {
+            list.classList.add('hidden'); list.classList.remove('flex'); icon.classList.remove('rotate-180');
+        }
+    }
     </script>
 </body>
 
