@@ -548,13 +548,13 @@
                     </div>
                 </div>
 
-                <a href="blog.html" class="text-white border-b border-white/10 pb-4"
+                <a href="../blog.html" class="text-white border-b border-white/10 pb-4"
                     onclick="toggleMobileMenu()">Blog</a>
-                <a href="about.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">About
+                <a href="../about.html" class="text-white border-b border-white/10 pb-4" onclick="toggleMobileMenu()">About
                     us</a>
-                <a href="contactus.html" class="text-white border-b border-white/10 pb-4"
+                <a href="../contactus.html" class="text-white border-b border-white/10 pb-4"
                     onclick="toggleMobileMenu()">Contact us</a>
-                <a href="SuccessStories.html" class="text-white border-b border-white/10 pb-4"
+                <a href="../SuccessStories.html" class="text-white border-b border-white/10 pb-4"
                     onclick="toggleMobileMenu()">Success Stories</a>
 
                 <button class="nav-btn-primary w-full py-4 mt-2" onclick="toggleMobileMenu(); openCalendly(event)">
@@ -758,6 +758,8 @@
         <div class="space-y-2">
             <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Name *</label>
             <input type="text" id="nameInput" class="glass-input focus:border-yellow-500/50 transition-colors w-full p-3 rounded bg-white/5 border border-white/10 text-white outline-none" placeholder="John Doe" required>
+            
+            <p id="nameError" class="text-red-500 text-xs font-bold mt-1 hidden"></p>
         </div>
 
         <div class="space-y-2">
@@ -951,24 +953,19 @@ function updateProgressBar() {
         progressBar.style.width = scrolled + "%";
     }
 
-    window.addEventListener("scroll", updateProgressBar);
-    window.addEventListener("load", updateProgressBar);
-
-    // 2. Mobile Menu Toggle
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         if (menu.classList.contains('opacity-100')) {
             menu.classList.remove('opacity-100', 'visible');
             menu.classList.add('opacity-0', 'invisible');
-            document.body.style.overflow = ''; 
+            document.body.style.overflow = '';
         } else {
             menu.classList.remove('opacity-0', 'invisible');
             menu.classList.add('opacity-100', 'visible');
-            document.body.style.overflow = 'hidden'; 
+            document.body.style.overflow = 'hidden';
         }
     }
 
-    // 3. Accordion Toggle
     function toggleAccordion(listId, iconId) {
         const list = document.getElementById(listId);
         const icon = document.getElementById(iconId);
@@ -984,49 +981,89 @@ function updateProgressBar() {
         }
     }
 
-const API_URL = "https://sheetdb.io/api/v1/btpya01irgaup"; 
+    window.addEventListener("scroll", updateProgressBar);
+    window.addEventListener("load", updateProgressBar);
+
+
+    // --- BACKEND & COMMENT LOGIC ---
+    const API_URL = "https://sheetdb.io/api/v1/btpya01irgaup";
     const ADMIN_USER = "admin";
     const ADMIN_PASS = "1234";
     let isAdmin = false;
 
     document.addEventListener('DOMContentLoaded', () => {
         loadComments();
-        
-        // Add listener to clear error when user starts typing again
+
+        // 1. Listener to clear EMAIL error when typing
         const emailInput = document.getElementById('emailInput');
         const emailError = document.getElementById('emailError');
-        
-        if(emailInput) {
+
+        if (emailInput) {
             emailInput.addEventListener('input', function() {
-                // Remove red border
                 this.classList.remove('border-red-500');
-                // Add back the original subtle border
-                this.classList.add('border-white/10'); 
-                // Hide error text
-                emailError.classList.add('hidden');
-                emailError.innerText = "";
+                this.classList.add('border-white/10');
+                if (emailError) {
+                    emailError.classList.add('hidden');
+                    emailError.innerText = "";
+                }
             });
         }
-        
+
+        // 2. Listener to clear NAME error when typing (NEW)
+        const nameInput = document.getElementById('nameInput');
+        const nameError = document.getElementById('nameError');
+
+        if (nameInput) {
+            nameInput.addEventListener('input', function() {
+                this.classList.remove('border-red-500');
+                this.classList.add('border-white/10');
+                if (nameError) {
+                    nameError.classList.add('hidden');
+                    nameError.innerText = "";
+                }
+            });
+        }
+
         document.getElementById('commentForm').addEventListener('submit', handlePost);
     });
 
-    // --- 1. POST COMMENT ---
+    // --- HANDLE POST SUBMISSION ---
     async function handlePost(e) {
         e.preventDefault();
+        
         const nameInput = document.getElementById('nameInput');
         const emailInput = document.getElementById('emailInput');
         const msgInput = document.getElementById('commentInput');
-        const emailError = document.getElementById('emailError'); // Get the error text element
+        
+        // Error Elements
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        
         const btn = e.target.querySelector('button');
 
-        // --- VALIDATION START ---
+        // --- VALIDATION 1: STRICT NAME ---
+        const nameValue = nameInput.value.trim();
+        // Regex: Only allows letters (a-z, A-Z) and spaces. No numbers, no symbols (@, .).
+        const nameRegex = /^[a-zA-Z\s]+$/;
+
+        if (!nameRegex.test(nameValue)) {
+            // Visual Feedback
+            nameInput.classList.remove('border-white/10');
+            nameInput.classList.add('border-red-500');
+
+            // Show Error Message
+            if (nameError) {
+                nameError.innerText = "Name must contain letters only (no numbers or emails).";
+                nameError.classList.remove('hidden');
+            }
+            return; // STOP EXECUTION
+        }
+
+        // --- VALIDATION 2: EMAIL DOMAIN ---
         const emailValue = emailInput.value.trim().toLowerCase();
-        const allowedDomains = ['gmail.com', 'yahoo.com', 'xxyy.com', 'audviklabs.com']; 
-        
+        const allowedDomains = ['gmail.com', 'yahoo.com', 'xxyy.com', 'audviklabs.com'];
         let isValidEmail = false;
-        
-        // Check if email has @ and split it
+
         if (emailValue.includes('@')) {
             const domain = emailValue.split('@')[1];
             if (allowedDomains.includes(domain)) {
@@ -1035,27 +1072,28 @@ const API_URL = "https://sheetdb.io/api/v1/btpya01irgaup";
         }
 
         if (!isValidEmail) {
-            // 1. Turn Input RED
-            emailInput.classList.remove('border-white/10'); // Remove default border
-            emailInput.classList.add('border-red-500');   // Add red border
+            // Visual Feedback
+            emailInput.classList.remove('border-white/10');
+            emailInput.classList.add('border-red-500');
             
-            // 2. Show Error Message
-            emailError.innerText = "Error: Please use an allowed email (e.g., @gmail.com";
-            emailError.classList.remove('hidden');
-            
-            // 3. Stop execution
-            return; 
+            // Show Error Message
+            if (emailError) {
+                emailError.innerText = "Error: Please use an allowed email (e.g., @gmail.com)";
+                emailError.classList.remove('hidden');
+            }
+            return; // STOP EXECUTION
         }
         // --- VALIDATION END ---
 
         // Admin Check
         if (nameInput.value.toLowerCase() === ADMIN_USER && msgInput.value === ADMIN_PASS) {
             isAdmin = !isAdmin;
-            alert(isAdmin ? "Admin Mode: ON" : "Admin Mode: OFF"); // Only alert for Admin toggle
-            loadComments(); 
+            alert(isAdmin ? "Admin Mode: ON" : "Admin Mode: OFF");
+            loadComments();
             return;
         }
 
+        // Proceed to Post
         btn.innerText = "Posting...";
         btn.disabled = true;
 
@@ -1063,7 +1101,7 @@ const API_URL = "https://sheetdb.io/api/v1/btpya01irgaup";
             id: 'id_' + Date.now(),
             name: nameInput.value,
             email: emailInput.value,
-            comment: msgInput.value, 
+            comment: msgInput.value,
             date: new Date().toLocaleDateString()
         };
 
@@ -1078,23 +1116,22 @@ const API_URL = "https://sheetdb.io/api/v1/btpya01irgaup";
             nameInput.value = '';
             emailInput.value = '';
             msgInput.value = '';
-            
+
             loadComments();
 
         } catch (error) {
             console.error(error);
-            // Optional: Show error on the button or a general error area
             btn.innerText = "Failed";
             setTimeout(() => btn.innerText = "Post Comment", 2000);
         } finally {
-            if(btn.innerText !== "Failed") {
+            if (btn.innerText !== "Failed") {
                 btn.innerText = "Post Comment";
             }
             btn.disabled = false;
         }
     }
 
-    // --- 2. LOAD COMMENTS ---
+    // --- LOAD COMMENTS ---
     async function loadComments() {
         const list = document.getElementById('commentsList');
         if (!list) return;
@@ -1102,15 +1139,15 @@ const API_URL = "https://sheetdb.io/api/v1/btpya01irgaup";
         try {
             const res = await fetch(API_URL);
             const data = await res.json();
-            
-            list.innerHTML = ""; 
-            
+
+            list.innerHTML = "";
+
             if (!Array.isArray(data)) return;
 
             data.reverse().forEach(item => {
                 const card = document.createElement('div');
                 card.className = "bg-white/5 p-6 rounded-2xl border border-white/10 relative group transition-all hover:bg-white/10 mb-4";
-                
+
                 let adminControls = '';
                 if (isAdmin) {
                     const safeComment = item.comment ? item.comment.replace(/'/g, "\\'") : "";
@@ -1143,7 +1180,7 @@ const API_URL = "https://sheetdb.io/api/v1/btpya01irgaup";
         }
     }
 
-    // --- 3. DELETE & EDIT ---
+    // --- DELETE & EDIT ---
     window.deleteComment = async (id) => {
         if (!confirm("Delete this?")) return;
         try {
@@ -1166,43 +1203,6 @@ const API_URL = "https://sheetdb.io/api/v1/btpya01irgaup";
             } catch (e) { console.log("Update failed"); }
         }
     };
-    
-    // --- UI HELPERS ---
-    function updateProgressBar() {
-        const progressBar = document.getElementById("scroll-progress");
-        if (!progressBar) return;
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-        const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-        if (scrollHeight <= clientHeight) { progressBar.style.width = "0%"; return; }
-        const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        progressBar.style.width = scrolled + "%";
-    }
-    window.addEventListener("scroll", updateProgressBar);
-    window.addEventListener("load", updateProgressBar);
-
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        if (menu.classList.contains('opacity-100')) {
-            menu.classList.remove('opacity-100', 'visible');
-            menu.classList.add('opacity-0', 'invisible');
-            document.body.style.overflow = '';
-        } else {
-            menu.classList.remove('opacity-0', 'invisible');
-            menu.classList.add('opacity-100', 'visible');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-    
-    function toggleAccordion(listId, iconId) {
-        const list = document.getElementById(listId);
-        const icon = document.getElementById(iconId);
-        if (list.classList.contains('hidden')) {
-            list.classList.remove('hidden'); list.classList.add('flex'); icon.classList.add('rotate-180');
-        } else {
-            list.classList.add('hidden'); list.classList.remove('flex'); icon.classList.remove('rotate-180');
-        }
-    }
     </script>
 </body>
 
